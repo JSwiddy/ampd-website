@@ -1142,3 +1142,13 @@ body.ampd-lock {
   left: 50%;
   transform: translateX(-50%);
 }
+.site-header {
+  padding: 1rem 0;        /* keep your original spacing */
+}
+
+.header-layout {
+  position: relative;
+  min-height: 64px;       /* 👈 THIS is the missing piece */
+  display: flex;
+  align-items: center;    /* vertical centering */
+}
