@@ -1152,3 +1152,25 @@ body.ampd-lock {
   display: flex;
   align-items: center;    /* vertical centering */
 }
+
+/* ===========================
+   MOBILE HEADER CENTER FIX
+   =========================== */
+
+@media (max-width: 900px) {
+  .header-layout {
+    justify-content: center;
+  }
+
+  .header-item--logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .header-item--icons {
+    position: absolute;
+    right: 1rem;
+  }
+}
+
