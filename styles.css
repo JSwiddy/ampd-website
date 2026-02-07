@@ -1133,3 +1133,12 @@ body.ampd-lock {
   padding: 1rem 3rem;
   font-size: 1.125rem;
 }
+.header-layout {
+  position: relative;
+}
+
+.header-item--logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
