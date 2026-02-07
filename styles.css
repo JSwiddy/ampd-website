@@ -213,6 +213,27 @@ button {
   letter-spacing: 0.005em;
 }
 
+/* New hero copy structure */
+.ampd-hero-copy {
+  color: #d1d1d1;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  letter-spacing: 0.005em;
+}
+
+.ampd-hero-line {
+  margin-bottom: 0.25rem;
+}
+
+.ampd-hero-line--primary {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.ampd-hero-line--secondary {
+  color: #d1d1d1;
+}
+
 .ampd-hero-cta {
   background: #1E7BFF;
   color: #ffffff;
@@ -634,7 +655,8 @@ body.ampd-lock {
     gap: 1rem;
   }
 
-  .ampd-hero-statement-text {
+  .ampd-hero-statement-text,
+  .ampd-hero-copy {
     max-width: 520px;
     text-align: center;
   }
@@ -657,7 +679,8 @@ body.ampd-lock {
     gap: 0.75rem;
   }
 
-  .ampd-hero-statement-text {
+  .ampd-hero-statement-text,
+  .ampd-hero-copy {
     max-width: 420px;
     text-align: center;
   }
@@ -680,7 +703,19 @@ body.ampd-lock {
     padding: 0 1.5rem;
   }
 
-  /* Header */
+  /* Header - centered layout */
+  .header-layout {
+    justify-content: center !important;
+    gap: 0 !important;
+  }
+
+  .header-item--logo {
+    position: static !important;
+    transform: none !important;
+    flex: 0 0 auto !important;
+    margin: 0 !important;
+  }
+
   .logo-desktop {
     display: none;
   }
@@ -688,10 +723,12 @@ body.ampd-lock {
   .logo-mobile {
     display: block;
     max-width: 120px;
+    margin: 0 auto;
   }
 
-  .header-item--navigation {
-    display: none;
+  .header-item--navigation,
+  .header-item--icons {
+    display: none !important;
   }
 
   .header-item--icons .site-nav {
@@ -719,6 +756,15 @@ body.ampd-lock {
   .ampd-hero-statement-text {
     max-width: 100%;
     font-size: 0.95rem;
+  }
+
+  .ampd-hero-copy {
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .ampd-hero-line {
+    margin-bottom: 0.25rem;
   }
 
   /* Logo Carousel */
@@ -1152,21 +1198,4 @@ body.ampd-lock {
   }
 }
 
-/* Mobile: centered logo using flexbox */
-@media (max-width: 900px) {
-  .header-layout {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    min-height: 64px;
-  }
-
-  .header-item--logo {
-    position: static !important;
-    transform: none !important;
-  }
-
-  .header-item--icons {
-    display: none;
-  }
-}
+/* Mobile centering is handled in the main mobile breakpoint above at line ~900 */
