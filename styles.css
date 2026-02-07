@@ -1174,3 +1174,47 @@ body.ampd-lock {
   }
 }
 
+/* ===========================
+   HEADER CENTERING – FINAL
+   =========================== */
+
+/* Desktop: absolute centered logo */
+@media (min-width: 901px) {
+  .header-layout {
+    position: relative;
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-item--logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile: flex centered logo (NO absolute) */
+@media (max-width: 900px) {
+  .header-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header-item--logo {
+    position: static;
+    transform: none;
+  }
+
+  .site-header__logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Optional: hide icons on mobile (recommended) */
+  .header-item--icons {
+    display: none;
+  }
+}
