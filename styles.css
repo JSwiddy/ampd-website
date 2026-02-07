@@ -619,6 +619,28 @@ body.ampd-lock {
 }
 
 /* ===========================
+   RESPONSIVE - DESKTOP
+   =========================== */
+
+@media (min-width: 1025px) {
+  .ampd-hero-statement {
+    max-width: 600px;
+    bottom: 4rem;
+  }
+
+  .ampd-hero-statement-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .ampd-hero-statement-text {
+    max-width: 520px;
+    text-align: center;
+  }
+}
+
+/* ===========================
    RESPONSIVE - TABLET
    =========================== */
 
