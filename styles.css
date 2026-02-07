@@ -1133,59 +1133,16 @@ body.ampd-lock {
   padding: 1rem 3rem;
   font-size: 1.125rem;
 }
-.header-layout {
-  position: relative;
-}
-
-.header-item--logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.site-header {
-  padding: 1rem 0;        /* keep your original spacing */
-}
-
-.header-layout {
-  position: relative;
-  min-height: 64px;       /* 👈 THIS is the missing piece */
-  display: flex;
-  align-items: center;    /* vertical centering */
-}
 
 /* ===========================
-   MOBILE HEADER CENTER FIX
+   HEADER CENTERING FIX
    =========================== */
 
-@media (max-width: 900px) {
-  .header-layout {
-    justify-content: center;
-  }
-
-  .header-item--logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .header-item--icons {
-    position: absolute;
-    right: 1rem;
-  }
-}
-
-/* ===========================
-   HEADER CENTERING – FINAL
-   =========================== */
-
-/* Desktop: absolute centered logo */
+/* Desktop: centered logo using absolute positioning */
 @media (min-width: 901px) {
   .header-layout {
     position: relative;
     min-height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
   }
 
   .header-item--logo {
@@ -1195,25 +1152,20 @@ body.ampd-lock {
   }
 }
 
-/* Mobile: flex centered logo (NO absolute) */
+/* Mobile: centered logo using flexbox */
 @media (max-width: 900px) {
   .header-layout {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-height: 64px;
   }
 
   .header-item--logo {
-    position: static;
-    transform: none;
+    position: static !important;
+    transform: none !important;
   }
 
-  .site-header__logo {
-    display: flex;
-    justify-content: center;
-  }
-
-  /* Optional: hide icons on mobile (recommended) */
   .header-item--icons {
     display: none;
   }
