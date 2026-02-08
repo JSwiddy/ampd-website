@@ -163,26 +163,17 @@
         <!-- Success Message (hidden by default) — OUTSIDE the form -->
         <div class="form-success" id="formSuccess" style="display: none;">
           <style>
-              .ampd-success-logo {
-                width: 120px;
-                margin: 0 auto 1.5rem;
-                animation: ampdPulse 2s ease-in-out infinite;
-              }
-              .ampd-success-logo img {
-                width: 100%;
-                display: block;
-              }
-              @keyframes ampdPulse {
-                0%, 100% { transform: scale(1); opacity: 1; }
-                50% { transform: scale(1.08); opacity: 0.85; }
-              }
               .ampd-success-headline {
                 font-family: 'Poppins', sans-serif;
                 font-size: 2rem;
                 font-weight: 700;
                 color: #fff;
                 margin-bottom: 0.5rem;
-                animation: fadeSlideUp 0.6s ease-out 0.3s both;
+                animation: fadeSlideUp 0.6s ease-out 0.3s both, ampdPulse 2s ease-in-out 1s infinite;
+              }
+              @keyframes ampdPulse {
+                0%, 100% { transform: scale(1); opacity: 1; }
+                50% { transform: scale(1.05); opacity: 0.9; }
               }
               .ampd-success-sub {
                 color: rgba(255,255,255,0.7);
@@ -232,9 +223,6 @@
               }
             </style>
 
-            <div class="ampd-success-logo">
-              <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487124/AMPD_White_ms0gvl.png" alt="AMPD">
-            </div>
             <div class="ampd-success-headline">Ready to Get AMPD UP! ⚡</div>
             <div class="ampd-success-sub">Your request is in. Here's what happens next:</div>
 
