@@ -29,6 +29,13 @@
       ]
     }
   ],
+  "redirects": [
+    {
+      "source": "/pages/organizations",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
