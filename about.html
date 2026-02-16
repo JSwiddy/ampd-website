@@ -63,9 +63,9 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -38%);
+        transform: translate(-50%, -28%);
         width: 750px;
-        height: 750px;
+        height: 900px;
         pointer-events: none;
         z-index: 0;
     }
@@ -81,7 +81,7 @@
         left: 50%;
         width: 600px;
         height: 600px;
-        transform: translate(-50%, -38%);
+        transform: translate(-50%, -28%);
         background: radial-gradient(circle, rgba(255,255,255,0.02) 0%, transparent 55%);
         pointer-events: none;
         z-index: 0;
@@ -250,21 +250,21 @@
 
     .field-svg-wrap {
         opacity: 0;
-        transform: translate(-50%, -38%) scale(0.9);
+        transform: translate(-50%, -28%) scale(0.9);
         animation: fieldIn 1.6s cubic-bezier(0.23, 1, 0.32, 1) 0s forwards;
     }
     @keyframes fieldIn {
-        to { opacity: 1; transform: translate(-50%, -38%) scale(1); }
+        to { opacity: 1; transform: translate(-50%, -28%) scale(1); }
     }
 
     .field-glow {
         opacity: 0;
-        transform: translate(-50%, -38%);
+        transform: translate(-50%, -28%);
         animation: glowIn 2s ease 0.3s forwards;
     }
     @keyframes glowIn {
-        from { opacity: 0; transform: translate(-50%, -38%); }
-        to { opacity: 1; transform: translate(-50%, -38%); }
+        from { opacity: 0; transform: translate(-50%, -28%); }
+        to { opacity: 1; transform: translate(-50%, -28%); }
     }
 
     .quote-text {
