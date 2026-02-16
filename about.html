@@ -23,90 +23,127 @@
   <link rel="stylesheet" href="styles.css">
 
   <style>
-    /* ── HERO WRAPPER — CONTAINS & SEPARATES ── */
+    /* ══════════════════════════════════════
+       SECTION 1: QUOTE LANDING (full screen)
+       ══════════════════════════════════════ */
 
-    .about-hero-wrap {
+    .about-quote-landing {
         position: relative;
-        background: radial-gradient(ellipse at 50% 45%, rgba(255,255,255,0.025) 0%, transparent 55%);
-    }
-
-    /* Bottom fade out — hero dissolves to black */
-    .about-hero-wrap::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 200px;
-        background: linear-gradient(to bottom, transparent, #000);
-        pointer-events: none;
-        z-index: 3;
-    }
-
-    /* ── HERO SECTION ── */
-
-    .about-hero {
         min-height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
-        padding: 160px 48px 160px;
-        max-width: 960px;
-        margin: 0 auto;
-        position: relative;
+        padding: 120px 48px 80px;
         overflow: hidden;
     }
 
-    /* ── BASEBALL DIAMOND — more visible now ── */
-    .about-diamond {
+    /* Bottom fade — hard cutoff to black */
+    .about-quote-landing::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 160px;
+        background: linear-gradient(to bottom, transparent, #000);
+        pointer-events: none;
+        z-index: 3;
+    }
+
+    /* ── BASEBALL DIAMOND with bases ── */
+    .diamond-field {
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 440px;
-        height: 440px;
-        transform: translate(-50%, -55%) rotate(45deg);
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 400px;
         pointer-events: none;
         z-index: 0;
     }
 
-    /* Outer diamond */
-    .about-diamond::before {
-        content: '';
+    /* Diamond outline (rotated square) */
+    .diamond-field-outline {
         position: absolute;
-        inset: 0;
+        top: 50%;
+        left: 50%;
+        width: 280px;
+        height: 280px;
+        transform: translate(-50%, -50%) rotate(45deg);
         border: 1.5px solid rgba(255,255,255,0.07);
-        border-radius: 6px;
-    }
-
-    /* Inner diamond */
-    .about-diamond::after {
-        content: '';
-        position: absolute;
-        top: 25%;
-        left: 25%;
-        width: 50%;
-        height: 50%;
-        border: 1px solid rgba(255,255,255,0.05);
         border-radius: 4px;
     }
 
-    /* Diamond glow — subtle radial behind it */
-    .about-diamond-glow {
+    /* Base paths — the lines connecting bases */
+    .diamond-field-inner {
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 600px;
-        height: 600px;
-        transform: translate(-50%, -55%);
-        background: radial-gradient(circle, rgba(255,255,255,0.02) 0%, transparent 65%);
+        width: 180px;
+        height: 180px;
+        transform: translate(-50%, -50%) rotate(45deg);
+        border: 1px solid rgba(255,255,255,0.04);
+        border-radius: 2px;
+    }
+
+    /* Individual bases */
+    .base {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background: rgba(255,255,255,0.1);
+        transform: translate(-50%, -50%) rotate(45deg);
+        border-radius: 2px;
+    }
+
+    /* Home plate — slightly different */
+    .base--home {
+        bottom: 18px;
+        left: 50%;
+        transform: translate(-50%, 0) rotate(45deg);
+        width: 14px;
+        height: 14px;
+        background: rgba(255,255,255,0.13);
+    }
+
+    /* First base — right */
+    .base--first {
+        top: 50%;
+        right: 18px;
+        transform: translate(0, -50%) rotate(45deg);
+    }
+
+    /* Second base — top */
+    .base--second {
+        top: 18px;
+        left: 50%;
+        transform: translate(-50%, 0) rotate(45deg);
+    }
+
+    /* Third base — left */
+    .base--third {
+        top: 50%;
+        left: 18px;
+        transform: translate(0, -50%) rotate(45deg);
+    }
+
+    /* Soft glow behind the diamond */
+    .diamond-glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 500px;
+        height: 500px;
+        transform: translate(-50%, -50%);
+        background: radial-gradient(circle, rgba(255,255,255,0.025) 0%, transparent 60%);
         pointer-events: none;
         z-index: 0;
     }
 
-    /* Baseball stitch decorations */
-    .about-hero-stitch {
+    /* Baseball stitch curves */
+    .quote-stitch {
         position: absolute;
         top: 0;
         left: 0;
@@ -117,42 +154,42 @@
         z-index: 0;
     }
 
-    .about-hero-stitch::before,
-    .about-hero-stitch::after {
+    .quote-stitch::before,
+    .quote-stitch::after {
         content: '';
         position: absolute;
         width: 200px;
         height: 400px;
         border-radius: 50%;
-        border: 1px dashed rgba(255,255,255,0.04);
+        border: 1px dashed rgba(255,255,255,0.035);
     }
 
-    .about-hero-stitch::before {
+    .quote-stitch::before {
         top: 10%;
         left: -80px;
         transform: rotate(-15deg);
     }
 
-    .about-hero-stitch::after {
+    .quote-stitch::after {
         bottom: 10%;
         right: -80px;
         transform: rotate(15deg);
     }
 
     /* Giant quotation mark */
-    .about-hero-bigquote {
+    .quote-bigmark {
         font-family: Georgia, 'Times New Roman', serif;
         font-size: clamp(120px, 18vw, 200px);
         line-height: 0.8;
         color: rgba(255,255,255,0.05);
         font-weight: 700;
-        margin-bottom: -20px;
+        margin-bottom: -16px;
         user-select: none;
         position: relative;
         z-index: 1;
     }
 
-    .about-hero-quote {
+    .quote-text {
         font-size: clamp(24px, 3vw, 32px);
         font-weight: 700;
         font-style: italic;
@@ -165,66 +202,17 @@
         z-index: 1;
     }
 
-    .about-hero-attribution {
+    .quote-author {
         font-size: 13px;
         font-weight: 600;
         color: rgba(255,255,255,0.3);
         letter-spacing: 0.14em;
         text-transform: uppercase;
-        margin-bottom: 64px;
         position: relative;
         z-index: 1;
     }
 
-    /* Thin accent line between quote and headline */
-    .about-hero-divider {
-        width: 48px;
-        height: 1px;
-        background: rgba(255,255,255,0.15);
-        margin-bottom: 64px;
-        position: relative;
-        z-index: 1;
-    }
-
-    .about-hero h1 {
-        font-size: clamp(36px, 5.5vw, 64px);
-        font-weight: 800;
-        line-height: 1.08;
-        letter-spacing: -0.035em;
-        max-width: 800px;
-        color: #ffffff;
-        position: relative;
-        z-index: 1;
-    }
-
-    .about-hero h1 .hero-accent {
-        display: inline;
-        position: relative;
-    }
-
-    .about-hero h1 .hero-accent::after {
-        content: '';
-        position: absolute;
-        bottom: 2px;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: rgba(255,255,255,0.18);
-        border-radius: 2px;
-    }
-
-    .about-hero-sub {
-        margin-top: 32px;
-        font-size: 17px;
-        line-height: 1.75;
-        color: rgba(255,255,255,0.4);
-        max-width: 500px;
-        font-weight: 400;
-        position: relative;
-        z-index: 1;
-    }
-
-    .about-scroll-hint {
+    .quote-scroll-hint {
         position: absolute;
         bottom: 40px;
         display: flex;
@@ -239,7 +227,7 @@
         z-index: 4;
     }
 
-    .about-scroll-arrow {
+    .quote-scroll-arrow {
         width: 20px;
         height: 20px;
         border-right: 1.5px solid rgba(255,255,255,0.25);
@@ -253,80 +241,101 @@
         50% { transform: rotate(45deg) translateY(6px); }
     }
 
-    /* ── HERO ANIMATIONS ── */
-    .about-hero-bigquote {
+    /* ── QUOTE LANDING ANIMATIONS ── */
+    .quote-bigmark {
         opacity: 0;
         transform: scale(0.8);
         animation: quoteReveal 1.2s cubic-bezier(0.23, 1, 0.32, 1) 0.1s forwards;
     }
-
     @keyframes quoteReveal {
         to { opacity: 1; transform: scale(1); }
     }
 
-    .about-diamond {
+    .diamond-field {
         opacity: 0;
-        transform: translate(-50%, -55%) rotate(45deg) scale(0.85);
-        animation: diamondReveal 1.5s cubic-bezier(0.23, 1, 0.32, 1) 0s forwards;
+        transform: translate(-50%, -50%) scale(0.85);
+        animation: diamondIn 1.4s cubic-bezier(0.23, 1, 0.32, 1) 0s forwards;
+    }
+    @keyframes diamondIn {
+        to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
     }
 
-    @keyframes diamondReveal {
-        to { opacity: 1; transform: translate(-50%, -55%) rotate(45deg) scale(1); }
-    }
-
-    .about-diamond-glow {
+    .diamond-glow {
         opacity: 0;
-        animation: glowFade 2s ease 0.3s forwards;
+        animation: glowIn 2s ease 0.3s forwards;
     }
-
-    @keyframes glowFade {
+    @keyframes glowIn {
         to { opacity: 1; }
     }
 
-    .about-hero-quote {
+    .quote-text {
         opacity: 0;
         transform: translateY(20px);
-        animation: fadeSlideUp 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.3s forwards;
+        animation: fadeUp 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.3s forwards;
     }
 
-    .about-hero-attribution {
+    .quote-author {
         opacity: 0;
         transform: translateY(20px);
-        animation: fadeSlideUp 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.45s forwards;
+        animation: fadeUp 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.5s forwards;
     }
 
-    .about-hero-divider {
-        opacity: 0;
-        transform: scaleX(0);
-        animation: lineGrow 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.6s forwards;
-    }
-
-    @keyframes lineGrow {
-        to { opacity: 1; transform: scaleX(1); }
-    }
-
-    .about-hero h1 {
-        opacity: 0;
-        transform: translateY(30px);
-        animation: fadeSlideUp 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.7s forwards;
-    }
-
-    .about-hero-sub {
-        opacity: 0;
-        transform: translateY(20px);
-        animation: fadeSlideUp 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.9s forwards;
-    }
-
-    @keyframes fadeSlideUp {
+    @keyframes fadeUp {
         to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ── SECTION SPACER — breathing room between hero and content ── */
-    .about-spacer {
-        height: 80px;
+
+    /* ══════════════════════════════════════
+       SECTION 2: THE QUESTION (separate)
+       ══════════════════════════════════════ */
+
+    .about-question {
+        padding: 120px 48px 100px;
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
     }
 
-    /* ── SHARED ── */
+    .about-question h1 {
+        font-size: clamp(36px, 5.5vw, 64px);
+        font-weight: 800;
+        line-height: 1.08;
+        letter-spacing: -0.035em;
+        max-width: 800px;
+        margin: 0 auto 32px;
+        color: #ffffff;
+    }
+
+    .about-question h1 .hero-accent {
+        display: inline;
+        position: relative;
+    }
+
+    .about-question h1 .hero-accent::after {
+        content: '';
+        position: absolute;
+        bottom: 2px;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: rgba(255,255,255,0.18);
+        border-radius: 2px;
+    }
+
+    .about-question-sub {
+        font-size: 17px;
+        line-height: 1.75;
+        color: rgba(255,255,255,0.4);
+        max-width: 500px;
+        margin: 0 auto;
+        font-weight: 400;
+    }
+
+
+    /* ══════════════════════════════════════
+       SHARED
+       ══════════════════════════════════════ */
+
     .about-divider {
         width: 100%;
         height: 1px;
@@ -342,7 +351,11 @@
         margin-bottom: 48px;
     }
 
-    /* ── REALITY ── */
+
+    /* ══════════════════════════════════════
+       REALITY
+       ══════════════════════════════════════ */
+
     .about-reality {
         padding: 120px 48px;
         max-width: 740px;
@@ -371,7 +384,11 @@
         border-left: 3px solid rgba(255,255,255,0.15);
     }
 
-    /* ── FOUNDER ── */
+
+    /* ══════════════════════════════════════
+       FOUNDER
+       ══════════════════════════════════════ */
+
     .about-founder {
         padding: 120px 48px;
         max-width: 1000px;
@@ -441,7 +458,11 @@
         font-style: italic;
     }
 
-    /* ── SOLUTION ── */
+
+    /* ══════════════════════════════════════
+       SOLUTION
+       ══════════════════════════════════════ */
+
     .about-solution {
         padding: 120px 48px;
         max-width: 1000px;
@@ -511,7 +532,11 @@
         color: rgba(255,255,255,0.5);
     }
 
-    /* ── MISSION ── */
+
+    /* ══════════════════════════════════════
+       MISSION
+       ══════════════════════════════════════ */
+
     .about-mission {
         padding: 120px 48px;
         max-width: 740px;
@@ -547,7 +572,11 @@
         margin: 48px 0 !important;
     }
 
-    /* ── CTA ── */
+
+    /* ══════════════════════════════════════
+       CTA
+       ══════════════════════════════════════ */
+
     .about-cta {
         padding: 100px 48px 120px;
         text-align: center;
@@ -587,7 +616,11 @@
         opacity: 1;
     }
 
-    /* ── SCROLL ANIMATIONS ── */
+
+    /* ══════════════════════════════════════
+       SCROLL ANIMATIONS
+       ══════════════════════════════════════ */
+
     .about-fade {
         opacity: 0;
         transform: translateY(40px);
@@ -604,15 +637,19 @@
     .about-delay-2 { transition-delay: 0.2s; }
     .about-delay-3 { transition-delay: 0.3s; }
 
-    /* ── RESPONSIVE ── */
+
+    /* ══════════════════════════════════════
+       RESPONSIVE
+       ══════════════════════════════════════ */
+
     @media (max-width: 768px) {
-        .about-hero { padding: 140px 24px 140px; }
-        .about-hero-bigquote { font-size: 100px; }
-        .about-diamond { width: 300px; height: 300px; }
-        .about-diamond-glow { width: 400px; height: 400px; }
-        .about-hero-stitch::before { left: -120px; }
-        .about-hero-stitch::after { right: -120px; }
-        .about-spacer { height: 40px; }
+        .about-quote-landing { padding: 120px 24px 80px; }
+        .quote-bigmark { font-size: 100px; }
+        .diamond-field { width: 300px; height: 300px; }
+        .diamond-field-outline { width: 210px; height: 210px; }
+        .diamond-field-inner { width: 130px; height: 130px; }
+        .diamond-glow { width: 380px; height: 380px; }
+        .about-question { padding: 80px 24px 80px; }
         .about-reality,
         .about-mission { padding: 80px 24px; }
         .about-founder {
@@ -648,38 +685,47 @@
 
   <main>
 
-    <!-- HERO — WRAPPED FOR SEPARATION -->
-    <div class="about-hero-wrap">
-      <section class="about-hero">
-        <!-- Baseball stitch decorations -->
-        <div class="about-hero-stitch"></div>
+    <!-- ════════════════════════════════
+         SECTION 1: QUOTE + DIAMOND FIELD
+         Full viewport. Its own world.
+         ════════════════════════════════ -->
+    <section class="about-quote-landing">
+      <!-- Stitch textures -->
+      <div class="quote-stitch"></div>
 
-        <!-- Diamond glow behind diamond -->
-        <div class="about-diamond-glow"></div>
+      <!-- Diamond glow -->
+      <div class="diamond-glow"></div>
 
-        <!-- Baseball diamond shape -->
-        <div class="about-diamond"></div>
+      <!-- Baseball diamond with bases -->
+      <div class="diamond-field">
+        <div class="diamond-field-outline"></div>
+        <div class="diamond-field-inner"></div>
+        <div class="base base--home"></div>
+        <div class="base base--first"></div>
+        <div class="base base--second"></div>
+        <div class="base base--third"></div>
+      </div>
 
-        <!-- Giant quotation mark -->
-        <div class="about-hero-bigquote">&ldquo;</div>
+      <!-- Giant quotation mark -->
+      <div class="quote-bigmark">&ldquo;</div>
 
-        <p class="about-hero-quote">"Baseball is 90 percent mental. The other half is physical."</p>
-        <p class="about-hero-attribution">&mdash; Yogi Berra</p>
+      <p class="quote-text">"Baseball is 90 percent mental. The other half is physical."</p>
+      <p class="quote-author">&mdash; Yogi Berra</p>
 
-        <!-- Thin accent line -->
-        <div class="about-hero-divider"></div>
+      <div class="quote-scroll-hint">
+        <div class="quote-scroll-arrow"></div>
+      </div>
+    </section>
 
-        <h1>So where&rsquo;s the platform<br>for the <span class="hero-accent">90%</span>?</h1>
-        <p class="about-hero-sub">There are tools for film. Tools for stats. Training programs for every physical skill. But the part everyone agrees matters most? Nothing. Until now.</p>
 
-        <div class="about-scroll-hint">
-          <div class="about-scroll-arrow"></div>
-        </div>
-      </section>
-    </div>
-
-    <!-- Breathing room after hero -->
-    <div class="about-spacer"></div>
+    <!-- ════════════════════════════════
+         SECTION 2: THE QUESTION
+         Separate. Clear. Punchy.
+         ════════════════════════════════ -->
+    <section class="about-question">
+      <h1 class="about-fade">So where&rsquo;s the platform<br>for the <span class="hero-accent">90%</span>?</h1>
+      <p class="about-question-sub about-fade about-delay-1">There are tools for film. Tools for stats. Training programs for every physical skill. But the part everyone agrees matters most? Nothing. Until now.</p>
+    </section>
 
     <div class="about-divider"></div>
 
