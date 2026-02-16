@@ -63,12 +63,12 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -38%);
-        width: 750px;
-        height: 750px;
+        transform: translate(-50%, -44%);
+        width: 950px;
+        height: 950px;
         pointer-events: none;
         z-index: 0;
-        opacity: 0.45;
+        opacity: 0.7;
     }
 
     .field-svg-wrap img {
@@ -252,11 +252,11 @@
 
     .field-svg-wrap {
         opacity: 0;
-        transform: translate(-50%, -38%) scale(0.9);
+        transform: translate(-50%, -44%) scale(0.9);
         animation: fieldIn 1.6s cubic-bezier(0.23, 1, 0.32, 1) 0s forwards;
     }
     @keyframes fieldIn {
-        to { opacity: 0.45; transform: translate(-50%, -38%) scale(1); }
+        to { opacity: 0.7; transform: translate(-50%, -44%) scale(1); }
     }
 
     .field-glow {
@@ -592,7 +592,7 @@
     @media (max-width: 768px) {
         .about-quote-section { padding: 80px 24px 40px; }
         .quote-bigmark { font-size: 120px; }
-        .field-svg-wrap { width: 520px; height: 520px; }
+        .field-svg-wrap { width: 680px; height: 680px; }
         .field-glow { width: 440px; height: 440px; }
         .about-question { padding: 40px 24px 60px; }
         .about-question-line { margin-bottom: 40px; }
@@ -638,7 +638,7 @@
         <div class="quote-stitch"></div>
         <div class="field-glow"></div>
 
-        <!-- Field image — replaces old SVG -->
+        <!-- Field image -->
         <div class="field-svg-wrap">
           <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1771276440/ChatGPT_Image_Feb_16_2026_03_12_59_PM_jkxod2.png" alt="">
         </div>
