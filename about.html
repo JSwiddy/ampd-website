@@ -63,9 +63,9 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -45%);
-        width: 550px;
-        height: 550px;
+        transform: translate(-50%, -38%);
+        width: 750px;
+        height: 750px;
         pointer-events: none;
         z-index: 0;
     }
@@ -79,9 +79,9 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 500px;
-        height: 500px;
-        transform: translate(-50%, -45%);
+        width: 600px;
+        height: 600px;
+        transform: translate(-50%, -38%);
         background: radial-gradient(circle, rgba(255,255,255,0.02) 0%, transparent 55%);
         pointer-events: none;
         z-index: 0;
@@ -250,19 +250,21 @@
 
     .field-svg-wrap {
         opacity: 0;
-        transform: translate(-50%, -45%) scale(0.9);
+        transform: translate(-50%, -38%) scale(0.9);
         animation: fieldIn 1.6s cubic-bezier(0.23, 1, 0.32, 1) 0s forwards;
     }
     @keyframes fieldIn {
-        to { opacity: 1; transform: translate(-50%, -45%) scale(1); }
+        to { opacity: 1; transform: translate(-50%, -38%) scale(1); }
     }
 
     .field-glow {
         opacity: 0;
+        transform: translate(-50%, -38%);
         animation: glowIn 2s ease 0.3s forwards;
     }
     @keyframes glowIn {
-        to { opacity: 1; }
+        from { opacity: 0; transform: translate(-50%, -38%); }
+        to { opacity: 1; transform: translate(-50%, -38%); }
     }
 
     .quote-text {
@@ -588,8 +590,8 @@
     @media (max-width: 768px) {
         .about-quote-section { padding: 80px 24px 40px; }
         .quote-bigmark { font-size: 120px; }
-        .field-svg-wrap { width: 380px; height: 380px; }
-        .field-glow { width: 360px; height: 360px; }
+        .field-svg-wrap { width: 520px; height: 520px; }
+        .field-glow { width: 440px; height: 440px; }
         .about-question { padding: 40px 24px 60px; }
         .about-question-line { margin-bottom: 40px; }
         .about-reality,
@@ -640,55 +642,63 @@
           at proper 90° angle, outfield arc connects them
         -->
         <div class="field-svg-wrap">
-          <svg viewBox="0 0 500 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 600 700" fill="none" xmlns="http://www.w3.org/2000/svg">
 
             <!--
-              Aerial baseball field — home plate at bottom center.
-              Foul lines fan OUTWARD from home through 1B/3B.
-              Home = (250, 460)
-              1B   = (340, 370)  — up and to the right
-              2B   = (250, 280)  — top of diamond
-              3B   = (160, 370)  — up and to the left
-              Foul lines extend past 1B/3B out to the outfield.
+              Large aerial field. Home plate at very bottom.
+              Foul lines run OUTSIDE the bases.
+              Big quote mark will sit in center field area (top).
+
+              Home  = (300, 620)
+              1B    = (400, 520)
+              2B    = (300, 420)
+              3B    = (200, 520)
+              Pitcher = (300, 530)
+
+              Foul lines extend from home past 1B/3B outward to outfield.
+              They pass OUTSIDE the bases, not through them.
             -->
 
-            <!-- Outfield fence arc -->
-            <path d="M 70 280 A 260 260 0 0 1 430 280" stroke="rgba(255,255,255,0.06)" stroke-width="1.2"/>
+            <!-- Outfield fence arc — big, sits behind quote text area -->
+            <path d="M 30 240 A 340 340 0 0 1 570 240" stroke="rgba(255,255,255,0.06)" stroke-width="1.2"/>
 
-            <!-- LEFT foul line — from home through 3B out to left field -->
-            <line x1="250" y1="460" x2="70" y2="280" stroke="rgba(255,255,255,0.08)" stroke-width="1.2"/>
+            <!-- LEFT foul line — runs from home, past OUTSIDE of 3B, to left field -->
+            <line x1="300" y1="620" x2="30" y2="240" stroke="rgba(255,255,255,0.08)" stroke-width="1.2"/>
 
-            <!-- RIGHT foul line — from home through 1B out to right field -->
-            <line x1="250" y1="460" x2="430" y2="280" stroke="rgba(255,255,255,0.08)" stroke-width="1.2"/>
+            <!-- RIGHT foul line — runs from home, past OUTSIDE of 1B, to right field -->
+            <line x1="300" y1="620" x2="570" y2="240" stroke="rgba(255,255,255,0.08)" stroke-width="1.2"/>
 
             <!-- Infield dirt circle -->
-            <circle cx="250" cy="365" r="100" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+            <circle cx="300" cy="510" r="120" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
 
-            <!-- Base paths -->
-            <line x1="250" y1="460" x2="340" y2="370" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
-            <line x1="340" y1="370" x2="250" y2="280" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
-            <line x1="250" y1="280" x2="160" y2="370" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
-            <line x1="160" y1="370" x2="250" y2="460" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+            <!-- Base paths (inside the foul lines) -->
+            <line x1="300" y1="610" x2="390" y2="520" stroke="rgba(255,255,255,0.06)" stroke-width="0.8"/>
+            <line x1="390" y1="520" x2="300" y2="430" stroke="rgba(255,255,255,0.06)" stroke-width="0.8"/>
+            <line x1="300" y1="430" x2="210" y2="520" stroke="rgba(255,255,255,0.06)" stroke-width="0.8"/>
+            <line x1="210" y1="520" x2="300" y2="610" stroke="rgba(255,255,255,0.06)" stroke-width="0.8"/>
 
             <!-- Pitcher's mound -->
-            <circle cx="250" cy="378" r="7" stroke="rgba(255,255,255,0.06)" stroke-width="1" fill="rgba(255,255,255,0.015)"/>
-            <line x1="244" y1="378" x2="256" y2="378" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+            <circle cx="300" cy="530" r="8" stroke="rgba(255,255,255,0.05)" stroke-width="1" fill="rgba(255,255,255,0.015)"/>
+            <line x1="294" y1="530" x2="306" y2="530" stroke="rgba(255,255,255,0.07)" stroke-width="1.5"/>
 
-            <!-- Home plate -->
-            <polygon points="250,455 244,460 244,466 256,466 256,460" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+            <!-- Home plate — prominent -->
+            <polygon points="300,612 293,618 293,626 307,626 307,618" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
 
-            <!-- First base -->
-            <rect x="335" y="365" width="10" height="10" rx="1" transform="rotate(45 340 370)" fill="rgba(255,255,255,0.11)"/>
+            <!-- First base (inside foul line) -->
+            <rect x="384" y="514" width="11" height="11" rx="1" transform="rotate(45 390 520)" fill="rgba(255,255,255,0.13)"/>
 
             <!-- Second base -->
-            <rect x="245" y="275" width="10" height="10" rx="1" transform="rotate(45 250 280)" fill="rgba(255,255,255,0.11)"/>
+            <rect x="294" y="424" width="11" height="11" rx="1" transform="rotate(45 300 430)" fill="rgba(255,255,255,0.13)"/>
 
-            <!-- Third base -->
-            <rect x="155" y="365" width="10" height="10" rx="1" transform="rotate(45 160 370)" fill="rgba(255,255,255,0.11)"/>
+            <!-- Third base (inside foul line) -->
+            <rect x="204" y="514" width="11" height="11" rx="1" transform="rotate(45 210 520)" fill="rgba(255,255,255,0.13)"/>
 
             <!-- Batter's boxes -->
-            <rect x="232" y="466" width="10" height="18" rx="1" stroke="rgba(255,255,255,0.035)" stroke-width="0.7" fill="none"/>
-            <rect x="258" y="466" width="10" height="18" rx="1" stroke="rgba(255,255,255,0.035)" stroke-width="0.7" fill="none"/>
+            <rect x="280" y="628" width="12" height="20" rx="1" stroke="rgba(255,255,255,0.03)" stroke-width="0.7" fill="none"/>
+            <rect x="308" y="628" width="12" height="20" rx="1" stroke="rgba(255,255,255,0.03)" stroke-width="0.7" fill="none"/>
+
+            <!-- Grass line / outfield arc inner -->
+            <path d="M 120 340 A 220 220 0 0 1 480 340" stroke="rgba(255,255,255,0.03)" stroke-width="0.8"/>
 
           </svg>
         </div>
