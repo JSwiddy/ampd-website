@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="styles.css">
 
   <style>
-    /* ── ABOUT PAGE STYLES ── */
+    /* ── ABOUT HERO — REDESIGNED ── */
 
     .about-hero {
         min-height: 100vh;
@@ -33,46 +33,161 @@
         align-items: center;
         text-align: center;
         padding: 160px 48px 120px;
-        max-width: 900px;
+        max-width: 960px;
         margin: 0 auto;
         position: relative;
+        overflow: hidden;
+    }
+
+    /* Baseball diamond shape — faint background element */
+    .about-hero::before {
+        content: '';
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        border: 1px solid rgba(255,255,255,0.04);
+        transform: rotate(45deg);
+        top: 50%;
+        left: 50%;
+        margin-top: -250px;
+        margin-left: -250px;
+        border-radius: 4px;
+        pointer-events: none;
+    }
+
+    /* Second smaller diamond */
+    .about-hero::after {
+        content: '';
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgba(255,255,255,0.03);
+        transform: rotate(45deg);
+        top: 50%;
+        left: 50%;
+        margin-top: -150px;
+        margin-left: -150px;
+        border-radius: 4px;
+        pointer-events: none;
+    }
+
+    /* Baseball stitch decorations */
+    .about-hero-stitch {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+    }
+
+    .about-hero-stitch::before,
+    .about-hero-stitch::after {
+        content: '';
+        position: absolute;
+        width: 200px;
+        height: 400px;
+        border-radius: 50%;
+        border: 1px dashed rgba(255,255,255,0.045);
+    }
+
+    .about-hero-stitch::before {
+        top: 10%;
+        left: -80px;
+        transform: rotate(-15deg);
+    }
+
+    .about-hero-stitch::after {
+        bottom: 10%;
+        right: -80px;
+        transform: rotate(15deg);
+    }
+
+    /* Giant quotation mark */
+    .about-hero-bigquote {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: clamp(120px, 18vw, 200px);
+        line-height: 0.8;
+        color: rgba(255,255,255,0.04);
+        font-weight: 700;
+        margin-bottom: -20px;
+        user-select: none;
+        position: relative;
+        z-index: 1;
     }
 
     .about-hero-quote {
-        font-size: clamp(24px, 3vw, 32px);
+        font-size: clamp(22px, 2.8vw, 30px);
         font-weight: 600;
         font-style: italic;
-        color: rgba(255,255,255,0.6);
-        margin-bottom: 20px;
+        color: rgba(255,255,255,0.55);
+        margin-bottom: 16px;
         letter-spacing: -0.01em;
-        line-height: 1.4;
+        line-height: 1.45;
+        max-width: 640px;
+        position: relative;
+        z-index: 1;
     }
 
     .about-hero-attribution {
-        font-size: 14px;
+        font-size: 13px;
         font-weight: 600;
-        color: rgba(255,255,255,0.35);
-        letter-spacing: 0.12em;
+        color: rgba(255,255,255,0.25);
+        letter-spacing: 0.14em;
         text-transform: uppercase;
-        margin-bottom: 56px;
+        margin-bottom: 64px;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Thin accent line between quote and headline */
+    .about-hero-divider {
+        width: 48px;
+        height: 1px;
+        background: rgba(255,255,255,0.12);
+        margin-bottom: 64px;
+        position: relative;
+        z-index: 1;
     }
 
     .about-hero h1 {
         font-size: clamp(36px, 5.5vw, 64px);
         font-weight: 800;
-        line-height: 1.1;
-        letter-spacing: -0.03em;
+        line-height: 1.08;
+        letter-spacing: -0.035em;
         max-width: 800px;
         color: #ffffff;
+        position: relative;
+        z-index: 1;
+    }
+
+    .about-hero h1 .hero-accent {
+        display: inline;
+        position: relative;
+    }
+
+    /* Subtle underline accent on "90%" */
+    .about-hero h1 .hero-accent::after {
+        content: '';
+        position: absolute;
+        bottom: 2px;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: rgba(255,255,255,0.15);
+        border-radius: 2px;
     }
 
     .about-hero-sub {
         margin-top: 32px;
-        font-size: 18px;
-        line-height: 1.7;
-        color: rgba(255,255,255,0.45);
-        max-width: 520px;
+        font-size: 17px;
+        line-height: 1.75;
+        color: rgba(255,255,255,0.4);
+        max-width: 500px;
         font-weight: 400;
+        position: relative;
+        z-index: 1;
     }
 
     .about-scroll-hint {
@@ -87,6 +202,7 @@
         letter-spacing: 0.12em;
         text-transform: uppercase;
         font-weight: 500;
+        z-index: 1;
     }
 
     .about-scroll-arrow {
@@ -101,6 +217,55 @@
     @keyframes aboutBounce {
         0%, 100% { transform: rotate(45deg) translateY(0); }
         50% { transform: rotate(45deg) translateY(6px); }
+    }
+
+    /* ── HERO ANIMATIONS ── */
+    .about-hero-bigquote {
+        opacity: 0;
+        transform: scale(0.8);
+        animation: quoteReveal 1.2s cubic-bezier(0.23, 1, 0.32, 1) 0.1s forwards;
+    }
+
+    @keyframes quoteReveal {
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    .about-hero-quote {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeSlideUp 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.3s forwards;
+    }
+
+    .about-hero-attribution {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeSlideUp 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.45s forwards;
+    }
+
+    .about-hero-divider {
+        opacity: 0;
+        transform: scaleX(0);
+        animation: lineGrow 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.6s forwards;
+    }
+
+    @keyframes lineGrow {
+        to { opacity: 1; transform: scaleX(1); }
+    }
+
+    .about-hero h1 {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeSlideUp 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.7s forwards;
+    }
+
+    .about-hero-sub {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeSlideUp 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.9s forwards;
+    }
+
+    @keyframes fadeSlideUp {
+        to { opacity: 1; transform: translateY(0); }
     }
 
     /* ── SHARED ── */
@@ -364,7 +529,7 @@
         opacity: 1;
     }
 
-    /* ── ANIMATIONS ── */
+    /* ── SCROLL ANIMATIONS ── */
     .about-fade {
         opacity: 0;
         transform: translateY(40px);
@@ -384,6 +549,11 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
         .about-hero { padding: 140px 24px 100px; }
+        .about-hero-bigquote { font-size: 100px; }
+        .about-hero::before { width: 350px; height: 350px; margin-top: -175px; margin-left: -175px; }
+        .about-hero::after { width: 200px; height: 200px; margin-top: -100px; margin-left: -100px; }
+        .about-hero-stitch::before { left: -120px; }
+        .about-hero-stitch::after { right: -120px; }
         .about-reality,
         .about-mission { padding: 80px 24px; }
         .about-founder {
@@ -419,12 +589,23 @@
 
   <main>
 
-    <!-- HERO -->
+    <!-- HERO — REDESIGNED -->
     <section class="about-hero">
-      <p class="about-hero-quote about-fade">"Baseball is 90 percent mental. The other half is physical."</p>
-      <p class="about-hero-attribution about-fade about-delay-1">&mdash; Yogi Berra</p>
-      <h1 class="about-fade about-delay-2">So where&rsquo;s the platform<br>for the 90%?</h1>
-      <p class="about-hero-sub about-fade about-delay-3">There are tools for film. Tools for stats. Training programs for every physical skill. But the part everyone agrees matters most? Nothing. Until now.</p>
+      <!-- Baseball stitch decorations -->
+      <div class="about-hero-stitch"></div>
+
+      <!-- Giant quotation mark -->
+      <div class="about-hero-bigquote">&ldquo;</div>
+
+      <p class="about-hero-quote">"Baseball is 90 percent mental. The other half is physical."</p>
+      <p class="about-hero-attribution">&mdash; Yogi Berra</p>
+
+      <!-- Thin accent line -->
+      <div class="about-hero-divider"></div>
+
+      <h1>So where&rsquo;s the platform<br>for the <span class="hero-accent">90%</span>?</h1>
+      <p class="about-hero-sub">There are tools for film. Tools for stats. Training programs for every physical skill. But the part everyone agrees matters most? Nothing. Until now.</p>
+
       <div class="about-scroll-hint">
         <div class="about-scroll-arrow"></div>
       </div>
@@ -543,7 +724,6 @@
     })();
   </script>
 
-  <!-- Match index page script reference -->
   <script src="script.js"></script>
 
 </body>
