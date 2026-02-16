@@ -118,7 +118,7 @@
   ],
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/((?!about\\.html|request-pilot\\.html|api/).*)",
       "destination": "/index.html"
     }
   ]
