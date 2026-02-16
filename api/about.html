@@ -56,18 +56,19 @@ nav img { height: 30px; }
     position: relative;
 }
 .hero-quote {
-    font-size: 18px;
-    font-weight: 400;
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 600;
     font-style: italic;
-    color: rgba(255,255,255,0.4);
-    margin-bottom: 16px;
-    letter-spacing: 0.01em;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
 }
 .hero-attribution {
     font-size: 14px;
-    font-weight: 500;
-    color: rgba(255,255,255,0.25);
-    letter-spacing: 0.08em;
+    font-weight: 600;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     margin-bottom: 56px;
 }
@@ -77,9 +78,6 @@ nav img { height: 30px; }
     line-height: 1.1;
     letter-spacing: -0.03em;
     max-width: 800px;
-}
-.hero h1 .dim {
-    color: rgba(255,255,255,0.3);
 }
 .hero-sub {
     margin-top: 32px;
@@ -394,7 +392,7 @@ footer p { font-size: 13px; color: rgba(255,255,255,0.2); }
 <section class="hero">
     <p class="hero-quote fade-up">"Baseball is 90 percent mental. The other half is physical."</p>
     <p class="hero-attribution fade-up fade-up-delay-1">&mdash; Yogi Berra</p>
-    <h1 class="fade-up fade-up-delay-2">So where&rsquo;s the platform <span class="dim">for the 90%?</span></h1>
+    <h1 class="fade-up fade-up-delay-2">So where&rsquo;s the platform<br>for the 90%?</h1>
     <p class="hero-sub fade-up fade-up-delay-3">There are tools for film. Tools for stats. Training programs for every physical skill. But the part everyone agrees matters most? Nothing. Until now.</p>
     <div class="scroll-hint">
         <div class="scroll-arrow"></div>
