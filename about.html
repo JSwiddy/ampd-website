@@ -626,6 +626,16 @@
         .about-cta { padding: 80px 24px 100px; }
         .about-callout { padding-left: 20px; }
     }
+    .about-card-physical .about-card-img {
+    height: 420px;          /* make container taller */
+}
+
+.about-card-physical .about-card-img img {
+    width: 110%;            /* blow it up */
+    height: auto;
+    object-fit: contain;    /* no cropping */
+}
+
   </style>
 </head>
 <body>
@@ -721,7 +731,7 @@
       <h2 class="about-fade">Physical meets digital.<br>Every single day.</h2>
       <p class="about-solution-sub about-fade">AMPD gives coaches and organizations a way to stay connected to their athletes in the moments that matter most. Not just during practice. Every day.</p>
       <div class="about-solution-grid">
-        <div class="about-card about-fade">
+        <div class="about-card about-fade about-card-physical">
           <div class="about-card-img">
             <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1771279865/STILLIRUNMOCK_uvpsm3.png" alt="AMPD Wristband">
           </div>
