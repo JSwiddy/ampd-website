@@ -10,494 +10,538 @@
     })(window, document, "clarity", "script", "s3mr0yz0xe");
   </script>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About | AMPD</title>
-<meta name="description" content="AMPD was built by someone who lived through the self-doubt, the injuries, and the silence. Where is the platform for the 90%?">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | AMPD</title>
+  <meta name="description" content="AMPD was built by someone who lived through the self-doubt, the injuries, and the silence. Where is the platform for the 90%?">
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css">
-<style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  <link rel="stylesheet" href="styles.css">
 
-body {
-    background: #000;
-    color: #fff;
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
-}
+  <style>
+    /* ── ABOUT PAGE STYLES ── */
 
-/* ── HEADER (inherited from styles.css) ── */
-
-/* ── HERO ── */
-.hero {
-    min-height: 100vh;
-    display: flex; flex-direction: column;
-    justify-content: center; align-items: center;
-    text-align: center;
-    padding: 160px 48px 120px;
-    max-width: 900px; margin: 0 auto;
-    position: relative;
-}
-.hero-quote {
-    font-size: clamp(24px, 3vw, 32px);
-    font-weight: 600;
-    font-style: italic;
-    color: rgba(255,255,255,0.6);
-    margin-bottom: 20px;
-    letter-spacing: -0.01em;
-    line-height: 1.4;
-}
-.hero-attribution {
-    font-size: 14px;
-    font-weight: 600;
-    color: rgba(255,255,255,0.3);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 56px;
-}
-.hero h1 {
-    font-size: clamp(36px, 5.5vw, 64px);
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-    max-width: 800px;
-}
-.hero-sub {
-    margin-top: 32px;
-    font-size: 18px;
-    line-height: 1.7;
-    color: rgba(255,255,255,0.45);
-    max-width: 520px;
-    font-weight: 400;
-}
-.scroll-hint {
-    position: absolute;
-    bottom: 40px;
-    display: flex; flex-direction: column; align-items: center; gap: 10px;
-    color: rgba(255,255,255,0.2);
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-weight: 500;
-}
-.scroll-arrow {
-    width: 20px; height: 20px;
-    border-right: 1.5px solid rgba(255,255,255,0.25);
-    border-bottom: 1.5px solid rgba(255,255,255,0.25);
-    transform: rotate(45deg);
-    animation: bounce 2s ease-in-out infinite;
-}
-@keyframes bounce {
-    0%, 100% { transform: rotate(45deg) translateY(0); }
-    50% { transform: rotate(45deg) translateY(6px); }
-}
-
-/* ── SECTION SHARED ── */
-.section-divider {
-    width: 100%;
-    height: 1px;
-    background: rgba(255,255,255,0.06);
-}
-.section-label {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.25);
-    margin-bottom: 48px;
-}
-
-/* ── REALITY ── */
-.reality-section {
-    padding: 120px 48px;
-    max-width: 740px;
-    margin: 0 auto;
-}
-.reality-section p {
-    font-size: 18px;
-    line-height: 1.85;
-    color: rgba(255,255,255,0.6);
-    margin-bottom: 28px;
-}
-.reality-section p:last-child { margin-bottom: 0; }
-.callout {
-    color: #fff;
-    font-size: clamp(22px, 3vw, 28px);
-    line-height: 1.45;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    margin: 56px 0;
-    padding-left: 28px;
-    border-left: 3px solid rgba(255,255,255,0.15);
-}
-
-/* ── FOUNDER ── */
-.founder-section {
-    padding: 120px 48px;
-    max-width: 1000px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
-    align-items: center;
-}
-.founder-image-wrap {
-    position: relative;
-    border-radius: 16px;
-    overflow: hidden;
-    aspect-ratio: 3/4;
-}
-.founder-image-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: saturate(0.7) contrast(1.1);
-}
-.founder-image-wrap::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0) 40%,
-        rgba(0,0,0,0.7) 100%
-    );
-    pointer-events: none;
-}
-.founder-text .section-label { margin-bottom: 24px; }
-.founder-name {
-    font-size: clamp(28px, 3.5vw, 40px);
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    margin-bottom: 8px;
-}
-.founder-title {
-    font-size: 14px;
-    font-weight: 500;
-    color: rgba(255,255,255,0.35);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    margin-bottom: 32px;
-}
-.founder-bio p {
-    font-size: 17px;
-    line-height: 1.8;
-    color: rgba(255,255,255,0.6);
-    margin-bottom: 20px;
-}
-.founder-pullquote {
-    margin-top: 36px;
-    font-size: 20px;
-    line-height: 1.55;
-    font-weight: 600;
-    color: rgba(255,255,255,0.85);
-    font-style: italic;
-}
-
-/* ── PHYSICAL + DIGITAL ── */
-.solution-section {
-    padding: 120px 48px;
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: center;
-}
-.solution-section .section-label {
-    margin-bottom: 32px;
-}
-.solution-section h2 {
-    font-size: clamp(28px, 4vw, 44px);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.15;
-    margin-bottom: 24px;
-}
-.solution-subtitle {
-    font-size: 18px;
-    line-height: 1.7;
-    color: rgba(255,255,255,0.5);
-    max-width: 600px;
-    margin: 0 auto 64px;
-}
-.solution-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    text-align: left;
-}
-.solution-card {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 16px;
-    padding: 48px 40px;
-    transition: border-color 0.4s, background 0.4s;
-}
-.solution-card:hover {
-    border-color: rgba(255,255,255,0.12);
-    background: rgba(255,255,255,0.05);
-}
-.card-icon {
-    width: 48px; height: 48px;
-    margin-bottom: 24px;
-    opacity: 0.7;
-}
-.solution-card h3 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 16px;
-    letter-spacing: -0.01em;
-}
-.solution-card p {
-    font-size: 16px;
-    line-height: 1.75;
-    color: rgba(255,255,255,0.5);
-}
-
-/* ── MISSION ── */
-.mission-section {
-    padding: 120px 48px;
-    max-width: 740px;
-    margin: 0 auto;
-    text-align: center;
-}
-.mission-section h2 {
-    font-size: clamp(28px, 4vw, 44px);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.15;
-    margin-bottom: 32px;
-}
-.mission-section p {
-    font-size: 18px;
-    line-height: 1.8;
-    color: rgba(255,255,255,0.55);
-    margin-bottom: 24px;
-}
-.mission-section p:last-of-type { margin-bottom: 0; }
-.mission-highlight {
-    color: #fff;
-    font-size: 22px;
-    font-weight: 600;
-    line-height: 1.5;
-    margin: 48px 0;
-}
-
-/* ── CTA ── */
-.cta-section {
-    padding: 100px 48px 120px;
-    text-align: center;
-}
-.cta-section h2 {
-    font-size: clamp(28px, 4vw, 44px);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.15;
-    margin-bottom: 20px;
-}
-.cta-section p {
-    font-size: 17px;
-    color: rgba(255,255,255,0.4);
-    margin-bottom: 40px;
-}
-.cta-button {
-    display: inline-block;
-    background: #fff;
-    color: #000;
-    padding: 16px 44px;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: 700;
-    text-decoration: none;
-    letter-spacing: 0.01em;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 40px rgba(255,255,255,0.1);
-}
-
-/* ── FOOTER (inherited from styles.css) ── */
-
-/* ── ANIMATIONS ── */
-.fade-up {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.9s cubic-bezier(0.23, 1, 0.32, 1),
-                transform 0.9s cubic-bezier(0.23, 1, 0.32, 1);
-}
-.fade-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-.fade-up-delay-1 { transition-delay: 0.1s; }
-.fade-up-delay-2 { transition-delay: 0.2s; }
-.fade-up-delay-3 { transition-delay: 0.3s; }
-
-/* ── RESPONSIVE ── */
-@media (max-width: 768px) {
-    .hero { padding: 140px 24px 100px; }
-    .reality-section,
-    .mission-section { padding: 80px 24px; }
-    .founder-section {
-        padding: 80px 24px;
-        grid-template-columns: 1fr;
-        gap: 48px;
+    .about-hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 160px 48px 120px;
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
     }
-    .founder-image-wrap { max-width: 400px; margin: 0 auto; }
-    .solution-section { padding: 80px 24px; }
-    .solution-grid { grid-template-columns: 1fr; }
-    .cta-section { padding: 80px 24px 100px; }
-    .callout { padding-left: 20px; }
-}
-</style>
+
+    .about-hero-quote {
+        font-size: clamp(24px, 3vw, 32px);
+        font-weight: 600;
+        font-style: italic;
+        color: rgba(255,255,255,0.6);
+        margin-bottom: 20px;
+        letter-spacing: -0.01em;
+        line-height: 1.4;
+    }
+
+    .about-hero-attribution {
+        font-size: 14px;
+        font-weight: 600;
+        color: rgba(255,255,255,0.35);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 56px;
+    }
+
+    .about-hero h1 {
+        font-size: clamp(36px, 5.5vw, 64px);
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        max-width: 800px;
+        color: #ffffff;
+    }
+
+    .about-hero-sub {
+        margin-top: 32px;
+        font-size: 18px;
+        line-height: 1.7;
+        color: rgba(255,255,255,0.45);
+        max-width: 520px;
+        font-weight: 400;
+    }
+
+    .about-scroll-hint {
+        position: absolute;
+        bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        color: rgba(255,255,255,0.2);
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+
+    .about-scroll-arrow {
+        width: 20px;
+        height: 20px;
+        border-right: 1.5px solid rgba(255,255,255,0.25);
+        border-bottom: 1.5px solid rgba(255,255,255,0.25);
+        transform: rotate(45deg);
+        animation: aboutBounce 2s ease-in-out infinite;
+    }
+
+    @keyframes aboutBounce {
+        0%, 100% { transform: rotate(45deg) translateY(0); }
+        50% { transform: rotate(45deg) translateY(6px); }
+    }
+
+    /* ── SHARED ── */
+    .about-divider {
+        width: 100%;
+        height: 1px;
+        background: rgba(255,255,255,0.06);
+    }
+
+    .about-label {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.25);
+        margin-bottom: 48px;
+    }
+
+    /* ── REALITY ── */
+    .about-reality {
+        padding: 120px 48px;
+        max-width: 740px;
+        margin: 0 auto;
+    }
+
+    .about-reality p {
+        font-size: 18px;
+        line-height: 1.85;
+        color: rgba(255,255,255,0.6);
+        margin-bottom: 28px;
+    }
+
+    .about-reality p:last-child {
+        margin-bottom: 0;
+    }
+
+    .about-callout {
+        color: #fff;
+        font-size: clamp(22px, 3vw, 28px);
+        line-height: 1.45;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin: 56px 0;
+        padding-left: 28px;
+        border-left: 3px solid rgba(255,255,255,0.15);
+    }
+
+    /* ── FOUNDER ── */
+    .about-founder {
+        padding: 120px 48px;
+        max-width: 1000px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+    }
+
+    .about-founder-img {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        aspect-ratio: 3/4;
+    }
+
+    .about-founder-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(0.7) contrast(1.1);
+    }
+
+    .about-founder-img::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 100%);
+        pointer-events: none;
+    }
+
+    .about-founder-text .about-label {
+        margin-bottom: 24px;
+    }
+
+    .about-founder-name {
+        font-size: clamp(28px, 3.5vw, 40px);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin-bottom: 8px;
+        color: #fff;
+    }
+
+    .about-founder-role {
+        font-size: 14px;
+        font-weight: 500;
+        color: rgba(255,255,255,0.35);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin-bottom: 32px;
+    }
+
+    .about-founder-bio p {
+        font-size: 17px;
+        line-height: 1.8;
+        color: rgba(255,255,255,0.6);
+        margin-bottom: 20px;
+    }
+
+    .about-founder-quote {
+        margin-top: 36px;
+        font-size: 20px;
+        line-height: 1.55;
+        font-weight: 600;
+        color: rgba(255,255,255,0.85);
+        font-style: italic;
+    }
+
+    /* ── SOLUTION ── */
+    .about-solution {
+        padding: 120px 48px;
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .about-solution .about-label {
+        margin-bottom: 32px;
+    }
+
+    .about-solution h2 {
+        font-size: clamp(28px, 4vw, 44px);
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 1.15;
+        margin-bottom: 24px;
+        color: #fff;
+    }
+
+    .about-solution-sub {
+        font-size: 18px;
+        line-height: 1.7;
+        color: rgba(255,255,255,0.5);
+        max-width: 600px;
+        margin: 0 auto 64px;
+    }
+
+    .about-solution-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        text-align: left;
+    }
+
+    .about-card {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 16px;
+        padding: 48px 40px;
+        transition: border-color 0.4s, background 0.4s;
+    }
+
+    .about-card:hover {
+        border-color: rgba(255,255,255,0.12);
+        background: rgba(255,255,255,0.05);
+    }
+
+    .about-card-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 24px;
+        opacity: 0.7;
+    }
+
+    .about-card h3 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 16px;
+        letter-spacing: -0.01em;
+        color: #fff;
+    }
+
+    .about-card p {
+        font-size: 16px;
+        line-height: 1.75;
+        color: rgba(255,255,255,0.5);
+    }
+
+    /* ── MISSION ── */
+    .about-mission {
+        padding: 120px 48px;
+        max-width: 740px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .about-mission h2 {
+        font-size: clamp(28px, 4vw, 44px);
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 1.15;
+        margin-bottom: 32px;
+        color: #fff;
+    }
+
+    .about-mission p {
+        font-size: 18px;
+        line-height: 1.8;
+        color: rgba(255,255,255,0.55);
+        margin-bottom: 24px;
+    }
+
+    .about-mission p:last-of-type {
+        margin-bottom: 0;
+    }
+
+    .about-mission-highlight {
+        color: #fff !important;
+        font-size: 22px !important;
+        font-weight: 600 !important;
+        line-height: 1.5 !important;
+        margin: 48px 0 !important;
+    }
+
+    /* ── CTA ── */
+    .about-cta {
+        padding: 100px 48px 120px;
+        text-align: center;
+    }
+
+    .about-cta h2 {
+        font-size: clamp(28px, 4vw, 44px);
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 1.15;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+
+    .about-cta p {
+        font-size: 17px;
+        color: rgba(255,255,255,0.4);
+        margin-bottom: 40px;
+    }
+
+    .about-cta-btn {
+        display: inline-block;
+        background: #fff;
+        color: #000;
+        padding: 16px 44px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+        letter-spacing: 0.01em;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .about-cta-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 40px rgba(255,255,255,0.1);
+        opacity: 1;
+    }
+
+    /* ── ANIMATIONS ── */
+    .about-fade {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.9s cubic-bezier(0.23, 1, 0.32, 1),
+                    transform 0.9s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .about-fade.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .about-delay-1 { transition-delay: 0.1s; }
+    .about-delay-2 { transition-delay: 0.2s; }
+    .about-delay-3 { transition-delay: 0.3s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+        .about-hero { padding: 140px 24px 100px; }
+        .about-reality,
+        .about-mission { padding: 80px 24px; }
+        .about-founder {
+            padding: 80px 24px;
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+        .about-founder-img { max-width: 400px; margin: 0 auto; }
+        .about-solution { padding: 80px 24px; }
+        .about-solution-grid { grid-template-columns: 1fr; }
+        .about-cta { padding: 80px 24px 100px; }
+        .about-callout { padding-left: 20px; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- Header -->
-<header class="site-header">
-  <div class="page-width">
-    <div class="header-layout">
-      <div class="header-item header-item--logo">
-        <div class="site-header__logo">
-          <a href="/">
-            <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487124/AMPD_White_ms0gvl.png" alt="AMPD" class="logo-desktop">
-            <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487124/AMPD_White_ms0gvl.png" alt="AMPD" class="logo-mobile">
-          </a>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="page-width">
+      <div class="header-layout">
+        <div class="header-item header-item--logo">
+          <div class="site-header__logo">
+            <a href="/">
+              <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487124/AMPD_White_ms0gvl.png" alt="AMPD" class="logo-desktop">
+              <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487124/AMPD_White_ms0gvl.png" alt="AMPD" class="logo-mobile">
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<!-- HERO -->
-<section class="hero">
-    <p class="hero-quote fade-up">"Baseball is 90 percent mental. The other half is physical."</p>
-    <p class="hero-attribution fade-up fade-up-delay-1">&mdash; Yogi Berra</p>
-    <h1 class="fade-up fade-up-delay-2">So where&rsquo;s the platform<br>for the 90%?</h1>
-    <p class="hero-sub fade-up fade-up-delay-3">There are tools for film. Tools for stats. Training programs for every physical skill. But the part everyone agrees matters most? Nothing. Until now.</p>
-    <div class="scroll-hint">
-        <div class="scroll-arrow"></div>
-    </div>
-</section>
+  <main>
 
-<div class="section-divider"></div>
+    <!-- HERO -->
+    <section class="about-hero">
+      <p class="about-hero-quote about-fade">"Baseball is 90 percent mental. The other half is physical."</p>
+      <p class="about-hero-attribution about-fade about-delay-1">&mdash; Yogi Berra</p>
+      <h1 class="about-fade about-delay-2">So where&rsquo;s the platform<br>for the 90%?</h1>
+      <p class="about-hero-sub about-fade about-delay-3">There are tools for film. Tools for stats. Training programs for every physical skill. But the part everyone agrees matters most? Nothing. Until now.</p>
+      <div class="about-scroll-hint">
+        <div class="about-scroll-arrow"></div>
+      </div>
+    </section>
 
-<!-- THE REALITY -->
-<section class="reality-section">
-    <div class="section-label fade-up">The Reality</div>
-    <p class="fade-up">An athlete wakes up and the first thing on their mind is not the game plan. It is the doubt. Am I starting? Did I do enough? What if I make the same mistake again?</p>
-    <p class="fade-up">They carry that into the car. Into the locker room. Onto the field. By the time they step between the lines, their body is there but their mind checked out an hour ago.</p>
-    <p class="fade-up">Coaches see it. They can feel when a kid is not right. But they have got a two-hour window and thirty players. There is no system, no tool, no daily touchpoint shaping how these athletes show up mentally.</p>
-    <div class="callout fade-up">The problem was never getting them to show up. It is how they show up.</div>
-    <p class="fade-up">After a tough loss, they go home with nothing but their own thoughts. Before a big game, they are overthinking with no way to reset. Between practices, the mental game has zero support. That is the gap. And it has existed forever.</p>
-</section>
+    <div class="about-divider"></div>
 
-<div class="section-divider"></div>
+    <!-- THE REALITY -->
+    <section class="about-reality">
+      <div class="about-label about-fade">The Reality</div>
+      <p class="about-fade">An athlete wakes up and the first thing on their mind is not the game plan. It is the doubt. Am I starting? Did I do enough? What if I make the same mistake again?</p>
+      <p class="about-fade">They carry that into the car. Into the locker room. Onto the field. By the time they step between the lines, their body is there but their mind checked out an hour ago.</p>
+      <p class="about-fade">Coaches see it. They can feel when a kid is not right. But they have got a two-hour window and thirty players. There is no system, no tool, no daily touchpoint shaping how these athletes show up mentally.</p>
+      <div class="about-callout about-fade">The problem was never getting them to show up. It is how they show up.</div>
+      <p class="about-fade">After a tough loss, they go home with nothing but their own thoughts. Before a big game, they are overthinking with no way to reset. Between practices, the mental game has zero support. That is the gap. And it has existed forever.</p>
+    </section>
 
-<!-- FOUNDER -->
-<section class="founder-section">
-    <div class="founder-image-wrap fade-up">
-        <!-- REPLACE src with your hosted image URL (upload to Cloudinary) -->
+    <div class="about-divider"></div>
+
+    <!-- FOUNDER -->
+    <section class="about-founder">
+      <div class="about-founder-img about-fade">
         <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1771266906/IMG_2341_2_zaguii.jpg" alt="John Swiderek">
-    </div>
-    <div class="founder-text">
-        <div class="section-label fade-up">Our Founder</div>
-        <h2 class="founder-name fade-up">John Swiderek</h2>
-        <div class="founder-title fade-up">Founder &amp; CEO</div>
-        <div class="founder-bio">
-            <p class="fade-up">AMPD was built by someone who lived through the self-doubt, the injuries, and the silence that comes when no one is checking in on how you are really doing.</p>
-            <p class="fade-up">After years of competing through setbacks with no mental support system, John did not just walk away from the game. He built what should have been there all along.</p>
+      </div>
+      <div class="about-founder-text">
+        <div class="about-label about-fade">Our Founder</div>
+        <h2 class="about-founder-name about-fade">John Swiderek</h2>
+        <div class="about-founder-role about-fade">Founder &amp; CEO</div>
+        <div class="about-founder-bio">
+          <p class="about-fade">AMPD was built by someone who lived through the self-doubt, the injuries, and the silence that comes when no one is checking in on how you are really doing.</p>
+          <p class="about-fade">After years of competing through setbacks with no mental support system, John did not just walk away from the game. He built what should have been there all along.</p>
         </div>
-        <p class="founder-pullquote fade-up">"I know what it feels like to show up every day and not be right mentally. No athlete should have to figure that out alone."</p>
-    </div>
-</section>
+        <p class="about-founder-quote about-fade">"I know what it feels like to show up every day and not be right mentally. No athlete should have to figure that out alone."</p>
+      </div>
+    </section>
 
-<div class="section-divider"></div>
+    <div class="about-divider"></div>
 
-<!-- PHYSICAL + DIGITAL -->
-<section class="solution-section">
-    <div class="section-label fade-up">The Solution</div>
-    <h2 class="fade-up">Physical meets digital.<br>Every single day.</h2>
-    <p class="solution-subtitle fade-up">AMPD gives coaches and organizations a way to stay connected to their athletes in the moments that matter most. Not just during practice. Every day.</p>
-
-    <div class="solution-grid">
-        <div class="solution-card fade-up">
-            <img class="card-icon" src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487127/NFCLOGO_asgcqr.png" alt="Physical">
-            <h3>The Physical</h3>
-            <p>Every morning an athlete puts on their AMPD wristband, they are reminding themselves they are part of something. It is a daily reset for their mindset before the day even starts. A physical connection to their team, even when they feel like they might be alone.</p>
+    <!-- PHYSICAL + DIGITAL -->
+    <section class="about-solution">
+      <div class="about-label about-fade">The Solution</div>
+      <h2 class="about-fade">Physical meets digital.<br>Every single day.</h2>
+      <p class="about-solution-sub about-fade">AMPD gives coaches and organizations a way to stay connected to their athletes in the moments that matter most. Not just during practice. Every day.</p>
+      <div class="about-solution-grid">
+        <div class="about-card about-fade">
+          <img class="about-card-icon" src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487127/NFCLOGO_asgcqr.png" alt="Physical">
+          <h3>The Physical</h3>
+          <p>Every morning an athlete puts on their AMPD wristband, they are reminding themselves they are part of something. It is a daily reset for their mindset before the day even starts. A physical connection to their team, even when they feel like they might be alone.</p>
         </div>
-        <div class="solution-card fade-up fade-up-delay-1">
-            <img class="card-icon" src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487127/MINDLOGO_v0cbea.png" alt="Digital">
-            <h3>The Digital</h3>
-            <p>One tap delivers mental performance content, daily reinforcement, workouts, and structure. Coaches get the tools to shape not just athletes, but people. No app to download. No friction. Just a tap and a message that meets them where they are.</p>
+        <div class="about-card about-fade about-delay-1">
+          <img class="about-card-icon" src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487127/MINDLOGO_v0cbea.png" alt="Digital">
+          <h3>The Digital</h3>
+          <p>One tap delivers mental performance content, daily reinforcement, workouts, and structure. Coaches get the tools to shape not just athletes, but people. No app to download. No friction. Just a tap and a message that meets them where they are.</p>
         </div>
+      </div>
+    </section>
+
+    <div class="about-divider"></div>
+
+    <!-- MISSION -->
+    <section class="about-mission">
+      <div class="about-label about-fade">Our Mission</div>
+      <h2 class="about-fade">Bigger than the game.</h2>
+      <p class="about-fade">Coaches are already in a position to shape young lives. But they are limited to the hours they get on the field. AMPD extends their influence into the 22 hours a day they do not have access to.</p>
+      <p class="about-mission-highlight about-fade">Your mental is the most important thing you will ever work on in your life. With the right mindset, anything is possible. Without it, talent does not matter.</p>
+      <p class="about-fade">AMPD gives every organization the platform to build a culture of mental performance. Daily. Consistent. Real. Because the athletes who stay locked in between practices are the ones who show up different when it counts.</p>
+    </section>
+
+    <div class="about-divider"></div>
+
+    <!-- CTA -->
+    <section class="about-cta">
+      <h2 class="about-fade">Give your athletes the edge<br>that starts before the game does.</h2>
+      <p class="about-fade">See how AMPD can transform your program.</p>
+      <a href="/request-pilot.html" class="about-cta-btn about-fade about-delay-1">Get a Demo &rarr;</a>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="page-width">
+      <div class="site-footer__section">
+        <ul class="social-icons">
+          <li>
+            <a href="https://www.instagram.com/get_ampd_up/" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 32 32"><path d="M16 3.094c4.206 0 4.7.019 6.363.094 1.538.069 2.369.325 2.925.544.738.287 1.262.625 1.813 1.175s.894 1.075 1.175 1.813c.212.556.475 1.387.544 2.925.075 1.662.094 2.156.094 6.363s-.019 4.7-.094 6.363c-.069 1.538-.325 2.369-.544 2.925-.288.738-.625 1.262-1.175 1.813s-1.075.894-1.813 1.175c-.556.212-1.387.475-2.925.544-1.663.075-2.156.094-6.363.094s-4.7-.019-6.363-.094c-1.537-.069-2.369-.325-2.925-.544-.737-.288-1.263-.625-1.813-1.175s-.894-1.075-1.175-1.813c-.212-.556-.475-1.387-.544-2.925-.075-1.663-.094-2.156-.094-6.363s.019-4.7.094-6.363c.069-1.537.325-2.369.544-2.925.287-.737.625-1.263 1.175-1.813s1.075-.894 1.813-1.175c.556-.212 1.388-.475 2.925-.544 1.662-.081 2.156-.094 6.363-.094zm0-2.838c-4.275 0-4.813.019-6.494.094-1.675.075-2.819.344-3.819.731-1.037.4-1.913.944-2.788 1.819S1.486 4.656 1.08 5.688c-.387 1-.656 2.144-.731 3.825-.075 1.675-.094 2.213-.094 6.488s.019 4.813.094 6.494c.075 1.675.344 2.819.731 3.825.4 1.038.944 1.913 1.819 2.788s1.756 1.413 2.788 1.819c1 .387 2.144.656 3.825.731s2.213.094 6.494.094 4.813-.019 6.494-.094c1.675-.075 2.819-.344 3.825-.731 1.038-.4 1.913-.944 2.788-1.819s1.413-1.756 1.819-2.788c.387-1 .656-2.144.731-3.825s.094-2.212.094-6.494-.019-4.813-.094-6.494c-.075-1.675-.344-2.819-.731-3.825-.4-1.038-.944-1.913-1.819-2.788s-1.756-1.413-2.788-1.819c-1-.387-2.144-.656-3.825-.731C20.812.275 20.275.256 16 .256z"/><path d="M16 7.912a8.088 8.088 0 0 0 0 16.175c4.463 0 8.087-3.625 8.087-8.088s-3.625-8.088-8.088-8.088zm0 13.338a5.25 5.25 0 1 1 0-10.5 5.25 5.25 0 1 1 0 10.5zM26.294 7.594a1.887 1.887 0 1 1-3.774.002 1.887 1.887 0 0 1 3.774-.003z"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="site-footer__copyright">
+        <span>&copy; 2026 AMPD - All rights reserved.</span>
+      </div>
     </div>
-</section>
+  </footer>
 
-<div class="section-divider"></div>
-
-<!-- MISSION -->
-<section class="mission-section">
-    <div class="section-label fade-up">Our Mission</div>
-    <h2 class="fade-up">Bigger than the game.</h2>
-    <p class="fade-up">Coaches are already in a position to shape young lives. But they are limited to the hours they get on the field. AMPD extends their influence into the 22 hours a day they do not have access to.</p>
-    <p class="mission-highlight fade-up">Your mental is the most important thing you will ever work on in your life. With the right mindset, anything is possible. Without it, talent does not matter.</p>
-    <p class="fade-up">AMPD gives every organization the platform to build a culture of mental performance. Daily. Consistent. Real. Because the athletes who stay locked in between practices are the ones who show up different when it counts.</p>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- CTA -->
-<section class="cta-section">
-    <h2 class="fade-up">Give your athletes the edge<br>that starts before the game does.</h2>
-    <p class="fade-up">See how AMPD can transform your program.</p>
-    <a href="/request-pilot.html" class="cta-button fade-up fade-up-delay-1">Get a Demo &rarr;</a>
-</section>
-
-<!-- Footer -->
-<footer class="site-footer">
-  <div class="page-width">
-    <div class="site-footer__section">
-      <ul class="social-icons">
-        <li>
-          <a href="https://www.instagram.com/get_ampd_up/" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg viewBox="0 0 32 32"><path d="M16 3.094c4.206 0 4.7.019 6.363.094 1.538.069 2.369.325 2.925.544.738.287 1.262.625 1.813 1.175s.894 1.075 1.175 1.813c.212.556.475 1.387.544 2.925.075 1.662.094 2.156.094 6.363s-.019 4.7-.094 6.363c-.069 1.538-.325 2.369-.544 2.925-.288.738-.625 1.262-1.175 1.813s-1.075.894-1.813 1.175c-.556.212-1.387.475-2.925.544-1.663.075-2.156.094-6.363.094s-4.7-.019-6.363-.094c-1.537-.069-2.369-.325-2.925-.544-.737-.288-1.263-.625-1.813-1.175s-.894-1.075-1.175-1.813c-.212-.556-.475-1.387-.544-2.925-.075-1.663-.094-2.156-.094-6.363s.019-4.7.094-6.363c.069-1.537.325-2.369.544-2.925.287-.737.625-1.263 1.175-1.813s1.075-.894 1.813-1.175c.556-.212 1.388-.475 2.925-.544 1.662-.081 2.156-.094 6.363-.094zm0-2.838c-4.275 0-4.813.019-6.494.094-1.675.075-2.819.344-3.819.731-1.037.4-1.913.944-2.788 1.819S1.486 4.656 1.08 5.688c-.387 1-.656 2.144-.731 3.825-.075 1.675-.094 2.213-.094 6.488s.019 4.813.094 6.494c.075 1.675.344 2.819.731 3.825.4 1.038.944 1.913 1.819 2.788s1.756 1.413 2.788 1.819c1 .387 2.144.656 3.825.731s2.213.094 6.494.094 4.813-.019 6.494-.094c1.675-.075 2.819-.344 3.825-.731 1.038-.4 1.913-.944 2.788-1.819s1.413-1.756 1.819-2.788c.387-1 .656-2.144.731-3.825s.094-2.212.094-6.494-.019-4.813-.094-6.494c-.075-1.675-.344-2.819-.731-3.825-.4-1.038-.944-1.913-1.819-2.788s-1.756-1.413-2.788-1.819c-1-.387-2.144-.656-3.825-.731C20.812.275 20.275.256 16 .256z"/><path d="M16 7.912a8.088 8.088 0 0 0 0 16.175c4.463 0 8.087-3.625 8.087-8.088s-3.625-8.088-8.088-8.088zm0 13.338a5.25 5.25 0 1 1 0-10.5 5.25 5.25 0 1 1 0 10.5zM26.294 7.594a1.887 1.887 0 1 1-3.774.002 1.887 1.887 0 0 1 3.774-.003z"/></svg>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div class="site-footer__copyright">
-      <span>&copy; 2026 AMPD - All rights reserved.</span>
-    </div>
-  </div>
-</footer>
-
-<!-- SCROLL ANIMATIONS -->
-<script>
-(function() {
-    var observer = new IntersectionObserver(function(entries) {
+  <!-- SCROLL ANIMATIONS -->
+  <script>
+    (function() {
+      var observer = new IntersectionObserver(function(entries) {
         for (var i = 0; i < entries.length; i++) {
-            if (entries[i].isIntersecting) {
-                entries[i].target.classList.add('visible');
-            }
+          if (entries[i].isIntersecting) {
+            entries[i].target.classList.add('visible');
+          }
         }
-    }, {
+      }, {
         threshold: 0.12,
         rootMargin: '0px 0px -60px 0px'
-    });
+      });
 
-    var els = document.querySelectorAll('.fade-up');
-    for (var j = 0; j < els.length; j++) {
+      var els = document.querySelectorAll('.about-fade');
+      for (var j = 0; j < els.length; j++) {
         observer.observe(els[j]);
-    }
-})();
-</script>
+      }
+    })();
+  </script>
 
 </body>
 </html>
