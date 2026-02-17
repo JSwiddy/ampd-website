@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Mission | AMPD</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #060611;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ── HEADER ── */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(to bottom, rgba(6,6,17,0.9), transparent);
+    }
+
+    .header-logo img {
+      height: 32px;
+      width: auto;
+    }
+
+    .header-nav__pills {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .header-nav__pill {
+      display: inline-block;
+      padding: 0.5rem 1.6rem;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-nav__pill::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: #fff;
+      border-radius: 10px;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+      z-index: 0;
+    }
+
+    .header-nav__pill span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-nav__pill:hover {
+      color: #0d0d0d;
+      border-color: #fff;
+    }
+
+    .header-nav__pill:hover::before {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    /* ── GLOBE SECTION ── */
+    .globe-hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    #globe-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    /* ── COUNTERS OVER GLOBE ── */
+    .globe-counters {
+      position: relative;
+      z-index: 2;
+      margin-top: 180px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 80px;
+      text-align: center;
+    }
+
+    .counter-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .counter-number {
+      font-size: clamp(42px, 6vw, 72px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 8px;
+      text-shadow: 0 0 30px rgba(0,140,255,0.3), 0 0 60px rgba(0,140,255,0.1);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .counter-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(0,140,255,0.5);
+      text-shadow: 0 0 10px rgba(0,140,255,0.15);
+    }
+
+    .counter-divider {
+      width: 1px;
+      height: 80px;
+      background: linear-gradient(to bottom, transparent, rgba(0,140,255,0.2), transparent);
+      margin-top: 10px;
+    }
+
+    /* ── SCANLINES ── */
+    .scanlines {
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg, transparent, transparent 2px,
+        rgba(0,140,255,0.008) 2px, rgba(0,140,255,0.008) 4px
+      );
+      pointer-events: none;
+      z-index: 50;
+    }
+
+    /* ── BRIDGE TEXT ── */
+    .bridge-section {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      margin-top: 60px;
+      padding-bottom: 40px;
+    }
+
+    .bridge-text {
+      font-size: 15px;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.02em;
+    }
+
+    /* ── FADE TO BLACK ── */
+    .globe-fade {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 200px;
+      background: linear-gradient(to bottom, transparent, #060611);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* ── MISSION PARAGRAPH ── */
+    .mission-section {
+      position: relative;
+      z-index: 5;
+      background: #060611;
+      padding: 100px 40px 120px;
+      text-align: center;
+    }
+
+    .mission-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(0,140,255,0.4);
+      margin-bottom: 40px;
+    }
+
+    .mission-line {
+      width: 48px;
+      height: 1px;
+      background: rgba(0,140,255,0.2);
+      margin: 0 auto 48px;
+    }
+
+    .mission-paragraph {
+      font-size: clamp(17px, 2vw, 20px);
+      line-height: 1.9;
+      color: rgba(255,255,255,0.6);
+      max-width: 700px;
+      margin: 0 auto;
+      letter-spacing: 0.01em;
+    }
+
+    .mission-paragraph strong {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .mission-highlight {
+      display: block;
+      margin-top: 36px;
+      font-size: clamp(20px, 2.5vw, 26px);
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.01em;
+      line-height: 1.5;
+    }
+
+    /* ── CTA ── */
+    .mission-cta {
+      position: relative;
+      z-index: 5;
+      background: #060611;
+      padding: 0 40px 120px;
+      text-align: center;
+    }
+
+    .mission-cta h2 {
+      font-size: clamp(26px, 4vw, 42px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      color: #fff;
+    }
+
+    .mission-cta p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 36px;
+    }
+
+    .mission-cta-btn {
+      display: inline-block;
+      background: #fff;
+      color: #000;
+      padding: 16px 44px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .mission-cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(255,255,255,0.1);
+    }
+
+    /* ── DIVIDER ── */
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(255,255,255,0.06);
+    }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-delay-1 { transition-delay: 0.1s; }
+    .fade-delay-2 { transition-delay: 0.2s; }
+    .fade-delay-3 { transition-delay: 0.3s; }
+
+    /* ── LOADING ── */
+    .loading {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+      background: #060611;
+      transition: opacity 0.8s ease;
+    }
+    .loading.hidden { opacity: 0; pointer-events: none; }
+    .loading-text {
+      font-size: 12px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(0,140,255,0.4);
+      animation: loadPulse 1.2s ease-in-out infinite;
+    }
+    @keyframes loadPulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .globe-counters {
+        gap: 30px;
+        margin-top: 220px;
+      }
+      .counter-number {
+        font-size: 36px;
+      }
+      .counter-divider {
+        height: 50px;
+      }
+      .site-header {
+        padding: 12px 20px;
+      }
+      .header-nav__pill {
+        font-size: 0.68rem;
+        padding: 0.4rem 1rem;
+      }
+      .mission-section {
+        padding: 80px 24px 100px;
+      }
+      .mission-cta {
+        padding: 0 24px 100px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .globe-counters {
+        flex-direction: column;
+        gap: 32px;
+        margin-top: 240px;
+      }
+      .counter-divider {
+        display: none;
+      }
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: #060611;
+      padding: 40px;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .site-footer p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loading" id="loader">
+    <div class="loading-text">Loading...</div>
+  </div>
+
+  <div class="scanlines"></div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="/" class="header-logo">
+      <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487124/AMPD_White_ms0gvl.png" alt="AMPD">
+    </a>
+    <div class="header-nav__pills">
+      <a href="#" class="header-nav__pill"><span>The Mission</span></a>
+      <a href="/about.html" class="header-nav__pill"><span>The Why</span></a>
+    </div>
+  </header>
+
+  <!-- GLOBE + COUNTERS -->
+  <section class="globe-hero">
+    <canvas id="globe-canvas"></canvas>
+
+    <div class="globe-counters">
+      <div class="counter-item fade-up">
+        <div class="counter-number" data-target="1247">0</div>
+        <div class="counter-label">Athletes Reached</div>
+      </div>
+
+      <div class="counter-divider fade-up fade-delay-1"></div>
+
+      <div class="counter-item fade-up fade-delay-1">
+        <div class="counter-number" data-target="3">0</div>
+        <div class="counter-label">Organizations Partnered</div>
+      </div>
+    </div>
+
+    <div class="bridge-section fade-up fade-delay-3">
+      <p class="bridge-text">Every program that joins means more athletes inspired. The mission grows with every team.</p>
+    </div>
+
+    <div class="globe-fade"></div>
+  </section>
+
+  <!-- MISSION PARAGRAPH -->
+  <section class="mission-section">
+    <div class="mission-label fade-up">Our Mission</div>
+    <div class="mission-line fade-up"></div>
+    <p class="mission-paragraph fade-up">
+      Our mission is to equip coaches, teams, athletic departments, and organizations with what most programs are still missing. <strong>A daily mental performance system.</strong> The mind is the single greatest predictor of success in and out of competition. Every program should be training it.
+      <span class="mission-highlight fade-up fade-delay-1">AMPD is here to inspire athletes and build team cultures that last beyond the season.</span>
+    </p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- CTA -->
+  <section class="mission-cta">
+    <div style="padding-top: 100px;">
+      <h2 class="fade-up">What is your athletic department<br>waiting for?</h2>
+      <p class="fade-up fade-delay-1">See how AMPD can transform your program.</p>
+      <a href="/request-pilot.html" class="mission-cta-btn fade-up fade-delay-2">Get a Demo &rarr;</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>&copy; 2026 AMPD - All rights reserved.</p>
+  </footer>
+
+  <!-- THREE.JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script>
+    // ═══════════════════════════════
+    // GLOBE
+    // ═══════════════════════════════
+    const canvas = document.getElementById('globe-canvas');
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 3.2;
+
+    const ambientLight = new THREE.AmbientLight(0x1a3a5c, 0.6);
+    scene.add(ambientLight);
+    const directionalLight = new THREE.DirectionalLight(0x4488cc, 1.2);
+    directionalLight.position.set(5, 3, 5);
+    scene.add(directionalLight);
+    const backLight = new THREE.DirectionalLight(0x0066ff, 0.3);
+    backLight.position.set(-3, -2, -5);
+    scene.add(backLight);
+
+    const globeGroup = new THREE.Group();
+    scene.add(globeGroup);
+
+    const textureLoader = new THREE.TextureLoader();
+    textureLoader.crossOrigin = 'anonymous';
+
+    const earthTexture = textureLoader.load(
+      'https://res.cloudinary.com/dhzjg43qc/image/upload/v1771299837/2k_earth_nightmap_rzi5sc.jpg',
+      function() { document.getElementById('loader').classList.add('hidden'); },
+      undefined,
+      function() { document.getElementById('loader').classList.add('hidden'); }
+    );
+
+    const globeMaterial = new THREE.ShaderMaterial({
+      uniforms: {
+        earthTexture: { value: earthTexture },
+        time: { value: 0 },
+        glowColor: { value: new THREE.Color(0x0088ff) },
+      },
+      vertexShader: `
+        varying vec2 vUv;
+        varying vec3 vNormal;
+        varying vec3 vPosition;
+        void main() {
+          vUv = uv;
+          vNormal = normalize(normalMatrix * normal);
+          vPosition = (modelViewMatrix * vec4(position, 1.0)).xyz;
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }
+      `,
+      fragmentShader: `
+        uniform sampler2D earthTexture;
+        uniform float time;
+        uniform vec3 glowColor;
+        varying vec2 vUv;
+        varying vec3 vNormal;
+        varying vec3 vPosition;
+        void main() {
+          vec4 texColor = texture2D(earthTexture, vUv);
+          float lum = dot(texColor.rgb, vec3(0.299, 0.587, 0.114));
+          vec3 holoColor = glowColor * lum * 1.8;
+          vec3 landGlow = vec3(0.0, 0.5, 1.0) * pow(lum, 0.8) * 0.7;
+          vec3 viewDir = normalize(-vPosition);
+          float fresnel = 1.0 - max(dot(viewDir, vNormal), 0.0);
+          fresnel = pow(fresnel, 2.5);
+          vec3 edgeGlow = glowColor * fresnel * 0.6;
+          float scan = sin(vUv.y * 300.0 + time * 2.0) * 0.02 + 1.0;
+          float bright = smoothstep(0.3, 0.8, lum);
+          vec3 cityLights = vec3(0.2, 0.6, 1.0) * bright * 0.5;
+          vec3 finalColor = holoColor + landGlow + edgeGlow + cityLights;
+          finalColor *= scan;
+          float alpha = 0.85 + fresnel * 0.15;
+          gl_FragColor = vec4(finalColor, alpha);
+        }
+      `,
+      transparent: true,
+    });
+
+    const globeMesh = new THREE.Mesh(new THREE.SphereGeometry(1, 64, 64), globeMaterial);
+    globeGroup.add(globeMesh);
+
+    // Inner glow
+    const innerGlowMat = new THREE.ShaderMaterial({
+      uniforms: { glowColor: { value: new THREE.Color(0x004488) } },
+      vertexShader: `
+        varying vec3 vNormal; varying vec3 vPosition;
+        void main() {
+          vNormal = normalize(normalMatrix * normal);
+          vPosition = (modelViewMatrix * vec4(position, 1.0)).xyz;
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }
+      `,
+      fragmentShader: `
+        uniform vec3 glowColor; varying vec3 vNormal; varying vec3 vPosition;
+        void main() {
+          vec3 viewDir = normalize(-vPosition);
+          float fresnel = max(dot(viewDir, vNormal), 0.0);
+          fresnel = pow(fresnel, 6.0);
+          gl_FragColor = vec4(glowColor * fresnel * 0.3, fresnel * 0.15);
+        }
+      `,
+      transparent: true, depthWrite: false,
+    });
+    globeGroup.add(new THREE.Mesh(new THREE.SphereGeometry(1.01, 64, 64), innerGlowMat));
+
+    // Wireframe
+    globeGroup.add(new THREE.Mesh(
+      new THREE.SphereGeometry(1.005, 36, 18),
+      new THREE.MeshBasicMaterial({ color: 0x0066aa, wireframe: true, transparent: true, opacity: 0.03 })
+    ));
+
+    // Particles
+    const pGeo = new THREE.BufferGeometry();
+    const pCount = 200;
+    const pPos = new Float32Array(pCount * 3);
+    for (let i = 0; i < pCount; i++) {
+      const t = Math.random() * Math.PI * 2;
+      const p = Math.random() * Math.PI;
+      const r = 1.3 + Math.random() * 0.8;
+      pPos[i*3] = r * Math.sin(p) * Math.cos(t);
+      pPos[i*3+1] = r * Math.cos(p);
+      pPos[i*3+2] = r * Math.sin(p) * Math.sin(t);
+    }
+    pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+    const pMat = new THREE.PointsMaterial({
+      color: 0x0099ff, size: 0.008, transparent: true, opacity: 0.4,
+      blending: THREE.AdditiveBlending, depthWrite: false,
+    });
+    const particles = new THREE.Points(pGeo, pMat);
+    scene.add(particles);
+
+    // Mouse
+    let mouseX = 0, mouseY = 0;
+    document.addEventListener('mousemove', (e) => {
+      mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+      mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+    });
+
+    // Animate
+    const clock = new THREE.Clock();
+    function animate() {
+      requestAnimationFrame(animate);
+      const elapsed = clock.getElapsedTime();
+      globeMaterial.uniforms.time.value = elapsed;
+      const targetRotY = elapsed * 0.08 + mouseX * 0.3;
+      const targetRotX = mouseY * 0.15;
+      globeGroup.rotation.y += (targetRotY - globeGroup.rotation.y) * 0.02;
+      globeGroup.rotation.x += (targetRotX - globeGroup.rotation.x) * 0.02;
+      particles.rotation.y += 0.0003;
+      particles.rotation.x += 0.0001;
+      pMat.opacity = 0.25 + Math.sin(elapsed * 0.5) * 0.1;
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    // ═══════════════════════════════
+    // COUNTER ANIMATION
+    // ═══════════════════════════════
+    function animateCounters() {
+      const counters = document.querySelectorAll('.counter-number');
+      counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        const suffix = counter.getAttribute('data-suffix') || '';
+        const duration = 2000;
+        const start = performance.now();
+
+        function tick(now) {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const ease = 1 - Math.pow(1 - progress, 3);
+          const current = Math.floor(ease * target);
+          counter.textContent = current.toLocaleString() + (progress >= 1 ? suffix : '');
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+
+        requestAnimationFrame(tick);
+      });
+    }
+
+    // ═══════════════════════════════
+    // SCROLL ANIMATIONS
+    // ═══════════════════════════════
+    let countersTriggered = false;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+
+          // Trigger counters when they come into view
+          if (!countersTriggered && entry.target.classList.contains('counter-item')) {
+            countersTriggered = true;
+            setTimeout(animateCounters, 300);
+          }
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
