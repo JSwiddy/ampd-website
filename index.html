@@ -31,136 +31,54 @@
       padding: 0.5rem 0;
     }
 
-    .header-nav {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .header-nav__links {
-      display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      gap: 1.75rem;
-    }
-
-    .header-nav__links a {
-      color: rgba(255, 255, 255, 0.75);
+    .header-nav__mission {
+      display: inline-block;
+      padding: 0.5rem 1.6rem;
+      color: rgba(255, 255, 255, 0.85);
       text-decoration: none;
       font-family: 'Poppins', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 500;
-      letter-spacing: 0.025em;
-      transition: color 0.25s ease;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 50px;
+      transition: all 0.3s ease;
       position: relative;
+      overflow: hidden;
     }
 
-    .header-nav__links a::after {
+    .header-nav__mission::before {
       content: '';
       position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
+      inset: 0;
       background: #fff;
-      transition: width 0.25s ease;
+      border-radius: 50px;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+      z-index: 0;
     }
 
-    .header-nav__links a:hover {
-      color: #fff;
+    .header-nav__mission span {
+      position: relative;
+      z-index: 1;
     }
 
-    .header-nav__links a:hover::after {
-      width: 100%;
-    }
-
-    .header-nav__cta {
-      display: inline-block;
-      padding: 0.55rem 1.4rem;
-      background: #fff;
+    .header-nav__mission:hover {
       color: #0d0d0d;
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 6px;
-      transition: background 0.25s ease, transform 0.2s ease;
+      border-color: #fff;
     }
 
-    .header-nav__cta:hover {
-      background: rgba(255, 255, 255, 0.88);
-      transform: translateY(-1px);
-    }
-
-    /* Mobile hamburger */
-    .header-nav__toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0.5rem;
-    }
-
-    .header-nav__toggle span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: #fff;
-      margin: 5px 0;
-      border-radius: 2px;
-      transition: all 0.3s ease;
+    .header-nav__mission:hover::before {
+      transform: scaleX(1);
+      transform-origin: left;
     }
 
     @media (max-width: 768px) {
-      .header-nav__toggle {
-        display: block;
-      }
-
-      .header-nav {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 260px;
-        height: 100vh;
-        background: #111;
-        flex-direction: column;
-        justify-content: flex-start;
-        padding: 5rem 2rem 2rem;
-        gap: 2rem;
-        transition: right 0.35s ease;
-        z-index: 999;
-        box-shadow: -4px 0 20px rgba(0,0,0,0.5);
-      }
-
-      .header-nav.is-open {
-        right: 0;
-      }
-
-      .header-nav__links {
-        flex-direction: column;
-        gap: 1.5rem;
-      }
-
-      .header-nav__links a {
-        font-size: 1.05rem;
-      }
-
-      .header-nav__cta {
-        text-align: center;
-        width: 100%;
-      }
-
-      .header-nav__overlay {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.5);
-        z-index: 998;
-      }
-
-      .header-nav__overlay.is-visible {
-        display: block;
+      .header-nav__mission {
+        font-size: 0.72rem;
+        padding: 0.45rem 1.2rem;
       }
     }
   </style>
@@ -179,24 +97,10 @@
           </div>
         </div>
 
-        <!-- Mobile Toggle -->
-        <button class="header-nav__toggle" aria-label="Menu" onclick="toggleNav()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <!-- Navigation -->
-        <nav class="header-nav" id="headerNav">
-          <ul class="header-nav__links">
-            <li><a href="/about.html">The Mission</a></li>
-            <li><a href="/request-pilot.html">Request Pilot</a></li>
-          </ul>
-          <a href="/request-pilot.html" class="header-nav__cta">Get a Demo →</a>
-        </nav>
-
-        <!-- Mobile Overlay -->
-        <div class="header-nav__overlay" id="navOverlay" onclick="toggleNav()"></div>
+        <!-- The Mission -->
+        <a href="/about.html" class="header-nav__mission">
+          <span>The Mission</span>
+        </a>
       </div>
     </div>
   </header>
@@ -443,13 +347,5 @@
   </div>
 
   <script src="script.js"></script>
-
-  <!-- Nav Toggle Script -->
-  <script>
-    function toggleNav() {
-      document.getElementById('headerNav').classList.toggle('is-open');
-      document.getElementById('navOverlay').classList.toggle('is-visible');
-    }
-  </script>
 </body>
 </html>
