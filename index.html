@@ -21,6 +21,149 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Nav Styles -->
+  <style>
+    .header-layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .header-nav__links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 1.75rem;
+    }
+
+    .header-nav__links a {
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.025em;
+      transition: color 0.25s ease;
+      position: relative;
+    }
+
+    .header-nav__links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #fff;
+      transition: width 0.25s ease;
+    }
+
+    .header-nav__links a:hover {
+      color: #fff;
+    }
+
+    .header-nav__links a:hover::after {
+      width: 100%;
+    }
+
+    .header-nav__cta {
+      display: inline-block;
+      padding: 0.55rem 1.4rem;
+      background: #fff;
+      color: #0d0d0d;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.25s ease, transform 0.2s ease;
+    }
+
+    .header-nav__cta:hover {
+      background: rgba(255, 255, 255, 0.88);
+      transform: translateY(-1px);
+    }
+
+    /* Mobile hamburger */
+    .header-nav__toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .header-nav__toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #fff;
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .header-nav__toggle {
+        display: block;
+      }
+
+      .header-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 260px;
+        height: 100vh;
+        background: #111;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 5rem 2rem 2rem;
+        gap: 2rem;
+        transition: right 0.35s ease;
+        z-index: 999;
+        box-shadow: -4px 0 20px rgba(0,0,0,0.5);
+      }
+
+      .header-nav.is-open {
+        right: 0;
+      }
+
+      .header-nav__links {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .header-nav__links a {
+        font-size: 1.05rem;
+      }
+
+      .header-nav__cta {
+        text-align: center;
+        width: 100%;
+      }
+
+      .header-nav__overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 998;
+      }
+
+      .header-nav__overlay.is-visible {
+        display: block;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -35,6 +178,25 @@
             </a>
           </div>
         </div>
+
+        <!-- Mobile Toggle -->
+        <button class="header-nav__toggle" aria-label="Menu" onclick="toggleNav()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Navigation -->
+        <nav class="header-nav" id="headerNav">
+          <ul class="header-nav__links">
+            <li><a href="/about.html">The Mission</a></li>
+            <li><a href="/request-pilot.html">Request Pilot</a></li>
+          </ul>
+          <a href="/request-pilot.html" class="header-nav__cta">Get a Demo →</a>
+        </nav>
+
+        <!-- Mobile Overlay -->
+        <div class="header-nav__overlay" id="navOverlay" onclick="toggleNav()"></div>
       </div>
     </div>
   </header>
@@ -281,5 +443,13 @@
   </div>
 
   <script src="script.js"></script>
+
+  <!-- Nav Toggle Script -->
+  <script>
+    function toggleNav() {
+      document.getElementById('headerNav').classList.toggle('is-open');
+      document.getElementById('navOverlay').classList.toggle('is-visible');
+    }
+  </script>
 </body>
 </html>
