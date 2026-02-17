@@ -31,9 +31,15 @@
       padding: 0.5rem 0;
     }
 
-    .header-nav__mission {
-      display: inline-block;
+    .header-nav__pills {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
       margin-left: auto;
+    }
+
+    .header-nav__pill {
+      display: inline-block;
       padding: 0.5rem 1.6rem;
       color: rgba(255, 255, 255, 0.85);
       text-decoration: none;
@@ -49,7 +55,7 @@
       overflow: hidden;
     }
 
-    .header-nav__mission::before {
+    .header-nav__pill::before {
       content: '';
       position: absolute;
       inset: 0;
@@ -61,25 +67,29 @@
       z-index: 0;
     }
 
-    .header-nav__mission span {
+    .header-nav__pill span {
       position: relative;
       z-index: 1;
     }
 
-    .header-nav__mission:hover {
+    .header-nav__pill:hover {
       color: #0d0d0d;
       border-color: #fff;
     }
 
-    .header-nav__mission:hover::before {
+    .header-nav__pill:hover::before {
       transform: scaleX(1);
       transform-origin: left;
     }
 
     @media (max-width: 768px) {
-      .header-nav__mission {
-        font-size: 0.72rem;
-        padding: 0.45rem 1.2rem;
+      .header-nav__pills {
+        gap: 0.5rem;
+      }
+      .header-nav__pill {
+        font-size: 0.68rem;
+        padding: 0.4rem 1rem;
+        letter-spacing: 0.1em;
       }
     }
   </style>
@@ -98,10 +108,15 @@
           </div>
         </div>
 
-        <!-- The Mission -->
-        <a href="/about.html" class="header-nav__mission">
-          <span>The Mission</span>
-        </a>
+        <!-- Nav Links -->
+        <div class="header-nav__pills">
+          <a href="#" class="header-nav__pill">
+            <span>The Mission</span>
+          </a>
+          <a href="/about.html" class="header-nav__pill">
+            <span>The Why</span>
+          </a>
+        </div>
       </div>
     </div>
   </header>
