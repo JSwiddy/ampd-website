@@ -180,7 +180,7 @@ button {
 
 .ampd-hero-visual-wrap {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   justify-content: center;
 }
