@@ -12,356 +12,315 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Organizations – AMPD</title>
-  <meta name="description" content="The Mental Performance Engine™ - Daily mindset reinforcement, built-in accountability, and alignment across teams — without an app.">
-  
+  <title>AMPD — The Platform for High School Athletic Programs</title>
+  <meta name="description" content="Give your athletic department the tools to actually reach your athletes. Communication, training, scheduling, and the only built-in mental performance system in sports.">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
-
-  <!-- Nav Styles -->
-  <style>
-    .header-layout {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.5rem 0;
-    }
-
-    .header-nav__pills {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-left: auto;
-    }
-
-    .header-nav__pill {
-      display: inline-block;
-      padding: 0.5rem 1.6rem;
-      color: rgba(255, 255, 255, 0.85);
-      text-decoration: none;
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      border-radius: 10px;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .header-nav__pill::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: #fff;
-      border-radius: 10px;
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.3s ease;
-      z-index: 0;
-    }
-
-    .header-nav__pill span {
-      position: relative;
-      z-index: 1;
-    }
-
-    .header-nav__pill:hover {
-      color: #0d0d0d;
-      border-color: #fff;
-    }
-
-    .header-nav__pill:hover::before {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-
-    @media (max-width: 768px) {
-      .header-nav__pills {
-        gap: 0.5rem;
-      }
-      .header-nav__pill {
-        font-size: 0.68rem;
-        padding: 0.4rem 1rem;
-        letter-spacing: 0.1em;
-      }
-    }
-  </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="site-header">
-    <div class="page-width">
-      <div class="header-layout">
-        <div class="header-item header-item--logo">
-          <div class="site-header__logo">
-            <a href="/">
-              <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487124/AMPD_White_ms0gvl.png" alt="AMPD" class="logo-desktop">
-              <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487124/AMPD_White_ms0gvl.png" alt="AMPD" class="logo-mobile">
-            </a>
-          </div>
-        </div>
 
-        <!-- Nav Links -->
-        <div class="header-nav__pills">
-          <a href="/mission.html" class="header-nav__pill">
-  <span>The Mission</span>
-</a>
-          <a href="/about.html" class="header-nav__pill">
-            <span>The Why</span>
-          </a>
-        </div>
+  <!-- ====== HEADER ====== -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <div class="header-logo">
+        <a href="/">
+          <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487124/AMPD_White_ms0gvl.png" alt="AMPD">
+        </a>
       </div>
+
+      <nav class="header-nav" id="headerNav">
+        <a href="/platform.html" class="header-nav__link">Platform</a>
+        <a href="/about.html" class="header-nav__link">The Why</a>
+        <a href="/safety.html" class="header-nav__link">Safety</a>
+        <a href="/request-pilot.html" class="header-nav__cta">Request a Pilot</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="main-content">
-    
-    <!-- Hero Section -->
-    <section class="ampd-hero">
-      <div class="ampd-hero-title">
-        <h1>
-          The Mental Performance
-          <span class="engine">Engine<span class="tm">™</span></span>
+  <main>
+
+    <!-- ====== HERO ====== -->
+    <section class="hero">
+      <div class="hero-glow"></div>
+
+      <div class="hero-content">
+        <h1 class="reveal">
+          Give your coaches the tools<br>to actually reach your athletes.
         </h1>
+        <p class="hero-sub reveal">
+          One platform for communication, training, scheduling, and the only built-in mental performance system in sports. Built for high school athletic programs.
+        </p>
+        <div class="hero-actions reveal">
+          <a href="/request-pilot.html" class="btn-primary">Request a Pilot &rarr;</a>
+          <a href="/platform.html" class="btn-secondary">See the Platform</a>
+        </div>
       </div>
 
-      <div class="ampd-hero-visual-wrap">
-        <div class="ampd-hero-bg"></div>
-        <div class="ampd-hero-bottomfade"></div>
-
-        <div class="ampd-hero-statement">
-          <div class="ampd-hero-statement-inner">
-            <div class="ampd-hero-copy">
-              <div class="ampd-hero-line ampd-hero-line--primary">
-                Culture doesn't build itself.
-              </div>
-              <div class="ampd-hero-line ampd-hero-line--secondary">
-                Feed it daily without an app.
-              </div>
-            </div>
-
-            <a href="/request-pilot.html" class="ampd-hero-cta">
-              Get a Demo →
-            </a>
-          </div>
-        </div>
-
+      <div class="hero-screenshot reveal">
+        <img src="https://cdn.shopify.com/s/files/1/0902/5372/1965/files/OrgLanding.png?v=1768943645" alt="AMPD Platform Dashboard">
       </div>
     </section>
 
-    <!-- Logo Carousel -->
-    <section class="ampd-logo-carousel">
-      <div class="ampd-logo-carousel__track">
-        <div class="ampd-logo-carousel__item">
-          <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487125/RIdgewood_Highschool_iicigi.png" alt="Ridgewood High School">
-        </div>
-        <div class="ampd-logo-carousel__item">
-          <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487126/STILLIRUN_2_zob56y.png" alt="Still I Run">
-        </div>
-        <div class="ampd-logo-carousel__item">
-          <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487125/RIdgewood_Highschool_iicigi.png" alt="Ridgewood High School">
-        </div>
-        <div class="ampd-logo-carousel__item">
-          <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487126/STILLIRUN_2_zob56y.png" alt="Still I Run">
-        </div>
-        <div class="ampd-logo-carousel__item">
-          <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487125/RIdgewood_Highschool_iicigi.png" alt="Ridgewood High School">
-        </div>
-        <div class="ampd-logo-carousel__item">
-          <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487126/STILLIRUN_2_zob56y.png" alt="Still I Run">
-        </div>
-        <div class="ampd-logo-carousel__item">
-          <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487125/RIdgewood_Highschool_iicigi.png" alt="Ridgewood High School">
-        </div>
-        <div class="ampd-logo-carousel__item">
-          <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487126/STILLIRUN_2_zob56y.png" alt="Still I Run">
-        </div>
-        <!-- Duplicate set for seamless loop -->
-        <div class="ampd-logo-carousel__item">
-          <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487125/RIdgewood_Highschool_iicigi.png" alt="Ridgewood High School">
-        </div>
-        <div class="ampd-logo-carousel__item">
-          <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487126/STILLIRUN_2_zob56y.png" alt="Still I Run">
-        </div>
-        <div class="ampd-logo-carousel__item">
-          <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487125/RIdgewood_Highschool_iicigi.png" alt="Ridgewood High School">
-        </div>
-        <div class="ampd-logo-carousel__item">
-          <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487126/STILLIRUN_2_zob56y.png" alt="Still I Run">
-        </div>
-        <div class="ampd-logo-carousel__item">
-          <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487125/RIdgewood_Highschool_iicigi.png" alt="Ridgewood High School">
-        </div>
-        <div class="ampd-logo-carousel__item">
-          <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487126/STILLIRUN_2_zob56y.png" alt="Still I Run">
-        </div>
-        <div class="ampd-logo-carousel__item">
-          <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487125/RIdgewood_Highschool_iicigi.png" alt="Ridgewood High School">
-        </div>
-        <div class="ampd-logo-carousel__item">
-          <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487126/STILLIRUN_2_zob56y.png" alt="Still I Run">
-        </div>
+    <!-- ====== TRUST BAR ====== -->
+    <section class="trust-bar">
+      <p class="trust-bar-label">Trusted by programs across the country</p>
+      <div class="trust-logos">
+        <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487125/RIdgewood_Highschool_iicigi.png" alt="Ridgewood High School">
+        <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487126/STILLIRUN_2_zob56y.png" alt="Still I Run">
       </div>
     </section>
 
-    <!-- Pillars Section -->
-    <section class="ampd-pillars">
-      <div class="ampd-pillars-inner">
-        <div class="ampd-pillars-header">
-          <h2>Built to Be Seen Every Day</h2>
-          <p>Physical touchpoints and digital mindset work together so the message shows up daily and actually sticks.</p>
+    <div class="section-divider"></div>
+
+    <!-- ====== THE PROBLEM ====== -->
+    <section class="problem-section">
+      <div class="section-label reveal">The Reality</div>
+      <h2 class="reveal">Coaches get two hours a day with their athletes. What happens in the other twenty-two?</h2>
+      <p class="problem-text reveal">
+        No system for daily check-ins. No way to deliver mental reps. No visibility into who is struggling. No single place to communicate, schedule, and train &mdash; let alone track how your athletes are actually showing up.
+      </p>
+      <p class="problem-highlight reveal">
+        Your athletic department deserves better than six apps and a group chat.
+      </p>
+      <p class="problem-text reveal">
+        Coaches are already in a position to shape young lives. But they are limited to the hours they get on the field. AMPD extends their influence into the hours they do not have.
+      </p>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ====== PLATFORM OVERVIEW ====== -->
+    <section class="platform-section">
+      <div class="section-label reveal">The Platform</div>
+      <h2 class="reveal">Everything your program needs. One place.</h2>
+      <p class="platform-sub reveal">Built specifically for how high school athletic programs actually run.</p>
+
+      <div class="platform-grid">
+        <!-- Communication -->
+        <div class="platform-card reveal">
+          <div class="platform-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3>Communication</h3>
+          <p>Announcements, messaging, and updates across your entire program. Parents, athletes, and coaches all connected.</p>
         </div>
 
-        <div class="ampd-pillars-grid">
-          <div class="ampd-pillar">
-            <div class="ampd-pillar-icon">
-              <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487127/NFCLOGO_asgcqr.png" alt="Physical and digital">
-            </div>
-            <h3>Physical + Digital</h3>
-            <p>A physical touchpoint paired with digital content keeps your message visible and top of mind every day.</p>
+        <!-- Scheduling -->
+        <div class="platform-card reveal">
+          <div class="platform-card-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           </div>
+          <h3>Scheduling</h3>
+          <p>Team calendar, events, practices, and game-day structure. Everyone sees the same schedule, always up to date.</p>
+        </div>
 
-          <div class="ampd-pillar">
-            <div class="ampd-pillar-icon">
-              <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487127/NOAPPLOGO_tch4np.png" alt="No app required">
-            </div>
-            <h3>No App Required</h3>
-            <p>Nothing to download. Users tap and access what they need instantly without friction or extra steps.</p>
+        <!-- Training -->
+        <div class="platform-card reveal">
+          <div class="platform-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M6 8H5a4 4 0 0 0 0 8h1"/><line x1="6" y1="12" x2="18" y2="12"/></svg>
           </div>
+          <h3>Training &amp; Workouts</h3>
+          <p>Structured workouts, block programming, and training content delivered directly to your athletes. No more paper handouts.</p>
+        </div>
 
-          <div class="ampd-pillar">
-            <div class="ampd-pillar-icon">
-              <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487127/MINDLOGO_v0cbea.png" alt="Daily mindset reinforcement">
-            </div>
-            <h3>Daily Mindset Reinforcement</h3>
-            <p>Daily mental cues reinforce focus, standards, and habits that shape consistent everyday performance.</p>
+        <!-- Roster -->
+        <div class="platform-card reveal">
+          <div class="platform-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
+          <h3>Roster Management</h3>
+          <p>Multi-sport athletes, group scoping, parent access, and role-based visibility. Your entire department organized.</p>
+        </div>
+
+        <!-- Program Visibility -->
+        <div class="platform-card reveal">
+          <div class="platform-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3>Program Visibility</h3>
+          <p>AD and district-level dashboards across every team. See compliance, readiness, and engagement at a glance.</p>
+        </div>
+
+        <!-- Mental Performance (highlighted) -->
+        <div class="platform-card platform-card--highlight reveal">
+          <div class="platform-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3>Mental Performance</h3>
+          <p>The daily check-in, mindset uploads, and the flag system. The one thing no other platform has. Built in.</p>
         </div>
       </div>
     </section>
 
-    <!-- Science CTA -->
-    <div class="ampd-science-cta">
-      <button class="ampd-outline-btn" data-ampd-open>
-        Read the science behind AMPD →
-      </button>
-    </div>
+    <div class="section-divider"></div>
 
-    <!-- Modules Section -->
-    <section class="ampd-modules">
-      <div class="ampd-modules-inner">
-        <div class="ampd-modules-list">
-          <div class="ampd-module">
-            <div class="ampd-icon">
-              <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487126/NEWLIGHTNINGBRAIN_fs1pqy.png" alt="Build Mental Strength">
-            </div>
-            <div class="ampd-text">
-              <h3>Build Mental Strength</h3>
-              <p>Build a strong team culture through daily mindset training that reinforces mental toughness and consistency.</p>
-            </div>
-          </div>
+    <!-- ====== THE DIFFERENTIATOR ====== -->
+    <section class="diff-section">
+      <div class="diff-header">
+        <div class="section-label reveal">What Makes AMPD Different</div>
+        <h2 class="reveal">The most important part of athlete development &mdash; built in.</h2>
+        <p class="reveal">Every program has tools for the physical side. AMPD is the first platform with a complete mental performance system woven into the daily experience.</p>
+      </div>
 
-          <div class="ampd-module">
-            <div class="ampd-icon">
-              <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487126/DUMBBELLICON_gcw2iu.png" alt="Push Workouts">
-            </div>
-            <div class="ampd-text">
-              <h3>Push Workouts</h3>
-              <p>Replace paper and Google Docs with structured workouts delivered through videos, notes, and links for your entire program.</p>
-            </div>
-          </div>
-
-          <div class="ampd-module">
-            <div class="ampd-icon">
-              <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487125/REMINDERSICON_yvc0c9.png" alt="Practice & Game Itineraries">
-            </div>
-            <div class="ampd-text">
-              <h3>Schedules and Itineraries</h3>
-              <p>Centralize schedules and itineraries for practices, games, meetings, and team operations in one clear system.</p>
-            </div>
-          </div>
-
-          <div class="ampd-module">
-            <div class="ampd-icon">
-              <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487125/CUSTOMBUILTICON_e5jfaj.png" alt="Custom Built">
-            </div>
-            <div class="ampd-text">
-              <h3>Custom Built</h3>
-              <p>Need something else? We'll build the next module with you based on what your program actually needs.</p>
-            </div>
-          </div>
+      <!-- The Check-In -->
+      <div class="diff-feature reveal">
+        <div class="diff-feature-visual">
+          <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487127/MGLOWING_ufacj3.png" alt="AMPD Daily Check-In">
         </div>
+        <div class="diff-feature-text">
+          <div class="section-label">The Daily Check-In</div>
+          <h3>Five metrics. Fifteen seconds. Every day.</h3>
+          <p>Athletes rate their Energy, Stress, Soreness, Focus, and Confidence each morning. Coaches see who is locked in and who needs attention &mdash; before practice even starts. Color-coded, streak-tracked, and impossible to miss.</p>
+        </div>
+      </div>
 
-        <div class="ampd-modules-visual">
-          <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487127/MGLOWING_ufacj3.png" alt="AMPD Platform">
+      <!-- The Mindset Upload -->
+      <div class="diff-feature diff-feature--reverse reveal">
+        <div class="diff-feature-visual">
+          <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487127/NFCLOGO_asgcqr.png" alt="AMPD Mindset Upload">
+        </div>
+        <div class="diff-feature-text">
+          <div class="section-label">The Mindset Upload</div>
+          <h3>Coach just uploaded your mindset.</h3>
+          <p>A daily 60-second morning ritual delivered straight from the coach. Pattern interrupt, theme word, mindset message, and a mental rep. Building mental strength one day at a time, powered by real team readiness data.</p>
+        </div>
+      </div>
+
+      <!-- The Flag System -->
+      <div class="diff-feature reveal">
+        <div class="diff-feature-visual">
+          <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487125/REMINDERSICON_yvc0c9.png" alt="AMPD Flag System">
+        </div>
+        <div class="diff-feature-text">
+          <div class="section-label">The Flag System</div>
+          <h3>No more guessing. No more missing the signs.</h3>
+          <p>Automatic alerts when an athlete is trending down. A single metric drops two points in a day? Flag. Three consecutive days of decline? Flag. Missed multiple check-ins? Flag. Coaches see it before the athlete even walks through the door.</p>
         </div>
       </div>
     </section>
 
-    <!-- CTA Button -->
-    <div class="ampd-cta-wrap">
-      <a href="/request-pilot.html" class="ampd-cta-culture">
-        Change Team Culture →
-      </a>
-    </div>
+    <div class="section-divider"></div>
 
-    <!-- Testimonial -->
-    <section class="ampd-testimonial">
-      <div class="ampd-testimonial-inner">
-        <blockquote class="ampd-testimonial-quote">
-          "AMPD has been a great daily mental supplement for our players. The Ridgewood wristbands were easy to roll out, helped us eliminate paper workouts, and didn't require an app to install or update."
-        </blockquote>
-        <div class="ampd-testimonial-author">
-          Head Varsity Baseball Coach
+    <!-- ====== MISSION STATEMENT ====== -->
+    <section class="mission-statement">
+      <h2 class="reveal">Player development does not stop when practice ends.</h2>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ====== TRUST SECTION ====== -->
+    <section class="trust-section">
+      <div class="section-label reveal" style="text-align:center;">Built for Schools</div>
+      <div class="trust-badges reveal">
+        <div class="trust-badge">
+          <div class="trust-badge-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <span>FERPA Compliant</span>
         </div>
-        <div class="ampd-testimonial-logo">
-          <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487125/RIdgewood_Highschool_iicigi.png" alt="Ridgewood High School">
+        <div class="trust-badge">
+          <div class="trust-badge-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <span>Data Encrypted</span>
         </div>
+        <div class="trust-badge">
+          <div class="trust-badge-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <span>US Hosted</span>
+        </div>
+        <div class="trust-badge">
+          <div class="trust-badge-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <span>District-Ready</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ====== TESTIMONIAL ====== -->
+    <section class="testimonial-section">
+      <blockquote class="testimonial-quote reveal">
+        "AMPD has been a great daily mental supplement for our players. The wristbands were easy to roll out, helped us eliminate paper workouts, and did not require an app to install or update."
+      </blockquote>
+      <div class="testimonial-author reveal">Head Varsity Baseball Coach</div>
+      <div class="testimonial-logo reveal">
+        <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487125/RIdgewood_Highschool_iicigi.png" alt="Ridgewood High School">
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ====== CTA ====== -->
+    <section class="cta-section">
+      <h2 class="reveal">See what AMPD can do for your program.</h2>
+      <p class="reveal">Give your coaches the tools. Reach your athletes where it matters.</p>
+      <div class="reveal">
+        <a href="/request-pilot.html" class="btn-primary">Request a Pilot &rarr;</a>
       </div>
     </section>
 
   </main>
 
-  <!-- Footer -->
+  <!-- ====== FOOTER ====== -->
   <footer class="site-footer">
-    <div class="page-width">
-      <div class="site-footer__section">
-        <ul class="social-icons">
-          <li>
-            <a href="https://www.instagram.com/get_ampd_up/" target="_blank" rel="noopener" aria-label="Instagram">
-              <svg viewBox="0 0 32 32"><path d="M16 3.094c4.206 0 4.7.019 6.363.094 1.538.069 2.369.325 2.925.544.738.287 1.262.625 1.813 1.175s.894 1.075 1.175 1.813c.212.556.475 1.387.544 2.925.075 1.662.094 2.156.094 6.363s-.019 4.7-.094 6.363c-.069 1.538-.325 2.369-.544 2.925-.288.738-.625 1.262-1.175 1.813s-1.075.894-1.813 1.175c-.556.212-1.387.475-2.925.544-1.663.075-2.156.094-6.363.094s-4.7-.019-6.363-.094c-1.537-.069-2.369-.325-2.925-.544-.737-.288-1.263-.625-1.813-1.175s-.894-1.075-1.175-1.813c-.212-.556-.475-1.387-.544-2.925-.075-1.663-.094-2.156-.094-6.363s.019-4.7.094-6.363c.069-1.537.325-2.369.544-2.925.287-.737.625-1.263 1.175-1.813s1.075-.894 1.813-1.175c.556-.212 1.388-.475 2.925-.544 1.662-.081 2.156-.094 6.363-.094zm0-2.838c-4.275 0-4.813.019-6.494.094-1.675.075-2.819.344-3.819.731-1.037.4-1.913.944-2.788 1.819S1.486 4.656 1.08 5.688c-.387 1-.656 2.144-.731 3.825-.075 1.675-.094 2.213-.094 6.488s.019 4.813.094 6.494c.075 1.675.344 2.819.731 3.825.4 1.038.944 1.913 1.819 2.788s1.756 1.413 2.788 1.819c1 .387 2.144.656 3.825.731s2.213.094 6.494.094 4.813-.019 6.494-.094c1.675-.075 2.819-.344 3.825-.731 1.038-.4 1.913-.944 2.788-1.819s1.413-1.756 1.819-2.788c.387-1 .656-2.144.731-3.825s.094-2.212.094-6.494-.019-4.813-.094-6.494c-.075-1.675-.344-2.819-.731-3.825-.4-1.038-.944-1.913-1.819-2.788s-1.756-1.413-2.788-1.819c-1-.387-2.144-.656-3.825-.731C20.812.275 20.275.256 16 .256z"/><path d="M16 7.912a8.088 8.088 0 0 0 0 16.175c4.463 0 8.087-3.625 8.087-8.088s-3.625-8.088-8.088-8.088zm0 13.338a5.25 5.25 0 1 1 0-10.5 5.25 5.25 0 1 1 0 10.5zM26.294 7.594a1.887 1.887 0 1 1-3.774.002 1.887 1.887 0 0 1 3.774-.003z"/></svg>
-            </a>
-          </li>
-
-        </ul>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487124/AMPD_White_ms0gvl.png" alt="AMPD">
+        <p>The all-in-one platform for high school athletic programs. Built for coaches who care about more than just the scoreboard.</p>
       </div>
-
-      <div class="site-footer__copyright">
-        <span>&copy; 2026 AMPD - All rights reserved.</span>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="/platform.html">Features</a>
+        <a href="/platform.html#coaches">For Coaches</a>
+        <a href="/platform.html#athletes">For Athletes</a>
+        <a href="/platform.html#admin">For ADs</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/about.html">The Why</a>
+        <a href="/safety.html">Safety &amp; Privacy</a>
+        <a href="/request-pilot.html">Request a Pilot</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 AMPD. All rights reserved.</span>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/get_ampd_up/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
       </div>
     </div>
   </footer>
 
-  <!-- PDF Modal -->
-  <div class="ampd-overlay" data-ampd-overlay>
-    <div class="ampd-modal">
-      <div class="ampd-modal-header">
-        <button class="ampd-close-btn" data-ampd-close>&times;</button>
-      </div>
-      <div class="ampd-modal-body">
-        <iframe class="ampd-pdf-frame" loading="lazy" src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487649/The_Science_Behind_AMPD_jyl8fy.pdf"></iframe>
-      </div>
-    </div>
-  </div>
-
+  <!-- ====== SCRIPTS ====== -->
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <!-- Site JS -->
   <script src="script.js"></script>
+
 </body>
 </html>
