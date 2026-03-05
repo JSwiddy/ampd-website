@@ -537,6 +537,10 @@ button {
   margin-bottom: 0;
 }
 
+.ampd-icon {
+  flex-shrink: 0;
+}
+
 .ampd-icon img,
 .ampd-icon svg {
   width: 140px;
