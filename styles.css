@@ -499,24 +499,32 @@ button {
 .ampd-modules-inner {
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
   position: relative;
   z-index: 2;
+  padding: 0 1rem;
 }
 
-.ampd-modules-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2.25rem;
+.ampd-modules-inner--wrap {
+  display: block;
+  overflow: hidden;
+}
+
+.ampd-modules-visual--float {
+  float: right;
+  width: 45%;
+  margin: 0 0 2rem 3rem;
+}
+
+.ampd-modules-visual--float img {
+  width: 100%;
+  display: block;
 }
 
 .ampd-module {
   display: flex;
   gap: 1.5rem;
   align-items: center;
+  margin-bottom: 2.25rem;
 }
 
 .ampd-icon img,
@@ -538,13 +546,6 @@ button {
   font-size: 0.95rem;
   line-height: 1.45;
   color: #b5b5b5;
-}
-
-.ampd-modules-visual img {
-  width: 100%;
-  max-width: 650px;
-  display: block;
-  margin-left: auto;
 }
 
 /* ===========================
