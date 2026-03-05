@@ -129,47 +129,62 @@ button {
 
 .ampd-hero {
   background: #000;
+  overflow: hidden;
 }
 
-.ampd-hero-split {
-  max-width: 1100px;
+.ampd-hero-stack {
+  position: relative;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 3rem 4rem 1rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: start;
+  text-align: center;
+}
+
+.ampd-hero-title {
+  color: #ffffff;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  line-height: 1.12;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  padding: 3rem 2rem 0;
   position: relative;
   z-index: 2;
 }
 
-.ampd-hero-left {
-  padding-top: 0;
+.ampd-hero-visual-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: -1rem;
 }
 
-.ampd-hero-left h1 {
-  color: #ffffff;
-  font-size: clamp(2rem, 3.2vw, 2.8rem);
-  line-height: 1.15;
-  font-weight: 500;
-  letter-spacing: -0.02em;
+.ampd-hero-img {
+  max-width: 900px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
-.ampd-hero-right {
-  padding-top: 0;
-  text-align: right;
+.ampd-hero-bottom {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0 2rem 3rem;
+  margin-top: -4rem;
 }
 
-.ampd-hero-right p {
+.ampd-hero-bottom p {
   color: rgba(255, 255, 255, 0.65);
-  font-size: 1.05rem;
-  line-height: 1.65;
-  margin-bottom: 1rem;
-  max-width: 420px;
-  margin-left: auto;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 480px;
+  text-align: left;
 }
 
-.ampd-hero-right .ampd-hero-cta {
+.ampd-hero-cta {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -178,22 +193,8 @@ button {
   font-weight: 600;
   border-radius: 6px;
   letter-spacing: 0.02em;
-  float: right;
-}
-
-.ampd-hero-visual-wrap {
-  position: relative;
-  overflow: visible;
-  display: flex;
-  justify-content: center;
-}
-
-.ampd-hero-img {
-  max-width: 900px;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: -8rem auto 0;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 
