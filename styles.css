@@ -178,31 +178,17 @@ button {
 
 .ampd-hero-visual-wrap {
   position: relative;
-  min-height: 85vh;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
 
-.ampd-hero-bg {
-  position: absolute;
-  inset: 0;
-  background-image: url('https://cdn.shopify.com/s/files/1/0902/5372/1965/files/OrgLanding.png?v=1768943645');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center top;
-  z-index: 1;
-}
-
-.ampd-hero-bottomfade {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,0.95) 0%,
-    rgba(0,0,0,0.75) 25%,
-    rgba(0,0,0,0.4) 50%,
-    rgba(0,0,0,0) 70%
-  );
-  z-index: 2;
+.ampd-hero-img {
+  max-width: 900px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 
@@ -822,8 +808,8 @@ body.ampd-lock {
     margin-bottom: 1.5rem;
   }
 
-  .ampd-hero-visual-wrap {
-    min-height: 55vh;
+  .ampd-hero-img {
+    max-width: 100%;
   }
 
   /* Logo Carousel */
