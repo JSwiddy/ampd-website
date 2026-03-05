@@ -80,6 +80,25 @@ window.addEventListener('load', function() {
   requestAnimationFrame(tick);
 });
 
+// Scroll fade-in animations (same pattern as about page)
+(function() {
+  var observer = new IntersectionObserver(function(entries) {
+    for (var i = 0; i < entries.length; i++) {
+      if (entries[i].isIntersecting) {
+        entries[i].target.classList.add('visible');
+      }
+    }
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -60px 0px'
+  });
+
+  var els = document.querySelectorAll('.ampd-fade');
+  for (var j = 0; j < els.length; j++) {
+    observer.observe(els[j]);
+  }
+})();
+
 // Add active state to header on scroll
 let lastScroll = 0;
 const header = document.querySelector('.site-header');
