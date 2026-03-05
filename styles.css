@@ -139,6 +139,8 @@ button {
   grid-template-columns: 1.1fr 0.9fr;
   gap: 2rem;
   align-items: start;
+  position: relative;
+  z-index: 2;
 }
 
 .ampd-hero-left {
@@ -188,7 +190,7 @@ button {
   width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto;
+  margin: -3rem auto 0;
 }
 
 
