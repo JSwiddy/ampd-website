@@ -525,6 +525,8 @@ button {
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   clear: both;
+  padding-top: 0;
+  margin-top: 0;
 }
 
 .ampd-module {
