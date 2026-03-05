@@ -411,7 +411,7 @@ button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 120px;
+  width: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -420,7 +420,8 @@ button {
 .ampd-orbit-center img {
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 0 30px rgba(30, 123, 255, 0.2));
+  border-radius: 18px;
+  filter: drop-shadow(0 0 30px rgba(30, 123, 255, 0.25));
 }
 
 .ampd-problem-sub {
