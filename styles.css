@@ -134,15 +134,15 @@ button {
 .ampd-hero-split {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 8rem 4rem 5rem;
+  padding: 4rem 4rem 3rem;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 6rem;
+  gap: 4rem;
   align-items: start;
 }
 
 .ampd-hero-left {
-  padding-top: 2rem;
+  padding-top: 1rem;
 }
 
 .ampd-hero-left h1 {
@@ -154,7 +154,7 @@ button {
 }
 
 .ampd-hero-right {
-  padding-top: 2.5rem;
+  padding-top: 1.5rem;
 }
 
 .ampd-hero-right p {
