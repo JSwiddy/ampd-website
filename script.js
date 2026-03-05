@@ -57,27 +57,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Orbit animation — items always face upright
-(function() {
+window.addEventListener('load', function() {
   var items = document.querySelectorAll('.ampd-orbit-item');
   if (!items.length) return;
 
+  var wrap = document.querySelector('.ampd-orbit-wrap');
   var count = items.length;
-  var speed = 0.006; // degrees per frame (~60s full rotation)
-  var offset = 0;
-
-  function getRadius() {
-    var wrap = document.querySelector('.ampd-orbit-wrap');
-    return wrap ? wrap.offsetWidth / 2 - 45 : 190;
-  }
-
-  var radius = getRadius();
-  window.addEventListener('resize', function() { radius = getRadius(); });
+  var angle = 0;
 
   function tick() {
-    offset += speed;
+    var radius = wrap.offsetWidth / 2 - 50;
+    angle += 0.15; // degrees per frame
     for (var i = 0; i < count; i++) {
-      var angle = (i / count) * 360 + offset;
-      var rad = angle * Math.PI / 180;
+      var a = (i / count) * 360 + angle;
+      var rad = a * Math.PI / 180;
       var x = Math.cos(rad) * radius;
       var y = Math.sin(rad) * radius;
       items[i].style.transform = 'translate(' + x + 'px, ' + y + 'px)';
@@ -85,7 +78,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);
-})();
+});
 
 // Add active state to header on scroll
 let lastScroll = 0;
