@@ -141,11 +141,13 @@ button {
 
 .ampd-hero-title {
   color: #ffffff;
-  font-size: clamp(2.2rem, 4vw, 3.4rem);
-  line-height: 1.12;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  line-height: 1.15;
   font-weight: 600;
   letter-spacing: -0.02em;
   padding: 3rem 2rem 0;
+  max-width: 800px;
+  margin: 0 auto;
   position: relative;
   z-index: 2;
 }
@@ -172,15 +174,15 @@ button {
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  padding: 0 2rem 3rem;
-  margin-top: -4rem;
+  padding: 0 2rem 2.5rem;
+  margin-top: -8rem;
 }
 
 .ampd-hero-bottom p {
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 1rem;
-  line-height: 1.6;
-  max-width: 480px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  max-width: 400px;
   text-align: left;
 }
 
