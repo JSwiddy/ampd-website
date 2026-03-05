@@ -66,7 +66,7 @@ window.addEventListener('load', function() {
   var angle = 0;
 
   function tick() {
-    var radius = wrap.offsetWidth / 2 - 50;
+    var radius = Math.max(wrap.offsetWidth / 2 - 50, 140);
     angle += 0.15; // degrees per frame
     for (var i = 0; i < count; i++) {
       var a = (i / count) * 360 + angle;
