@@ -534,6 +534,7 @@ button {
   gap: 1.5rem;
   align-items: center;
   margin-bottom: 2.25rem;
+  max-width: 55%;
 }
 
 .ampd-modules-bottom .ampd-module {
