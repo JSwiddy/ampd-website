@@ -552,6 +552,147 @@ button {
 }
 
 /* ===========================
+   BEFORE / AFTER COMPARISON
+   =========================== */
+
+.ampd-compare {
+  background: #000;
+  padding: 5rem 1rem;
+  color: #fff;
+}
+
+.ampd-compare-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ampd-compare-inner h2 {
+  text-align: center;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.ampd-compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.ampd-compare-card {
+  border-radius: 16px;
+  padding: 2.5rem;
+  position: relative;
+}
+
+.ampd-compare-card--before {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ampd-compare-card--after {
+  background: rgba(30, 123, 255, 0.06);
+  border: 1px solid rgba(30, 123, 255, 0.3);
+}
+
+.ampd-compare-label {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 1.25rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.ampd-compare-label--good {
+  background: rgba(30, 123, 255, 0.15);
+  color: #1E7BFF;
+}
+
+.ampd-compare-desc {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 1.75rem;
+}
+
+.ampd-compare-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.ampd-compare-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px;
+  color: #fff;
+  opacity: 0.6;
+}
+
+.ampd-compare-center-icon {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.ampd-compare-center-icon img {
+  width: 100px;
+  height: 100px;
+  border-radius: 22px;
+  filter: drop-shadow(0 0 30px rgba(30, 123, 255, 0.3));
+}
+
+.ampd-compare-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ampd-compare-list li {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  padding-left: 1.75rem;
+  position: relative;
+}
+
+.ampd-compare-list--bad li {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.ampd-compare-list--bad li::before {
+  content: "\2717";
+  position: absolute;
+  left: 0;
+  color: rgba(239, 68, 68, 0.7);
+  font-weight: 700;
+}
+
+.ampd-compare-list--good li {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.ampd-compare-list--good li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: 700;
+}
+
+/* ===========================
    CTA BUTTON
    =========================== */
 
