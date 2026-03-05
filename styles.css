@@ -524,6 +524,7 @@ button {
   display: flex;
   gap: 3rem;
   clear: both;
+  margin-top: -2rem;
 }
 
 .ampd-modules-bottom-row .ampd-module {
