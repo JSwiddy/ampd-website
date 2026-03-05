@@ -56,6 +56,37 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// Orbit animation — items always face upright
+(function() {
+  var items = document.querySelectorAll('.ampd-orbit-item');
+  if (!items.length) return;
+
+  var count = items.length;
+  var speed = 0.006; // degrees per frame (~60s full rotation)
+  var offset = 0;
+
+  function getRadius() {
+    var wrap = document.querySelector('.ampd-orbit-wrap');
+    return wrap ? wrap.offsetWidth / 2 - 45 : 190;
+  }
+
+  var radius = getRadius();
+  window.addEventListener('resize', function() { radius = getRadius(); });
+
+  function tick() {
+    offset += speed;
+    for (var i = 0; i < count; i++) {
+      var angle = (i / count) * 360 + offset;
+      var rad = angle * Math.PI / 180;
+      var x = Math.cos(rad) * radius;
+      var y = Math.sin(rad) * radius;
+      items[i].style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
+
 // Add active state to header on scroll
 let lastScroll = 0;
 const header = document.querySelector('.site-header');

@@ -358,43 +358,39 @@ button {
 /* Orbit */
 .ampd-orbit-wrap {
   position: relative;
-  width: 420px;
-  height: 420px;
+  width: 480px;
+  height: 480px;
   margin: 0 auto 3rem;
 }
 
 .ampd-orbit-ring {
   position: absolute;
   inset: 0;
-  animation: ampd-spin 60s linear infinite;
 }
 
 .ampd-orbit-item {
-  --angle: calc(var(--i) * 36deg);
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 80px;
-  margin-left: -40px;
-  margin-top: -40px;
-  transform: rotate(var(--angle)) translateX(190px) rotate(calc(-1 * var(--angle)));
+  width: 90px;
+  margin-left: -45px;
+  margin-top: -45px;
   text-align: center;
-  /* counter-rotate to stay upright against parent spin */
-  animation: ampd-counter-spin 60s linear infinite;
+  will-change: transform;
 }
 
 .ampd-orbit-icon {
-  width: 38px;
-  height: 38px;
-  margin: 0 auto 0.35rem;
-  color: rgba(255, 255, 255, 0.4);
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 0.4rem;
+  color: rgba(255, 255, 255, 0.45);
   background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6px;
+  padding: 8px;
 }
 
 .ampd-orbit-icon svg {
@@ -403,9 +399,9 @@ button {
 }
 
 .ampd-orbit-label {
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.5);
   letter-spacing: 0.02em;
   white-space: nowrap;
 }
@@ -415,7 +411,7 @@ button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100px;
+  width: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -425,16 +421,6 @@ button {
   width: 100%;
   height: auto;
   filter: drop-shadow(0 0 30px rgba(30, 123, 255, 0.2));
-}
-
-@keyframes ampd-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-@keyframes ampd-counter-spin {
-  from { transform: rotate(var(--angle)) translateX(190px) rotate(calc(-1 * var(--angle) - 0deg)); }
-  to { transform: rotate(calc(var(--angle) + 360deg)) translateX(190px) rotate(calc(-1 * var(--angle) - 360deg)); }
 }
 
 .ampd-problem-sub {
@@ -904,21 +890,20 @@ body.ampd-lock {
 
   /* Orbit */
   .ampd-orbit-wrap {
-    width: 300px;
-    height: 300px;
+    width: 320px;
+    height: 320px;
   }
 
   .ampd-orbit-item {
     width: 64px;
     margin-left: -32px;
     margin-top: -32px;
-    transform: rotate(var(--angle)) translateX(130px) rotate(calc(-1 * var(--angle)));
   }
 
   .ampd-orbit-icon {
-    width: 30px;
-    height: 30px;
-    padding: 5px;
+    width: 36px;
+    height: 36px;
+    padding: 6px;
     border-radius: 8px;
   }
 
@@ -927,12 +912,7 @@ body.ampd-lock {
   }
 
   .ampd-orbit-center {
-    width: 70px;
-  }
-
-  @keyframes ampd-counter-spin {
-    from { transform: rotate(var(--angle)) translateX(130px) rotate(calc(-1 * var(--angle) - 0deg)); }
-    to { transform: rotate(calc(var(--angle) + 360deg)) translateX(130px) rotate(calc(-1 * var(--angle) - 360deg)); }
+    width: 80px;
   }
 
   /* Pillars */
