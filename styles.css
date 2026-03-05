@@ -389,14 +389,14 @@ button {
   width: 52px;
   height: 52px;
   margin: 0 auto 0.4rem;
-  color: rgba(255, 255, 255, 0.45);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 12px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px;
+  padding: 10px;
 }
 
 .ampd-orbit-icon svg {
@@ -412,17 +412,17 @@ button {
   white-space: nowrap;
 }
 
-/* Tool brand colors — muted, no glow */
-.ampd-orbit-item:nth-child(1) .ampd-orbit-icon { color: rgba(66,133,244,0.55); }
-.ampd-orbit-item:nth-child(2) .ampd-orbit-icon { color: rgba(52,168,83,0.55); }
-.ampd-orbit-item:nth-child(3) .ampd-orbit-icon { color: rgba(234,67,53,0.55); }
-.ampd-orbit-item:nth-child(4) .ampd-orbit-icon { color: rgba(118,39,187,0.55); }
-.ampd-orbit-item:nth-child(5) .ampd-orbit-icon { color: rgba(61,90,254,0.55); }
-.ampd-orbit-item:nth-child(6) .ampd-orbit-icon { color: rgba(0,175,240,0.55); }
-.ampd-orbit-item:nth-child(7) .ampd-orbit-icon { color: rgba(255,109,0,0.55); }
-.ampd-orbit-item:nth-child(8) .ampd-orbit-icon { color: rgba(52,199,89,0.55); }
-.ampd-orbit-item:nth-child(9) .ampd-orbit-icon { color: rgba(255,167,38,0.55); }
-.ampd-orbit-item:nth-child(10) .ampd-orbit-icon { color: rgba(176,190,197,0.55); }
+/* Tool brand colors — solid app icon backgrounds, white icons */
+.ampd-orbit-item:nth-child(1) .ampd-orbit-icon { background: rgba(66,133,244,0.75); }
+.ampd-orbit-item:nth-child(2) .ampd-orbit-icon { background: rgba(52,168,83,0.75); }
+.ampd-orbit-item:nth-child(3) .ampd-orbit-icon { background: rgba(234,67,53,0.75); }
+.ampd-orbit-item:nth-child(4) .ampd-orbit-icon { background: rgba(118,39,187,0.75); }
+.ampd-orbit-item:nth-child(5) .ampd-orbit-icon { background: rgba(61,90,254,0.75); }
+.ampd-orbit-item:nth-child(6) .ampd-orbit-icon { background: rgba(0,175,240,0.75); }
+.ampd-orbit-item:nth-child(7) .ampd-orbit-icon { background: rgba(255,109,0,0.75); }
+.ampd-orbit-item:nth-child(8) .ampd-orbit-icon { background: rgba(52,199,89,0.75); }
+.ampd-orbit-item:nth-child(9) .ampd-orbit-icon { background: rgba(255,167,38,0.75); }
+.ampd-orbit-item:nth-child(10) .ampd-orbit-icon { background: rgba(176,190,197,0.75); }
 
 .ampd-orbit-center {
   position: absolute;
