@@ -56,21 +56,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Scroll reveal animations
-(function() {
-  var observer = new IntersectionObserver(function(entries) {
-    for (var i = 0; i < entries.length; i++) {
-      if (entries[i].isIntersecting) {
-        entries[i].target.classList.add('visible');
-      }
-    }
-  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-
-  document.querySelectorAll('.ampd-problem-reveal').forEach(function(el) {
-    observer.observe(el);
-  });
-})();
-
 // Add active state to header on scroll
 let lastScroll = 0;
 const header = document.querySelector('.site-header');
