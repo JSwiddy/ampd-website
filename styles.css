@@ -134,7 +134,7 @@ button {
 .ampd-hero-split {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 1.5rem 4rem 3rem;
+  padding: 2.25rem 4rem 3rem;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 4rem;
