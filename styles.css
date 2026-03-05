@@ -520,13 +520,14 @@ button {
   display: block;
 }
 
-.ampd-modules-bottom {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.ampd-modules-bottom-row {
+  display: flex;
   gap: 3rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+}
+
+.ampd-modules-bottom-row .ampd-module {
+  max-width: 50%;
+  margin-bottom: 0;
 }
 
 .ampd-module {
@@ -535,10 +536,6 @@ button {
   align-items: center;
   margin-bottom: 2.25rem;
   max-width: 55%;
-}
-
-.ampd-modules-bottom .ampd-module {
-  margin-bottom: 0;
 }
 
 .ampd-icon {
