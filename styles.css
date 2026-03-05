@@ -521,8 +521,8 @@ button {
 
 .ampd-icon img,
 .ampd-icon svg {
-  width: 100px;
-  height: 100px;
+  width: 140px;
+  height: 140px;
   object-fit: contain;
 }
 
