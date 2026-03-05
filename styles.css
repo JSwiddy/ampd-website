@@ -738,11 +738,11 @@ body.ampd-lock {
    RESPONSIVE - TABLET
    =========================== */
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .ampd-hero-split {
     grid-template-columns: 1fr;
     gap: 2rem;
-    padding: 5rem 3rem 3rem;
+    padding: 3rem 2rem 2rem;
   }
 
   .ampd-hero-left {
