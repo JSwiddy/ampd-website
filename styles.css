@@ -523,6 +523,8 @@ button {
 .ampd-modules-bottom-row {
   display: flex;
   gap: 3rem;
+  position: relative;
+  z-index: 3;
 }
 
 .ampd-modules-bottom-row .ampd-module {
