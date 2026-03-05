@@ -520,11 +520,22 @@ button {
   display: block;
 }
 
+.ampd-modules-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  clear: both;
+}
+
 .ampd-module {
   display: flex;
   gap: 1.5rem;
   align-items: center;
   margin-bottom: 2.25rem;
+}
+
+.ampd-modules-bottom .ampd-module {
+  margin-bottom: 0;
 }
 
 .ampd-icon img,
