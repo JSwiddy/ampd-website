@@ -285,12 +285,52 @@
       }
     }
 
+    /* Platform CTA */
+    .plat-cta {
+      background: #111111;
+      padding: 120px 24px;
+      text-align: center;
+    }
+
+    .plat-cta h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: #F5F5F5;
+      margin-bottom: 16px;
+    }
+
+    .plat-cta p {
+      font-size: 1rem;
+      color: #888;
+      max-width: 520px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+
+    .plat-cta-btn {
+      display: inline-block;
+      background: #ffffff;
+      color: #080808;
+      font-weight: 700;
+      padding: 16px 36px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: opacity 0.2s ease;
+    }
+
+    .plat-cta-btn:hover {
+      opacity: 0.9;
+    }
+
     @media (max-width: 768px) {
       .plat-hero { padding: 120px 1.25rem 60px; }
       .role-section { padding: 60px 1.25rem; }
       .role-features { grid-template-columns: 1fr; }
       .mindset-section { padding: 60px 1.25rem; }
       .mindset-grid { grid-template-columns: 1fr; }
+      .plat-cta { padding: 80px 20px; }
     }
   </style>
 </head>
@@ -550,11 +590,11 @@
     <div class="section-divider"></div>
 
     <!-- CTA -->
-    <section class="cta-section">
+    <section class="plat-cta">
       <h2 class="reveal">Ready to see AMPD in action?</h2>
       <p class="reveal">We will walk you through the platform and show you exactly how it works for your program.</p>
       <div class="reveal">
-        <a href="/request-pilot.html" class="btn-primary">Get a Demo &rarr;</a>
+        <a href="/request-pilot.html" class="plat-cta-btn">Get a Demo &rarr;</a>
       </div>
     </section>
 
