@@ -740,6 +740,7 @@ button {
 
 .ampd-compare-label {
   display: inline-block;
+  align-self: flex-start;
   font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -780,13 +781,13 @@ button {
 }
 
 .ampd-compare-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 9px;
+  padding: 10px;
   color: var(--text-secondary);
   background: #1a1a1a;
   opacity: 0.6;
