@@ -7,18 +7,11 @@
     const form = document.getElementById('pilotForm');
     const formSuccess = document.getElementById('formSuccess');
     
-    if (!form) {
-      console.error('Form not found');
-      return;
-    }
-    
-    console.log('Form handler loaded');
+    if (!form) return;
     
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       e.stopPropagation();
-      
-      console.log('Form submitted');
       
       const formData = new FormData(form);
       const data = {};
@@ -32,8 +25,6 @@
       submitBtn.textContent = 'Sending...';
       submitBtn.disabled = true;
       
-      console.log('Sending to API:', data);
-      
       // Send to Vercel serverless function
       fetch('/api/pilot-request', {
         method: 'POST',
@@ -44,7 +35,6 @@
         body: JSON.stringify(data)
       })
       .then(response => {
-        console.log('Response status:', response.status);
         if (!response.ok) {
           return response.json().then(err => {
             throw new Error(err.error || 'Network response was not ok');
@@ -53,7 +43,6 @@
         return response.json();
       })
       .then(result => {
-        console.log('Success:', result);
         if (result.success) {
           form.style.display = 'none';
           formSuccess.style.display = 'flex';
@@ -71,7 +60,6 @@
         }
       })
       .catch(error => {
-        console.error('Form error:', error);
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
         alert('Sorry, there was an error submitting your request. Please try again or email us directly.');
