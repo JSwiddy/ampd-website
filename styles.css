@@ -612,7 +612,7 @@ button {
   padding: 4rem 1rem;
   color: var(--text-primary);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .ampd-modules-inner {
