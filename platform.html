@@ -324,6 +324,46 @@
       opacity: 0.9;
     }
 
+    /* Logo marquee */
+    .logo-marquee-section {
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .logo-marquee-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: #444;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+
+    .logo-marquee-wrap {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .logo-marquee-track {
+      display: flex;
+      width: fit-content;
+      animation: marqueeScroll 40s linear infinite;
+    }
+
+    .logo-marquee-track img {
+      height: 36px;
+      width: auto;
+      object-fit: contain;
+      filter: grayscale(100%) brightness(0.6);
+      margin: 0 48px;
+      opacity: 0.7;
+      flex-shrink: 0;
+    }
+
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
     @media (max-width: 768px) {
       .plat-hero { padding: 120px 1.25rem 60px; }
       .role-section { padding: 60px 1.25rem; }
@@ -331,6 +371,7 @@
       .mindset-section { padding: 60px 1.25rem; }
       .mindset-grid { grid-template-columns: 1fr; }
       .plat-cta { padding: 80px 20px; }
+      .logo-marquee-track img { margin: 0 28px; height: 28px; }
     }
   </style>
 </head>
@@ -371,6 +412,60 @@
       <div class="section-label reveal">The Platform</div>
       <h1 class="reveal">Everything your program needs. One place.</h1>
       <p class="reveal">Communication, training, scheduling, roster management, and the only built-in mental performance system in sports. Built specifically for how high school athletic programs actually run.</p>
+    </section>
+
+    <!-- Logo Marquee -->
+    <section class="logo-marquee-section">
+      <div class="logo-marquee-eyebrow reveal">Built for high school athletics across the country</div>
+      <div class="logo-marquee-wrap">
+        <div class="logo-marquee-track">
+          <img src="https://a-us.storyblok.com/f/1022696/650X314/e9be63939e/logo.png" alt="NFHS" onerror="this.style.display='none'">
+          <img src="https://ihsa-assets-prod.nyc3.cdn.digitaloceanspaces.com/images/page-graphic/ihsa-125-logo.png" alt="IHSA" onerror="this.style.display='none'">
+          <img src="https://www.mhsaa.com/themes/custom/mhsaa/images/logo.png" alt="MHSAA" onerror="this.style.display='none'">
+          <img src="https://www.uiltexas.org/images/svg/uil-logo-web.svg" alt="UIL" onerror="this.style.display='none'">
+          <img src="https://www.cifstate.org/news/images/CIF_Logo_Rotator.png" alt="CIF" onerror="this.style.display='none'">
+          <img src="https://www.ohsaa.org/Portals/_default/skins/ohsaa/img/ohsaa-logo.png" alt="OHSAA" onerror="this.style.display='none'">
+          <img src="https://www.piaa.org/assets/images/PIAA-logo.svg" alt="PIAA" onerror="this.style.display='none'">
+          <img src="https://www.ghsa.net/sites/default/files/ghsa_logo_header_2_1.png" alt="GHSA" onerror="this.style.display='none'">
+          <img src="https://dbukjj6eu5tsf.cloudfront.net/fhsaa.org/images/responsive/main_logo_lg2.svg" alt="FHSAA" onerror="this.style.display='none'">
+          <img src="https://www.wiaawi.org/Images/WIAA-Logo.png" alt="WIAA" onerror="this.style.display='none'">
+          <img src="https://www.njsiaa.org/themes/njsiaa/images/logo.svg" alt="NJSIAA" onerror="this.style.display='none'">
+          <img src="https://www.nysphsaa.org/images/logos/site/site.png" alt="NYSPHSAA" onerror="this.style.display='none'">
+          <img src="https://www.mshsl.org/themes/custom/mshsl/images/logo.svg" alt="MSHSL" onerror="this.style.display='none'">
+          <img src="https://cms-files.tssaa.org/images/logos/tssaa-centennial-excellence.png" alt="TSSAA" onerror="this.style.display='none'">
+          <img src="https://cdn2.khsaa.org/wp-content/themes/khsaa-theme/images/logo.png" alt="KHSAA" onerror="this.style.display='none'">
+          <img src="https://www.vhsl.org/wp-content/uploads/2017/04/Fb-logo.jpg" alt="VHSL" onerror="this.style.display='none'">
+          <img src="https://www.nchsaa.org/wp-content/uploads/2023/08/Color-2nd-nchsaa-logo.png" alt="NCHSAA" onerror="this.style.display='none'">
+          <img src="https://www.lhsaa.org/html/images/imgs/main-logo.png" alt="LHSAA" onerror="this.style.display='none'">
+          <img src="https://ahsaa.com/Portals/0/try%203.jpg?ver=_6jc7GrAcOo7FIlJc05GJQ%3d%3d" alt="AHSAA" onerror="this.style.display='none'">
+          <img src="https://dbukjj6eu5tsf.cloudfront.net/chsaanow.com/images/responsive_2023/logo-main.png" alt="CHSAA" onerror="this.style.display='none'">
+          <img src="https://ossaaillustrated.com/wp-content/uploads/2022/11/OSSAALogo-1.jpeg" alt="OSSAA" onerror="this.style.display='none'">
+          <img src="https://aiaonline.org/assets/images/aia.png" alt="AIA" onerror="this.style.display='none'">
+          <!-- Duplicate set for seamless loop -->
+          <img src="https://a-us.storyblok.com/f/1022696/650X314/e9be63939e/logo.png" alt="NFHS" onerror="this.style.display='none'">
+          <img src="https://ihsa-assets-prod.nyc3.cdn.digitaloceanspaces.com/images/page-graphic/ihsa-125-logo.png" alt="IHSA" onerror="this.style.display='none'">
+          <img src="https://www.mhsaa.com/themes/custom/mhsaa/images/logo.png" alt="MHSAA" onerror="this.style.display='none'">
+          <img src="https://www.uiltexas.org/images/svg/uil-logo-web.svg" alt="UIL" onerror="this.style.display='none'">
+          <img src="https://www.cifstate.org/news/images/CIF_Logo_Rotator.png" alt="CIF" onerror="this.style.display='none'">
+          <img src="https://www.ohsaa.org/Portals/_default/skins/ohsaa/img/ohsaa-logo.png" alt="OHSAA" onerror="this.style.display='none'">
+          <img src="https://www.piaa.org/assets/images/PIAA-logo.svg" alt="PIAA" onerror="this.style.display='none'">
+          <img src="https://www.ghsa.net/sites/default/files/ghsa_logo_header_2_1.png" alt="GHSA" onerror="this.style.display='none'">
+          <img src="https://dbukjj6eu5tsf.cloudfront.net/fhsaa.org/images/responsive/main_logo_lg2.svg" alt="FHSAA" onerror="this.style.display='none'">
+          <img src="https://www.wiaawi.org/Images/WIAA-Logo.png" alt="WIAA" onerror="this.style.display='none'">
+          <img src="https://www.njsiaa.org/themes/njsiaa/images/logo.svg" alt="NJSIAA" onerror="this.style.display='none'">
+          <img src="https://www.nysphsaa.org/images/logos/site/site.png" alt="NYSPHSAA" onerror="this.style.display='none'">
+          <img src="https://www.mshsl.org/themes/custom/mshsl/images/logo.svg" alt="MSHSL" onerror="this.style.display='none'">
+          <img src="https://cms-files.tssaa.org/images/logos/tssaa-centennial-excellence.png" alt="TSSAA" onerror="this.style.display='none'">
+          <img src="https://cdn2.khsaa.org/wp-content/themes/khsaa-theme/images/logo.png" alt="KHSAA" onerror="this.style.display='none'">
+          <img src="https://www.vhsl.org/wp-content/uploads/2017/04/Fb-logo.jpg" alt="VHSL" onerror="this.style.display='none'">
+          <img src="https://www.nchsaa.org/wp-content/uploads/2023/08/Color-2nd-nchsaa-logo.png" alt="NCHSAA" onerror="this.style.display='none'">
+          <img src="https://www.lhsaa.org/html/images/imgs/main-logo.png" alt="LHSAA" onerror="this.style.display='none'">
+          <img src="https://ahsaa.com/Portals/0/try%203.jpg?ver=_6jc7GrAcOo7FIlJc05GJQ%3d%3d" alt="AHSAA" onerror="this.style.display='none'">
+          <img src="https://dbukjj6eu5tsf.cloudfront.net/chsaanow.com/images/responsive_2023/logo-main.png" alt="CHSAA" onerror="this.style.display='none'">
+          <img src="https://ossaaillustrated.com/wp-content/uploads/2022/11/OSSAALogo-1.jpeg" alt="OSSAA" onerror="this.style.display='none'">
+          <img src="https://aiaonline.org/assets/images/aia.png" alt="AIA" onerror="this.style.display='none'">
+        </div>
+      </div>
     </section>
 
     <div class="section-divider"></div>
