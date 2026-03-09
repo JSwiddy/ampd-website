@@ -637,7 +637,7 @@ button {
   max-width: 650px;
   display: block;
   margin-left: auto;
-  mix-blend-mode: lighten;
+  background: #000;
 }
 
 .ampd-module {
