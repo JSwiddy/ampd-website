@@ -201,6 +201,64 @@
       z-index: 10;
     }
 
+    /* Coach accordion */
+    .role-layout--accordion {
+      align-items: center;
+    }
+
+    .role-accordion {
+      width: 100%;
+    }
+
+    .role-accordion-item {
+      border-bottom: 1px solid #2e2e2e;
+    }
+
+    .role-accordion-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .role-accordion-title h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #F5F5F5;
+      margin: 0;
+    }
+
+    .role-accordion-item.active .role-accordion-title h3 {
+      color: #ffffff;
+    }
+
+    .role-accordion-icon {
+      font-size: 1.25rem;
+      color: #888;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .role-accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .role-accordion-item.active .role-accordion-body {
+      max-height: 200px;
+    }
+
+    .role-accordion-body p {
+      font-size: 0.9rem;
+      color: #888;
+      line-height: 1.6;
+      padding-bottom: 18px;
+      margin: 0;
+    }
+
     @media (max-width: 768px) {
       .role-layout {
         grid-template-columns: 1fr;
@@ -273,31 +331,61 @@
         <h2>The tools to run your program and reach your athletes.</h2>
         <p>Everything a head coach or staff member needs to communicate, train, and stay connected to their team every day.</p>
       </div>
-      <div class="role-layout">
-        <div class="role-features">
-          <div class="role-feature reveal">
-            <h3>Team Communication</h3>
-            <p>Send announcements, polls, and updates to your entire team or specific groups. No more group chats or missed messages.</p>
+      <div class="role-layout role-layout--accordion">
+        <div class="role-accordion reveal">
+          <div class="role-accordion-item active">
+            <div class="role-accordion-title">
+              <h3>Team Communication</h3>
+              <span class="role-accordion-icon">&minus;</span>
+            </div>
+            <div class="role-accordion-body">
+              <p>Send announcements, polls, and updates to your entire team or specific groups. No more group chats or missed messages.</p>
+            </div>
           </div>
-          <div class="role-feature reveal">
-            <h3>Workout &amp; Training Delivery</h3>
-            <p>Build structured workouts, block programs, and training content. Deliver it directly to your athletes with videos, notes, and links.</p>
+          <div class="role-accordion-item">
+            <div class="role-accordion-title">
+              <h3>Workout &amp; Training Delivery</h3>
+              <span class="role-accordion-icon">+</span>
+            </div>
+            <div class="role-accordion-body">
+              <p>Build structured workouts, block programs, and training content. Deliver it directly to your athletes with videos, notes, and links.</p>
+            </div>
           </div>
-          <div class="role-feature reveal">
-            <h3>Scheduling &amp; Calendar</h3>
-            <p>Create and manage your team calendar. Practices, games, meetings, and events all in one place, visible to everyone who needs it.</p>
+          <div class="role-accordion-item">
+            <div class="role-accordion-title">
+              <h3>Scheduling &amp; Calendar</h3>
+              <span class="role-accordion-icon">+</span>
+            </div>
+            <div class="role-accordion-body">
+              <p>Create and manage your team calendar. Practices, games, meetings, and events all in one place, visible to everyone who needs it.</p>
+            </div>
           </div>
-          <div class="role-feature reveal">
-            <h3>Mindset Upload</h3>
-            <p>Deliver daily mental performance content to your athletes each morning. A 60-second ritual that builds mental strength over time.</p>
+          <div class="role-accordion-item">
+            <div class="role-accordion-title">
+              <h3>Mindset Upload</h3>
+              <span class="role-accordion-icon">+</span>
+            </div>
+            <div class="role-accordion-body">
+              <p>Deliver daily mental performance content to your athletes each morning. A 60-second ritual that builds mental strength over time.</p>
+            </div>
           </div>
-          <div class="role-feature reveal">
-            <h3>Readiness Dashboard</h3>
-            <p>See your team's daily check-in data at a glance. Know who is locked in, who is trending down, and who needs a conversation.</p>
+          <div class="role-accordion-item">
+            <div class="role-accordion-title">
+              <h3>Readiness Dashboard</h3>
+              <span class="role-accordion-icon">+</span>
+            </div>
+            <div class="role-accordion-body">
+              <p>See your team's daily check-in data at a glance. Know who is locked in, who is trending down, and who needs a conversation.</p>
+            </div>
           </div>
-          <div class="role-feature reveal">
-            <h3>Flag Alerts</h3>
-            <p>Automatic notifications when an athlete's readiness drops, trends decline, or engagement falls off. No more guessing.</p>
+          <div class="role-accordion-item">
+            <div class="role-accordion-title">
+              <h3>Flag Alerts</h3>
+              <span class="role-accordion-icon">+</span>
+            </div>
+            <div class="role-accordion-body">
+              <p>Automatic notifications when an athlete's readiness drops, trends decline, or engagement falls off. No more guessing.</p>
+            </div>
           </div>
         </div>
         <div class="role-mockup-wrap reveal">
@@ -446,5 +534,22 @@
   </footer>
 
   <script src="script.js?v=6"></script>
+  <script>
+    document.querySelectorAll('.role-accordion-title').forEach(function(title) {
+      title.addEventListener('click', function() {
+        var item = this.parentElement;
+        var accordion = item.parentElement;
+        var isActive = item.classList.contains('active');
+        accordion.querySelectorAll('.role-accordion-item').forEach(function(i) {
+          i.classList.remove('active');
+          i.querySelector('.role-accordion-icon').textContent = '+';
+        });
+        if (!isActive) {
+          item.classList.add('active');
+          item.querySelector('.role-accordion-icon').innerHTML = '&minus;';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
