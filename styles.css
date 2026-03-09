@@ -1028,56 +1028,6 @@ button {
 }
 
 /* ===========================
-   TESTIMONIAL
-   =========================== */
-
-.ampd-testimonial {
-  background: var(--bg-primary);
-  padding: 5rem 1.5rem;
-  display: flex;
-  justify-content: center;
-}
-
-.ampd-testimonial-inner {
-  max-width: 800px;
-  width: 100%;
-  text-align: center;
-}
-
-.ampd-testimonial-glyph {
-  font-size: 5rem;
-  line-height: 1;
-  font-weight: 700;
-  color: var(--border-hover);
-  margin-bottom: -0.5rem;
-}
-
-.ampd-testimonial-quote {
-  margin: 0 0 2.75rem;
-  font-size: clamp(1.4rem, 2.6vw, 1.85rem);
-  line-height: 1.55;
-  font-weight: 400;
-  font-style: italic;
-  color: var(--text-primary);
-}
-
-.ampd-testimonial-author {
-  font-size: 0.85rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 0.75rem;
-  color: var(--text-secondary);
-}
-
-.ampd-testimonial-logo img {
-  display: block;
-  margin: 0 auto;
-  max-width: 110px;
-  height: auto;
-  opacity: 0.7;
-}
-
-/* ===========================
    FINAL CTA BAND
    =========================== */
 
@@ -1694,24 +1644,6 @@ body.ampd-lock {
   .trust-section__grid {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
-  }
-
-  /* Testimonial */
-  .ampd-testimonial {
-    padding: 3rem 1rem;
-  }
-
-  .ampd-testimonial-glyph {
-    font-size: 3.5rem;
-  }
-
-  .ampd-testimonial-quote {
-    font-size: 1.25rem;
-    margin-bottom: 2.25rem;
-  }
-
-  .ampd-testimonial-logo img {
-    max-width: 90px;
   }
 
   /* Final CTA */
