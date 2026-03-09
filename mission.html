@@ -225,17 +225,6 @@
       background: rgba(255,255,255,0.06);
     }
 
-    /* ── SCROLL ANIMATIONS ── */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
-    .fade-delay-1 { transition-delay: 0.1s; }
-    .fade-delay-2 { transition-delay: 0.2s; }
-    .fade-delay-3 { transition-delay: 0.3s; }
-
     /* ── LOADING ── */
     .loading {
       position: fixed;
@@ -324,18 +313,18 @@
     <canvas id="globe-canvas"></canvas>
 
     <div class="globe-counters">
-      <div class="counter-item fade-up">
+      <div class="counter-item reveal">
         <div class="counter-number" data-target="1247">0</div>
         <div class="counter-label">Athletes Reached</div>
       </div>
-      <div class="counter-divider fade-up fade-delay-1"></div>
-      <div class="counter-item fade-up fade-delay-1">
+      <div class="counter-divider reveal reveal-delay-1"></div>
+      <div class="counter-item reveal reveal-delay-1">
         <div class="counter-number" data-target="3">0</div>
         <div class="counter-label">Organizations Partnered</div>
       </div>
     </div>
 
-    <div class="bridge-section fade-up fade-delay-3">
+    <div class="bridge-section reveal reveal-delay-3">
       <p class="bridge-text">Every program that joins means more athletes inspired. The mission grows with every team.</p>
     </div>
 
@@ -344,11 +333,11 @@
 
   <!-- MISSION PARAGRAPH -->
   <section class="mission-section">
-    <div class="mission-label fade-up">Our Mission</div>
-    <div class="mission-line fade-up"></div>
-    <p class="mission-paragraph fade-up">
+    <div class="mission-label reveal">Our Mission</div>
+    <div class="mission-line reveal"></div>
+    <p class="mission-paragraph reveal">
       Our mission is to equip coaches, teams, athletic departments, and organizations with what most programs are still missing. <strong>A daily mental performance system.</strong> The mind is the single greatest predictor of success in and out of competition. Every program should be training it.
-      <span class="mission-highlight fade-up fade-delay-1">AMPD is here to inspire athletes and build team cultures that last beyond the season.</span>
+      <span class="mission-highlight reveal reveal-delay-1">AMPD is here to inspire athletes and build team cultures that last beyond the season.</span>
     </p>
   </section>
 
@@ -357,9 +346,9 @@
   <!-- CTA -->
   <section class="mission-cta">
     <div style="padding-top: 100px;">
-      <h2 class="fade-up">What is your athletic department<br>waiting for?</h2>
-      <p class="fade-up fade-delay-1">See how AMPD can transform your program.</p>
-      <a href="/request-pilot.html" class="mission-cta-btn fade-up fade-delay-2">Get a Demo &rarr;</a>
+      <h2 class="reveal">What is your athletic department<br>waiting for?</h2>
+      <p class="reveal reveal-delay-1">See how AMPD can transform your program.</p>
+      <a href="/request-pilot.html" class="mission-cta-btn reveal reveal-delay-2">Get a Demo &rarr;</a>
     </div>
   </section>
 
@@ -578,7 +567,7 @@
       });
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>

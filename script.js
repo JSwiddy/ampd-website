@@ -95,7 +95,7 @@ window.addEventListener('load', function() {
   rafId = requestAnimationFrame(tick);
 });
 
-// Unified scroll fade-in observer — handles .reveal, .ampd-fade, .about-fade, .fade-up
+// Scroll fade-in observer for .reveal elements
 (function() {
   var observer = new IntersectionObserver(function(entries) {
     for (var i = 0; i < entries.length; i++) {
@@ -108,8 +108,7 @@ window.addEventListener('load', function() {
     rootMargin: '0px 0px -60px 0px'
   });
 
-  var selectors = '.reveal, .ampd-fade, .about-fade, .fade-up';
-  var els = document.querySelectorAll(selectors);
+  var els = document.querySelectorAll('.reveal');
   for (var j = 0; j < els.length; j++) {
     observer.observe(els[j]);
   }
