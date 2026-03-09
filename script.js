@@ -56,7 +56,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Orbit animation — items always face upright
+// Orbit animation — items always face upright, pauses when off-screen
 window.addEventListener('load', function() {
   var items = document.querySelectorAll('.ampd-orbit-item');
   if (!items.length) return;
@@ -64,10 +64,25 @@ window.addEventListener('load', function() {
   var wrap = document.querySelector('.ampd-orbit-wrap');
   var count = items.length;
   var angle = 0;
+  var orbitVisible = true;
+  var rafId = null;
+
+  // Pause orbit when off-screen
+  var orbitObserver = new IntersectionObserver(function(entries) {
+    orbitVisible = entries[0].isIntersecting;
+    if (orbitVisible && !rafId) {
+      rafId = requestAnimationFrame(tick);
+    }
+  }, { threshold: 0.05 });
+  orbitObserver.observe(wrap);
 
   function tick() {
+    if (!orbitVisible) {
+      rafId = null;
+      return;
+    }
     var radius = Math.max(wrap.offsetWidth / 2 - 50, 140);
-    angle += 0.15; // degrees per frame
+    angle += 0.15;
     for (var i = 0; i < count; i++) {
       var a = (i / count) * 360 + angle;
       var rad = a * Math.PI / 180;
@@ -75,12 +90,12 @@ window.addEventListener('load', function() {
       var y = Math.sin(rad) * radius;
       items[i].style.transform = 'translate(' + x + 'px, ' + y + 'px)';
     }
-    requestAnimationFrame(tick);
+    rafId = requestAnimationFrame(tick);
   }
-  requestAnimationFrame(tick);
+  rafId = requestAnimationFrame(tick);
 });
 
-// Scroll fade-in animations (same pattern as about page)
+// Unified scroll fade-in observer — handles .reveal, .ampd-fade, .about-fade, .fade-up
 (function() {
   var observer = new IntersectionObserver(function(entries) {
     for (var i = 0; i < entries.length; i++) {
@@ -93,26 +108,46 @@ window.addEventListener('load', function() {
     rootMargin: '0px 0px -60px 0px'
   });
 
-  var els = document.querySelectorAll('.ampd-fade');
+  var selectors = '.reveal, .ampd-fade, .about-fade, .fade-up';
+  var els = document.querySelectorAll(selectors);
   for (var j = 0; j < els.length; j++) {
     observer.observe(els[j]);
   }
 })();
 
-// Add active state to header on scroll
-let lastScroll = 0;
-const header = document.querySelector('.site-header');
+// Header scroll — add .scrolled class
+(function() {
+  var header = document.querySelector('.site-header');
+  if (!header) return;
 
-window.addEventListener('scroll', function() {
-  const currentScroll = window.pageYOffset;
-  
-  if (currentScroll > 100) {
-    header.style.background = 'rgba(0, 0, 0, 0.95)';
-    header.style.backdropFilter = 'blur(10px)';
-  } else {
-    header.style.background = '#000';
-    header.style.backdropFilter = 'none';
+  window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 60) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+})();
+
+// Mobile hamburger toggle
+(function() {
+  var toggle = document.getElementById('navToggle');
+  var mobileNav = document.getElementById('mobileNav');
+  if (!toggle || !mobileNav) return;
+
+  toggle.addEventListener('click', function() {
+    toggle.classList.toggle('active');
+    mobileNav.classList.toggle('active');
+    document.body.classList.toggle('ampd-lock');
+  });
+
+  // Close on link click
+  var links = mobileNav.querySelectorAll('a');
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', function() {
+      toggle.classList.remove('active');
+      mobileNav.classList.remove('active');
+      document.body.classList.remove('ampd-lock');
+    });
   }
-  
-  lastScroll = currentScroll;
-});
+})();

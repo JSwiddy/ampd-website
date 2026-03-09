@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=49">
+  <link rel="stylesheet" href="styles.css?v=50">
 
   <style>
     .safety-hero {
@@ -187,7 +187,7 @@
 <body>
 
   <!-- Header -->
-  <header class="site-header scrolled" id="siteHeader">
+  <header class="site-header" id="siteHeader">
     <div class="header-inner">
       <div class="header-logo">
         <a href="/">
@@ -197,14 +197,22 @@
       <nav class="header-nav" id="headerNav">
         <a href="/platform.html" class="header-nav__link">Platform</a>
         <a href="/about.html" class="header-nav__link">The Why</a>
+        <a href="/mission.html" class="header-nav__link">Mission</a>
         <a href="/safety.html" class="header-nav__link">Safety</a>
-        <a href="/request-pilot.html" class="header-nav__cta">Request a Pilot</a>
+        <a href="/request-pilot.html" class="header-nav__cta">Get a Demo</a>
       </nav>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
+  <div class="mobile-nav-overlay" id="mobileNav">
+    <a href="/platform.html">Platform</a>
+    <a href="/about.html">The Why</a>
+    <a href="/mission.html">Mission</a>
+    <a href="/safety.html">Safety</a>
+    <a href="/request-pilot.html" class="btn-primary">Get a Demo</a>
+  </div>
 
   <main>
 
@@ -299,40 +307,34 @@
 
   <!-- Footer -->
   <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487124/AMPD_White_ms0gvl.png" alt="AMPD">
-        <p>The all-in-one platform for high school athletic programs.</p>
+    <div class="max-w">
+      <div class="footer-top">
+        <div class="footer-logo">
+          <a href="/"><img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487124/AMPD_White_ms0gvl.png" alt="AMPD"></a>
+        </div>
+        <div class="footer-nav">
+          <a href="/platform.html">Platform</a>
+          <a href="/about.html">The Why</a>
+          <a href="/mission.html">Mission</a>
+          <a href="/safety.html">Safety</a>
+          <a href="/request-pilot.html">Request a Pilot</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/get_ampd_up/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </div>
       </div>
-      <div class="footer-col">
-        <h4>Platform</h4>
-        <a href="/platform.html">Features</a>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <a href="/about.html">The Why</a>
-        <a href="/safety.html">Safety &amp; Privacy</a>
-        <a href="/request-pilot.html">Request a Pilot</a>
-      </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <a href="/privacy-policy.html">Privacy Policy</a>
-        <a href="/terms.html">Terms of Service</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 AMPD. All rights reserved.</span>
-      <div class="footer-social">
-        <a href="https://www.instagram.com/get_ampd_up/" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        </a>
+      <div class="footer-bottom">
+        <span>&copy; 2026 AMPD. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="/privacy-policy.html">Privacy Policy</a>
+          <a href="/terms.html">Terms of Service</a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>
