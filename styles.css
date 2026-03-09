@@ -333,17 +333,58 @@ button {
   text-align: center;
 }
 
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 3rem 2rem 0.75rem;
+  opacity: 0;
+  animation: heroFadeIn 0.6s ease forwards;
+}
+
 .ampd-hero-title {
   color: var(--text-primary);
   font-size: clamp(2rem, 3.5vw, 2.8rem);
   line-height: 1.15;
   font-weight: 600;
   letter-spacing: -0.02em;
-  padding: 3rem 2rem 0;
+  padding: 0 2rem;
   max-width: 800px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
+}
+
+/* Hero staggered load animations */
+.hero-stagger {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroFadeIn 0.7s ease forwards;
+}
+
+.hero-stagger-1 { animation-delay: 0.15s; }
+.hero-stagger-2 { animation-delay: 0.35s; }
+.hero-stagger-3 { animation-delay: 0.55s; }
+
+@keyframes heroFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero float animation on screenshot */
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.hero-float {
+  animation: heroFloat 4s ease-in-out infinite;
+  animation-delay: 1.2s;
 }
 
 .ampd-hero-visual-wrap {
@@ -380,9 +421,17 @@ button {
   text-align: left;
 }
 
+.ampd-hero-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
 .ampd-hero-cta {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   padding: 12px 24px;
   background: var(--accent);
   color: var(--bg-primary);
@@ -393,7 +442,6 @@ button {
   white-space: nowrap;
   line-height: 1;
   transition: transform 0.2s ease;
-  flex-shrink: 0;
 }
 
 .ampd-hero-cta:hover {
@@ -844,27 +892,160 @@ button {
 }
 
 /* ===========================
+   HOW IT WORKS
+   =========================== */
+
+.how-it-works {
+  background: var(--bg-secondary);
+  padding: 6rem 0;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.how-it-works__title {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  margin-bottom: 3.5rem;
+  color: var(--text-primary);
+}
+
+.how-it-works__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.how-it-works__step {
+  padding: 2rem 1.5rem;
+}
+
+.how-it-works__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--bg-primary);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.how-it-works__step h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.65rem;
+  color: var(--text-primary);
+}
+
+.how-it-works__step p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+/* ===========================
+   COMPLIANCE / TRUST
+   =========================== */
+
+.trust-section {
+  background: var(--bg-primary);
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.trust-section__title {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.trust-section__sub {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+}
+
+.trust-section__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.trust-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 2rem 1.25rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.trust-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+}
+
+.trust-card__icon {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 1rem;
+  color: var(--accent-green);
+}
+
+.trust-card__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.trust-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.trust-card p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+/* ===========================
    TESTIMONIAL
    =========================== */
 
 .ampd-testimonial {
   background: var(--bg-primary);
-  padding: 4rem 1.5rem;
+  padding: 5rem 1.5rem;
   display: flex;
   justify-content: center;
 }
 
 .ampd-testimonial-inner {
-  max-width: 760px;
+  max-width: 800px;
   width: 100%;
   text-align: center;
 }
 
+.ampd-testimonial-glyph {
+  font-size: 5rem;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--border-hover);
+  margin-bottom: -0.5rem;
+}
+
 .ampd-testimonial-quote {
   margin: 0 0 2.75rem;
-  font-size: clamp(1.35rem, 2.4vw, 1.7rem);
+  font-size: clamp(1.4rem, 2.6vw, 1.85rem);
   line-height: 1.55;
   font-weight: 400;
+  font-style: italic;
   color: var(--text-primary);
 }
 
@@ -882,6 +1063,31 @@ button {
   max-width: 110px;
   height: auto;
   opacity: 0.7;
+}
+
+/* ===========================
+   FINAL CTA BAND
+   =========================== */
+
+.final-cta-band {
+  background: var(--bg-secondary);
+  padding: 5rem 0;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.final-cta-band h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.final-cta-band p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.55;
 }
 
 /* ===========================
@@ -1445,9 +1651,46 @@ body.ampd-lock {
     grid-template-columns: 1fr;
   }
 
+  /* Hero mobile */
+  .ampd-hero-ctas {
+    width: 100%;
+    align-items: center;
+  }
+
+  .ampd-hero-ctas .btn-ghost {
+    font-size: 0.85rem;
+    padding: 10px 20px;
+  }
+
+  /* How It Works */
+  .how-it-works {
+    padding: 4rem 0;
+  }
+
+  .how-it-works__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  /* Trust */
+  .trust-section {
+    padding: 4rem 0;
+  }
+
+  .trust-section__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
   /* Testimonial */
   .ampd-testimonial {
     padding: 3rem 1rem;
+  }
+
+  .ampd-testimonial-glyph {
+    font-size: 3.5rem;
   }
 
   .ampd-testimonial-quote {
@@ -1459,10 +1702,9 @@ body.ampd-lock {
     max-width: 90px;
   }
 
-  /* CTA */
-  .ampd-cta-culture {
-    font-size: 0.9rem;
-    padding: 10px 20px;
+  /* Final CTA */
+  .final-cta-band {
+    padding: 3.5rem 0;
   }
 
   /* Footer mobile */
@@ -1540,12 +1782,20 @@ body.ampd-lock {
    =========================== */
 
 @media (max-width: 480px) {
+  .hero-eyebrow {
+    padding: 2rem 1rem 0.75rem;
+  }
+
   .ampd-hero-title {
     font-size: 1.75rem;
-    padding: 2rem 1rem 0;
+    padding: 0 1rem;
   }
 
   .ampd-hero-bottom {
     padding: 0 1rem 2rem;
+  }
+
+  .trust-section__grid {
+    grid-template-columns: 1fr;
   }
 }
