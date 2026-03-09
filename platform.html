@@ -165,6 +165,65 @@
       color: rgba(255,255,255,0.5);
     }
 
+    /* Two-column role layout */
+    .role-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .role-layout--reverse {
+      direction: rtl;
+    }
+
+    .role-layout--reverse > * {
+      direction: ltr;
+    }
+
+    .role-placeholder {
+      background: #111111;
+      border: 1px solid #2e2e2e;
+      border-radius: 12px;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .role-placeholder svg {
+      width: 32px;
+      height: 32px;
+      stroke: #444;
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .role-placeholder__label {
+      text-align: center;
+      color: #444;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .role-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .role-layout--reverse {
+        direction: ltr;
+      }
+
+      .role-placeholder {
+        order: -1;
+        height: 400px;
+      }
+    }
+
     @media (max-width: 768px) {
       .plat-hero { padding: 120px 1.25rem 60px; }
       .role-section { padding: 60px 1.25rem; }
@@ -222,30 +281,37 @@
         <h2>The tools to run your program and reach your athletes.</h2>
         <p>Everything a head coach or staff member needs to communicate, train, and stay connected to their team every day.</p>
       </div>
-      <div class="role-features">
-        <div class="role-feature reveal">
-          <h3>Team Communication</h3>
-          <p>Send announcements, polls, and updates to your entire team or specific groups. No more group chats or missed messages.</p>
+      <div class="role-layout">
+        <div class="role-features">
+          <div class="role-feature reveal">
+            <h3>Team Communication</h3>
+            <p>Send announcements, polls, and updates to your entire team or specific groups. No more group chats or missed messages.</p>
+          </div>
+          <div class="role-feature reveal">
+            <h3>Workout &amp; Training Delivery</h3>
+            <p>Build structured workouts, block programs, and training content. Deliver it directly to your athletes with videos, notes, and links.</p>
+          </div>
+          <div class="role-feature reveal">
+            <h3>Scheduling &amp; Calendar</h3>
+            <p>Create and manage your team calendar. Practices, games, meetings, and events all in one place, visible to everyone who needs it.</p>
+          </div>
+          <div class="role-feature reveal">
+            <h3>Mindset Upload</h3>
+            <p>Deliver daily mental performance content to your athletes each morning. A 60-second ritual that builds mental strength over time.</p>
+          </div>
+          <div class="role-feature reveal">
+            <h3>Readiness Dashboard</h3>
+            <p>See your team's daily check-in data at a glance. Know who is locked in, who is trending down, and who needs a conversation.</p>
+          </div>
+          <div class="role-feature reveal">
+            <h3>Flag Alerts</h3>
+            <p>Automatic notifications when an athlete's readiness drops, trends decline, or engagement falls off. No more guessing.</p>
+          </div>
         </div>
-        <div class="role-feature reveal">
-          <h3>Workout &amp; Training Delivery</h3>
-          <p>Build structured workouts, block programs, and training content. Deliver it directly to your athletes with videos, notes, and links.</p>
-        </div>
-        <div class="role-feature reveal">
-          <h3>Scheduling &amp; Calendar</h3>
-          <p>Create and manage your team calendar. Practices, games, meetings, and events all in one place, visible to everyone who needs it.</p>
-        </div>
-        <div class="role-feature reveal">
-          <h3>Mindset Upload</h3>
-          <p>Deliver daily mental performance content to your athletes each morning. A 60-second ritual that builds mental strength over time.</p>
-        </div>
-        <div class="role-feature reveal">
-          <h3>Readiness Dashboard</h3>
-          <p>See your team's daily check-in data at a glance. Know who is locked in, who is trending down, and who needs a conversation.</p>
-        </div>
-        <div class="role-feature reveal">
-          <h3>Flag Alerts</h3>
-          <p>Automatic notifications when an athlete's readiness drops, trends decline, or engagement falls off. No more guessing.</p>
+        <!-- TODO: replace with Coach Dashboard screenshot from John -->
+        <div class="role-placeholder reveal">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          <div class="role-placeholder__label">App Screenshot<br>Coach Dashboard</div>
         </div>
       </div>
     </section>
@@ -259,22 +325,29 @@
         <h2>A daily experience that builds mental strength.</h2>
         <p>Under 15 seconds to check in. 60 seconds for the morning mindset. Everything they need in one place.</p>
       </div>
-      <div class="role-features">
-        <div class="role-feature reveal">
-          <h3>Daily Check-In</h3>
-          <p>Five metrics — Energy, Stress, Soreness, Focus, Confidence — rated 1 to 5 each morning. Color coded, streak tracked, one screen.</p>
+      <div class="role-layout role-layout--reverse">
+        <div class="role-features">
+          <div class="role-feature reveal">
+            <h3>Daily Check-In</h3>
+            <p>Five metrics — Energy, Stress, Soreness, Focus, Confidence — rated 1 to 5 each morning. Color coded, streak tracked, one screen.</p>
+          </div>
+          <div class="role-feature reveal">
+            <h3>Morning Mindset</h3>
+            <p>A daily mental performance ritual delivered by the coach. Pattern interrupt, theme word, mindset message, and a mental rep.</p>
+          </div>
+          <div class="role-feature reveal">
+            <h3>Workouts &amp; Training</h3>
+            <p>Access workouts, block programs, and training content from any coach. Always up to date, always in one place.</p>
+          </div>
+          <div class="role-feature reveal">
+            <h3>Team Schedule</h3>
+            <p>See the full team calendar — practices, games, events. Always know what is coming and when to be there.</p>
+          </div>
         </div>
-        <div class="role-feature reveal">
-          <h3>Morning Mindset</h3>
-          <p>A daily mental performance ritual delivered by the coach. Pattern interrupt, theme word, mindset message, and a mental rep.</p>
-        </div>
-        <div class="role-feature reveal">
-          <h3>Workouts &amp; Training</h3>
-          <p>Access workouts, block programs, and training content from any coach. Always up to date, always in one place.</p>
-        </div>
-        <div class="role-feature reveal">
-          <h3>Team Schedule</h3>
-          <p>See the full team calendar — practices, games, events. Always know what is coming and when to be there.</p>
+        <!-- TODO: replace with Athlete Home Screen screenshot from John -->
+        <div class="role-placeholder reveal">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          <div class="role-placeholder__label">App Screenshot<br>Athlete Home Screen</div>
         </div>
       </div>
     </section>
@@ -288,22 +361,29 @@
         <h2>Program-wide visibility without micromanaging.</h2>
         <p>See how every team is running across your entire athletic department. Compliance, engagement, and readiness at a glance.</p>
       </div>
-      <div class="role-features">
-        <div class="role-feature reveal">
-          <h3>Multi-Team Dashboard</h3>
-          <p>See all teams, all coaches, and all programs in one view. Know which teams are active, which athletes are engaged, and where attention is needed.</p>
+      <div class="role-layout">
+        <div class="role-features">
+          <div class="role-feature reveal">
+            <h3>Multi-Team Dashboard</h3>
+            <p>See all teams, all coaches, and all programs in one view. Know which teams are active, which athletes are engaged, and where attention is needed.</p>
+          </div>
+          <div class="role-feature reveal">
+            <h3>Coach Invite &amp; Onboarding</h3>
+            <p>Invite coaches by sport and level (Varsity, JV, Freshman). Each coach gets their own onboarding flow and team setup.</p>
+          </div>
+          <div class="role-feature reveal">
+            <h3>Org-Level Settings</h3>
+            <p>Set branding, feature defaults, domain enforcement, and season mode across your entire organization from one place.</p>
+          </div>
+          <div class="role-feature reveal">
+            <h3>District Architecture</h3>
+            <p>For multi-school districts: manage multiple schools under one district admin account. Each school operates independently with shared district oversight.</p>
+          </div>
         </div>
-        <div class="role-feature reveal">
-          <h3>Coach Invite &amp; Onboarding</h3>
-          <p>Invite coaches by sport and level (Varsity, JV, Freshman). Each coach gets their own onboarding flow and team setup.</p>
-        </div>
-        <div class="role-feature reveal">
-          <h3>Org-Level Settings</h3>
-          <p>Set branding, feature defaults, domain enforcement, and season mode across your entire organization from one place.</p>
-        </div>
-        <div class="role-feature reveal">
-          <h3>District Architecture</h3>
-          <p>For multi-school districts: manage multiple schools under one district admin account. Each school operates independently with shared district oversight.</p>
+        <!-- TODO: replace with AD Overview screenshot from John -->
+        <div class="role-placeholder reveal">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          <div class="role-placeholder__label">App Screenshot<br>AD Overview</div>
         </div>
       </div>
     </section>
