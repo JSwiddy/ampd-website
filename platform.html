@@ -184,12 +184,21 @@
     .role-mockup-wrap {
       position: relative;
       overflow: visible;
+      height: 520px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .role-mockup-wrap img.role-mockup {
-      width: 100%;
-      border-radius: 12px;
+      max-height: 520px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
       display: block;
+      margin: 0 auto;
+      border-radius: 12px;
     }
 
     .role-mockup-logo {
@@ -404,23 +413,43 @@
         <h2>A daily experience that builds mental strength.</h2>
         <p>Under 15 seconds to check in. 60 seconds for the morning mindset. Everything they need in one place.</p>
       </div>
-      <div class="role-layout role-layout--reverse">
-        <div class="role-features">
-          <div class="role-feature reveal">
-            <h3>Daily Check-In</h3>
-            <p>Five metrics — Energy, Stress, Soreness, Focus, Confidence — rated 1 to 5 each morning. Color coded, streak tracked, one screen.</p>
+      <div class="role-layout role-layout--reverse role-layout--accordion">
+        <div class="role-accordion reveal">
+          <div class="role-accordion-item active">
+            <div class="role-accordion-title">
+              <h3>Daily Readiness Check-In</h3>
+              <span class="role-accordion-icon">&minus;</span>
+            </div>
+            <div class="role-accordion-body">
+              <p>Athletes log how they're feeling physically and mentally every day. Coaches see it instantly. No more guessing who showed up ready and who didn't.</p>
+            </div>
           </div>
-          <div class="role-feature reveal">
-            <h3>Morning Mindset</h3>
-            <p>A daily mental performance ritual delivered by the coach. Pattern interrupt, theme word, mindset message, and a mental rep.</p>
+          <div class="role-accordion-item">
+            <div class="role-accordion-title">
+              <h3>Workouts &amp; Training</h3>
+              <span class="role-accordion-icon">+</span>
+            </div>
+            <div class="role-accordion-body">
+              <p>Every workout your coach assigns shows up here. Watch the video, follow the plan, log your sets. All in one place.</p>
+            </div>
           </div>
-          <div class="role-feature reveal">
-            <h3>Workouts &amp; Training</h3>
-            <p>Access workouts, block programs, and training content from any coach. Always up to date, always in one place.</p>
+          <div class="role-accordion-item">
+            <div class="role-accordion-title">
+              <h3>Mindset Training</h3>
+              <span class="role-accordion-icon">+</span>
+            </div>
+            <div class="role-accordion-body">
+              <p>A 60-second mental performance ritual delivered every morning. Build focus, confidence, and resilience one day at a time.</p>
+            </div>
           </div>
-          <div class="role-feature reveal">
-            <h3>Team Schedule</h3>
-            <p>See the full team calendar — practices, games, events. Always know what is coming and when to be there.</p>
+          <div class="role-accordion-item">
+            <div class="role-accordion-title">
+              <h3>Schedule &amp; Events</h3>
+              <span class="role-accordion-icon">+</span>
+            </div>
+            <div class="role-accordion-body">
+              <p>Practices, games, and team events all in one feed. No missed times, no confusion, no excuses.</p>
+            </div>
           </div>
         </div>
         <div class="role-mockup-wrap reveal">
@@ -439,23 +468,43 @@
         <h2>Program-wide visibility without micromanaging.</h2>
         <p>See how every team is running across your entire athletic department. Compliance, engagement, and readiness at a glance.</p>
       </div>
-      <div class="role-layout">
-        <div class="role-features">
-          <div class="role-feature reveal">
-            <h3>Multi-Team Dashboard</h3>
-            <p>See all teams, all coaches, and all programs in one view. Know which teams are active, which athletes are engaged, and where attention is needed.</p>
+      <div class="role-layout role-layout--accordion">
+        <div class="role-accordion reveal">
+          <div class="role-accordion-item active">
+            <div class="role-accordion-title">
+              <h3>Full Program Oversight</h3>
+              <span class="role-accordion-icon">&minus;</span>
+            </div>
+            <div class="role-accordion-body">
+              <p>See every team, every coach, and every athlete in your athletic department from one screen. No more chasing people down for updates.</p>
+            </div>
           </div>
-          <div class="role-feature reveal">
-            <h3>Coach Invite &amp; Onboarding</h3>
-            <p>Invite coaches by sport and level (Varsity, JV, Freshman). Each coach gets their own onboarding flow and team setup.</p>
+          <div class="role-accordion-item">
+            <div class="role-accordion-title">
+              <h3>Coach &amp; Roster Management</h3>
+              <span class="role-accordion-icon">+</span>
+            </div>
+            <div class="role-accordion-body">
+              <p>Add coaches, build rosters, and manage staff access across every sport in your program. Full control, always.</p>
+            </div>
           </div>
-          <div class="role-feature reveal">
-            <h3>Org-Level Settings</h3>
-            <p>Set branding, feature defaults, domain enforcement, and season mode across your entire organization from one place.</p>
+          <div class="role-accordion-item">
+            <div class="role-accordion-title">
+              <h3>Engagement Visibility</h3>
+              <span class="role-accordion-icon">+</span>
+            </div>
+            <div class="role-accordion-body">
+              <p>Know which teams are active, which coaches are sending content, and how athletes are responding. Real data, not assumptions.</p>
+            </div>
           </div>
-          <div class="role-feature reveal">
-            <h3>District Architecture</h3>
-            <p>For multi-school districts: manage multiple schools under one district admin account. Each school operates independently with shared district oversight.</p>
+          <div class="role-accordion-item">
+            <div class="role-accordion-title">
+              <h3>District Ready</h3>
+              <span class="role-accordion-icon">+</span>
+            </div>
+            <div class="role-accordion-body">
+              <p>Built to scale from one team to every sport in your entire district. Add schools, add programs, keep everything organized.</p>
+            </div>
           </div>
         </div>
         <div class="role-mockup-wrap reveal">
