@@ -1062,15 +1062,23 @@ button {
   border-top: none;
 }
 
-.site-footer a[style*="color:#888"]:hover {
+.footer-link:hover {
   color: #F5F5F5 !important;
 }
 
-.site-footer a[style*="color:#555"]:hover {
+.footer-legal-link:hover {
   color: #888 !important;
 }
 
-.footer-ig-link:hover svg {
+.footer-social-icon {
+  transition: border-color 0.2s ease;
+}
+
+.footer-social-icon:hover {
+  border-color: #888 !important;
+}
+
+.footer-social-icon:hover svg {
   stroke: #F5F5F5 !important;
 }
 
@@ -1578,6 +1586,7 @@ body.ampd-lock {
   .site-footer > div {
     max-width: 100% !important;
     margin: 0 12px 12px 12px !important;
+    border-radius: 12px !important;
   }
 
   .site-footer > div > div:first-child {
