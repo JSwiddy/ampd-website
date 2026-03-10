@@ -13,11 +13,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Safety &amp; Privacy — AMPD</title>
-  <meta name="description" content="AMPD is built with student data privacy at the center. FERPA compliant, data encrypted, US hosted, and district-ready.">
+  <meta name="description" content="AMPD is built with student data privacy at the center. FERPA compliant, data encrypted, US hosted, and district ready.">
 
   <!-- OG Meta -->
   <meta property="og:title" content="Safety & Privacy — AMPD">
-  <meta property="og:description" content="AMPD is built with student data privacy at the center. FERPA compliant, data encrypted, US hosted, and district-ready.">
+  <meta property="og:description" content="AMPD is built with student data privacy at the center. FERPA compliant, data encrypted, US hosted, and district ready.">
   <meta property="og:image" content="https://res.cloudinary.com/dhzjg43qc/image/upload/v1772744732/AMPD_APP_ICON_epn4op.png">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
@@ -101,33 +101,53 @@
       color: rgba(255,255,255,0.4);
     }
 
-    /* FAQ sections */
-    .safety-content {
-      padding: 80px 2rem 120px;
-      max-width: 760px;
-      margin: 0 auto;
+    /* FAQ header */
+    .safety-faq-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: #444;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      text-align: center;
     }
 
-    .safety-block {
+    .safety-faq-headline {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 700;
+      color: #F5F5F5;
+      text-align: center;
       margin-bottom: 64px;
     }
 
-    .safety-block:last-child {
+    /* FAQ sections — 3 column grid */
+    .safety-content {
+      padding: 80px 2rem 80px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .safety-blocks-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+    }
+
+    .safety-block {
       margin-bottom: 0;
     }
 
     .safety-block h2 {
-      font-size: clamp(22px, 3vw, 30px);
+      font-size: clamp(18px, 2.5vw, 22px);
       font-weight: 700;
       letter-spacing: -0.02em;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .safety-block p {
-      font-size: 16px;
+      font-size: 15px;
       line-height: 1.8;
       color: rgba(255,255,255,0.55);
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     .safety-block p:last-child {
@@ -140,12 +160,12 @@
     }
 
     .safety-block ul li {
-      font-size: 16px;
+      font-size: 15px;
       line-height: 1.8;
       color: rgba(255,255,255,0.55);
-      padding-left: 24px;
+      padding-left: 20px;
       position: relative;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .safety-block ul li::before {
@@ -159,13 +179,16 @@
       background: rgba(255,255,255,0.2);
     }
 
+    /* Commitment card */
     .safety-commitment {
-      margin-top: 80px;
+      margin-top: 0;
       padding: 48px;
       background: rgba(255,255,255,0.02);
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 16px;
       text-align: center;
+      max-width: 760px;
+      margin: 0 auto;
     }
 
     .safety-commitment h2 {
@@ -182,13 +205,113 @@
       margin: 0 auto;
     }
 
+    .safety-commitment-btn {
+      display: inline-block;
+      background: #fff;
+      color: #080808;
+      font-weight: 700;
+      padding: 16px 36px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: opacity 0.2s ease;
+    }
+
+    .safety-commitment-btn:hover {
+      opacity: 0.9;
+    }
+
+    /* Badge strip */
+    .safety-badge-strip {
+      padding: 60px 24px 48px;
+      text-align: center;
+    }
+
+    .safety-badge-strip-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: #444;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+
+    .safety-badge-strip-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .safety-badge-strip-item {
+      width: 160px;
+      height: 80px;
+      border: 1px solid #2e2e2e;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #444;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .safety-badge-strip-note {
+      font-size: 0.75rem;
+      color: #444;
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    /* CTA band */
+    .safety-cta {
+      background: #111111;
+      padding: 120px 24px;
+      text-align: center;
+    }
+
+    .safety-cta h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: #F5F5F5;
+      margin-bottom: 16px;
+    }
+
+    .safety-cta p {
+      font-size: 1rem;
+      color: #888;
+      max-width: 520px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
+    .safety-cta-btn {
+      display: inline-block;
+      background: #ffffff;
+      color: #080808;
+      font-weight: 700;
+      padding: 16px 36px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: opacity 0.2s ease;
+    }
+
+    .safety-cta-btn:hover {
+      opacity: 0.9;
+    }
+
     @media (max-width: 768px) {
       .safety-hero { padding: 120px 1.25rem 60px; }
       .safety-badges { padding: 60px 1.25rem; }
       .safety-badges-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
       .safety-badge-card { padding: 24px 16px; }
-      .safety-content { padding: 60px 1.25rem 80px; }
+      .safety-content { padding: 60px 1.25rem 60px; }
+      .safety-blocks-grid { grid-template-columns: 1fr; gap: 48px; }
       .safety-commitment { padding: 32px 24px; }
+      .safety-cta { padding: 80px 20px; }
     }
   </style>
 </head>
@@ -228,7 +351,7 @@
     <section class="safety-hero">
       <div class="section-label reveal">Safety &amp; Privacy</div>
       <h1 class="reveal">Your athletes' data is safe with us.</h1>
-      <p class="reveal">AMPD is built with student data privacy at the center. We follow the strictest standards in education technology so your school can adopt with confidence.</p>
+      <p class="reveal">AMPD is built with student data privacy at the center. Every feature, every role, every data point is designed to meet the standards your school requires.</p>
     </section>
 
     <div class="section-divider"></div>
@@ -248,67 +371,96 @@
         </div>
         <div class="safety-badge-card reveal">
           <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <h3>US-Based Hosting</h3>
-          <p>All data is stored on US-based servers. Nothing leaves the country.</p>
+          <h3>US Based Hosting</h3>
+          <p>All data is stored on US based servers. Nothing leaves the country.</p>
         </div>
         <div class="safety-badge-card reveal">
           <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          <h3>District-Ready</h3>
-          <p>Multi-school architecture, domain enforcement, and org-level controls built in from day one.</p>
+          <h3>District Ready</h3>
+          <p>Multi school architecture, domain enforcement, and org level controls built in from day one.</p>
         </div>
       </div>
     </section>
 
     <div class="section-divider"></div>
 
-    <!-- Content Sections -->
+    <!-- FAQ Content Sections -->
     <section class="safety-content">
+      <div class="safety-faq-eyebrow reveal">Data Privacy</div>
+      <h2 class="safety-faq-headline reveal">Common Security Questions</h2>
 
-      <div class="safety-block reveal">
-        <h2>How We Handle Student Data</h2>
-        <p>AMPD collects only the data necessary to operate the platform for your athletic program. This includes basic profile information (name, email, role) and data generated through platform use (check-in responses, workout completion, schedule interactions).</p>
-        <p>We never collect more than what is needed. We never sell student data. We never share data with third-party advertisers. Period.</p>
+      <div class="safety-blocks-grid">
+        <div class="safety-block reveal">
+          <h2>How We Handle Student Data</h2>
+          <p>AMPD collects only the data necessary to operate the platform for your athletic program. This includes basic profile information (name, email, role) and data generated through platform use (check in responses, workout completion, schedule interactions).</p>
+          <p>We never collect more than what is needed. We never sell student data. We never share data with third party advertisers. Period.</p>
+        </div>
+
+        <div class="safety-block reveal">
+          <h2>Role Based Access Control</h2>
+          <p>Every user sees only what they are supposed to see. The system enforces strict role based visibility:</p>
+          <ul>
+            <li><strong>Athletes</strong> see their own data, their own trends, and content from their coaches.</li>
+            <li><strong>Parents</strong> see their child's compliance and schedule. They never see raw readiness scores or other athletes' data.</li>
+            <li><strong>Coaches</strong> see their team's data only. Head coaches see the full team. Staff members see what the head coach grants access to.</li>
+            <li><strong>Athletic Directors</strong> see aggregate program level data across all teams in their organization.</li>
+          </ul>
+        </div>
+
+        <div class="safety-block reveal">
+          <h2>Domain Email Enforcement</h2>
+          <p>Schools can restrict athlete account creation to approved email domains only. This ensures that only verified students with a valid school email address can join your program on AMPD. This feature is optional and can be configured per organization.</p>
+        </div>
+
+        <div class="safety-block reveal">
+          <h2>COPPA Compliance</h2>
+          <p>For athletes under 13, AMPD follows the Children's Online Privacy Protection Act (COPPA) guidelines. We support parental consent workflows and minimize data collection for younger users in accordance with federal requirements.</p>
+        </div>
+
+        <div class="safety-block reveal">
+          <h2>Session Security</h2>
+          <p>AMPD uses session based authentication with encrypted cookies. Sessions are scoped to the user's organization and role. There are no persistent tokens floating around in local storage or URLs. Sessions expire and can be revoked by administrators.</p>
+        </div>
+
+        <div class="safety-block reveal">
+          <h2>Zero Advertising Policy</h2>
+          <p>AMPD does not run ads. We do not use student data for advertising purposes. We do not share data with ad networks or data brokers. Your athletes are not the product.</p>
+        </div>
       </div>
+    </section>
 
-      <div class="safety-block reveal">
-        <h2>Role-Based Access Control</h2>
-        <p>Every user sees only what they are supposed to see. The system enforces strict role-based visibility:</p>
-        <ul>
-          <li><strong>Athletes</strong> see their own data, their own trends, and content from their coaches.</li>
-          <li><strong>Parents</strong> see their child's compliance and schedule. They never see raw readiness scores or other athletes' data.</li>
-          <li><strong>Coaches</strong> see their team's data only. Head coaches see the full team. Staff members see what the head coach grants access to.</li>
-          <li><strong>Athletic Directors</strong> see aggregate program-level data across all teams in their organization.</li>
-        </ul>
-      </div>
+    <div class="section-divider"></div>
 
-      <div class="safety-block reveal">
-        <h2>Domain Email Enforcement</h2>
-        <p>Schools can restrict athlete account creation to approved email domains only. This ensures that only verified students with a valid school email address can join your program on AMPD. This feature is optional and can be configured per organization.</p>
-      </div>
-
-      <div class="safety-block reveal">
-        <h2>COPPA Compliance</h2>
-        <p>For athletes under 13, AMPD follows the Children's Online Privacy Protection Act (COPPA) guidelines. We support parental consent workflows and minimize data collection for younger users in accordance with federal requirements.</p>
-      </div>
-
-      <div class="safety-block reveal">
-        <h2>Session Security</h2>
-        <p>AMPD uses session-based authentication with encrypted cookies. Sessions are scoped to the user's organization and role. There are no persistent tokens floating around in local storage or URLs. Sessions expire and can be revoked by administrators.</p>
-      </div>
-
-      <div class="safety-block reveal">
-        <h2>Zero Advertising Policy</h2>
-        <p>AMPD does not run ads. We do not use student data for advertising purposes. We do not share data with ad networks or data brokers. Your athletes are not the product.</p>
-      </div>
-
+    <!-- Our Commitment -->
+    <section style="padding: 80px 2rem;">
       <div class="safety-commitment reveal">
         <h2>Our Commitment</h2>
         <p>We believe the platform your athletes use every day should be one their school can trust completely. If you have questions about our security practices, we are happy to walk through them with your IT team.</p>
         <div style="margin-top: 32px;">
-          <a href="/request-pilot.html" class="btn-primary">Talk to Us &rarr;</a>
+          <a href="/request-pilot.html" class="safety-commitment-btn">Get a Demo &rarr;</a>
         </div>
       </div>
+    </section>
 
+    <!-- Compliance Badge Strip -->
+    <section class="safety-badge-strip">
+      <div class="safety-badge-strip-eyebrow reveal">Compliance &amp; Privacy Standards</div>
+      <div class="safety-badge-strip-row reveal">
+        <div class="safety-badge-strip-item">FERPA</div>
+        <div class="safety-badge-strip-item">COPPA</div>
+        <div class="safety-badge-strip-item">Student Privacy Pledge</div>
+        <div class="safety-badge-strip-item">SDPC</div>
+      </div>
+      <p class="safety-badge-strip-note reveal">Compliance certifications in progress. Student Privacy Pledge and SDPC registration pending approval.</p>
+    </section>
+
+    <!-- CTA -->
+    <section class="safety-cta">
+      <h2 class="reveal">Your athletes deserve a program that takes their development seriously.</h2>
+      <p class="reveal">See how AMPD protects your athletes and develops them every single day.</p>
+      <div class="reveal">
+        <a href="/request-pilot.html" class="safety-cta-btn">Get a Demo &rarr;</a>
+      </div>
     </section>
 
   </main>
