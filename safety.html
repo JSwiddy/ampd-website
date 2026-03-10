@@ -134,6 +134,27 @@
 
     .safety-block {
       margin-bottom: 0;
+      background: #111111;
+      border: 1px solid #1e1e1e;
+      border-radius: 12px;
+      padding: 28px;
+      transition: border-color 0.2s ease;
+    }
+
+    .safety-block:hover {
+      border-color: rgba(74,222,128,0.3);
+    }
+
+    .safety-block svg {
+      width: 28px;
+      height: 28px;
+      stroke: #4ade80;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      display: block;
+      margin-bottom: 12px;
     }
 
     .safety-block h2 {
@@ -391,12 +412,14 @@
 
       <div class="safety-blocks-grid">
         <div class="safety-block reveal">
+          <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
           <h2>How We Handle Student Data</h2>
           <p>AMPD collects only the data necessary to operate the platform for your athletic program. This includes basic profile information (name, email, role) and data generated through platform use (check in responses, workout completion, schedule interactions).</p>
           <p>We never collect more than what is needed. We never sell student data. We never share data with third party advertisers. Period.</p>
         </div>
 
         <div class="safety-block reveal">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           <h2>Role Based Access Control</h2>
           <p>Every user sees only what they are supposed to see. The system enforces strict role based visibility:</p>
           <ul>
@@ -408,21 +431,25 @@
         </div>
 
         <div class="safety-block reveal">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           <h2>Domain Email Enforcement</h2>
           <p>Schools can restrict athlete account creation to approved email domains only. This ensures that only verified students with a valid school email address can join your program on AMPD. This feature is optional and can be configured per organization.</p>
         </div>
 
         <div class="safety-block reveal">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
           <h2>COPPA Compliance</h2>
           <p>For athletes under 13, AMPD follows the Children's Online Privacy Protection Act (COPPA) guidelines. We support parental consent workflows and minimize data collection for younger users in accordance with federal requirements.</p>
         </div>
 
         <div class="safety-block reveal">
+          <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
           <h2>Session Security</h2>
           <p>AMPD uses session based authentication with encrypted cookies. Sessions are scoped to the user's organization and role. There are no persistent tokens floating around in local storage or URLs. Sessions expire and can be revoked by administrators.</p>
         </div>
 
         <div class="safety-block reveal">
+          <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
           <h2>Zero Advertising Policy</h2>
           <p>AMPD does not run ads. We do not use student data for advertising purposes. We do not share data with ad networks or data brokers. Your athletes are not the product.</p>
         </div>
