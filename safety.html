@@ -119,81 +119,123 @@
       margin-bottom: 64px;
     }
 
-    /* FAQ sections — 3 column grid */
+    /* FAQ accordion */
     .safety-content {
       padding: 80px 2rem 80px;
-      max-width: 1100px;
+      max-width: 760px;
       margin: 0 auto;
     }
 
-    .safety-blocks-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 48px;
+    .safety-accordion {
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
 
-    .safety-block {
-      margin-bottom: 0;
-      background: #111111;
-      border: 1px solid #1e1e1e;
-      border-radius: 12px;
-      padding: 28px;
-      transition: border-color 0.2s ease;
+    .safety-accordion-item {
+      border-bottom: 1px solid #2e2e2e;
     }
 
-    .safety-block:hover {
-      border-color: rgba(74,222,128,0.3);
+    .safety-accordion-trigger {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 20px 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
     }
 
-    .safety-block svg {
-      width: 28px;
-      height: 28px;
+    .safety-accordion-trigger svg.acc-icon {
+      width: 20px;
+      height: 20px;
       stroke: #4ade80;
       fill: none;
       stroke-width: 2;
       stroke-linecap: round;
       stroke-linejoin: round;
-      display: block;
-      margin-bottom: 12px;
+      flex-shrink: 0;
+      margin-right: 12px;
     }
 
-    .safety-block h2 {
-      font-size: clamp(18px, 2.5vw, 22px);
+    .safety-accordion-trigger span {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
       font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 16px;
+      color: #F5F5F5;
+      flex: 1;
     }
 
-    .safety-block p {
-      font-size: 15px;
-      line-height: 1.8;
-      color: rgba(255,255,255,0.55);
+    .safety-accordion-trigger svg.acc-toggle {
+      width: 20px;
+      height: 20px;
+      stroke: #888;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+      margin-left: 12px;
+    }
+
+    .safety-accordion-trigger .acc-toggle-minus {
+      display: none;
+    }
+
+    .safety-accordion-item.active .safety-accordion-trigger span {
+      color: #ffffff;
+    }
+
+    .safety-accordion-item.active .acc-toggle-plus {
+      display: none;
+    }
+
+    .safety-accordion-item.active .acc-toggle-minus {
+      display: block;
+    }
+
+    .safety-accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .safety-accordion-body-inner {
+      padding: 0 0 20px 32px;
+    }
+
+    .safety-accordion-body-inner p {
+      font-size: 0.9rem;
+      color: #888;
+      line-height: 1.6;
       margin-bottom: 12px;
     }
 
-    .safety-block p:last-child {
+    .safety-accordion-body-inner p:last-child {
       margin-bottom: 0;
     }
 
-    .safety-block ul {
+    .safety-accordion-body-inner ul {
       list-style: none;
       padding: 0;
+      margin: 0;
     }
 
-    .safety-block ul li {
-      font-size: 15px;
-      line-height: 1.8;
-      color: rgba(255,255,255,0.55);
+    .safety-accordion-body-inner ul li {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #888;
       padding-left: 20px;
       position: relative;
       margin-bottom: 6px;
     }
 
-    .safety-block ul li::before {
+    .safety-accordion-body-inner ul li::before {
       content: '';
       position: absolute;
       left: 0;
-      top: 11px;
+      top: 10px;
       width: 6px;
       height: 6px;
       border-radius: 50%;
@@ -330,7 +372,6 @@
       .safety-badges-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
       .safety-badge-card { padding: 24px 16px; }
       .safety-content { padding: 60px 1.25rem 60px; }
-      .safety-blocks-grid { grid-template-columns: 1fr; gap: 48px; }
       .safety-commitment { padding: 32px 24px; }
       .safety-cta { padding: 80px 20px; }
     }
@@ -410,49 +451,99 @@
       <div class="safety-faq-eyebrow reveal">Data Privacy</div>
       <h2 class="safety-faq-headline reveal">Common Security Questions</h2>
 
-      <div class="safety-blocks-grid">
-        <div class="safety-block reveal">
-          <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-          <h2>How We Handle Student Data</h2>
-          <p>AMPD collects only the data necessary to operate the platform for your athletic program. This includes basic profile information (name, email, role) and data generated through platform use (check in responses, workout completion, schedule interactions).</p>
-          <p>We never collect more than what is needed. We never sell student data. We never share data with third party advertisers. Period.</p>
+      <div class="safety-accordion">
+
+        <div class="safety-accordion-item reveal">
+          <button class="safety-accordion-trigger" onclick="toggleAccordion(this)">
+            <svg class="acc-icon" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            <span>How We Handle Student Data</span>
+            <svg class="acc-toggle acc-toggle-plus" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            <svg class="acc-toggle acc-toggle-minus" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="safety-accordion-body">
+            <div class="safety-accordion-body-inner">
+              <p>AMPD collects only the data necessary to operate the platform for your athletic program. This includes basic profile information (name, email, role) and data generated through platform use (check in responses, workout completion, schedule interactions).</p>
+              <p>We never collect more than what is needed. We never sell student data. We never share data with third party advertisers. Period.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="safety-block reveal">
-          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          <h2>Role Based Access Control</h2>
-          <p>Every user sees only what they are supposed to see. The system enforces strict role based visibility:</p>
-          <ul>
-            <li><strong>Athletes</strong> see their own data, their own trends, and content from their coaches.</li>
-            <li><strong>Parents</strong> see their child's compliance and schedule. They never see raw readiness scores or other athletes' data.</li>
-            <li><strong>Coaches</strong> see their team's data only. Head coaches see the full team. Staff members see what the head coach grants access to.</li>
-            <li><strong>Athletic Directors</strong> see aggregate program level data across all teams in their organization.</li>
-          </ul>
+        <div class="safety-accordion-item reveal">
+          <button class="safety-accordion-trigger" onclick="toggleAccordion(this)">
+            <svg class="acc-icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <span>Role Based Access Control</span>
+            <svg class="acc-toggle acc-toggle-plus" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            <svg class="acc-toggle acc-toggle-minus" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="safety-accordion-body">
+            <div class="safety-accordion-body-inner">
+              <p>Every user sees only what they are supposed to see. The system enforces strict role based visibility:</p>
+              <ul>
+                <li><strong>Athletes</strong> see their own data, their own trends, and content from their coaches.</li>
+                <li><strong>Parents</strong> see their child's compliance and schedule. They never see raw readiness scores or other athletes' data.</li>
+                <li><strong>Coaches</strong> see their team's data only. Head coaches see the full team. Staff members see what the head coach grants access to.</li>
+                <li><strong>Athletic Directors</strong> see aggregate program level data across all teams in their organization.</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-        <div class="safety-block reveal">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <h2>Domain Email Enforcement</h2>
-          <p>Schools can restrict athlete account creation to approved email domains only. This ensures that only verified students with a valid school email address can join your program on AMPD. This feature is optional and can be configured per organization.</p>
+        <div class="safety-accordion-item reveal">
+          <button class="safety-accordion-trigger" onclick="toggleAccordion(this)">
+            <svg class="acc-icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>Domain Email Enforcement</span>
+            <svg class="acc-toggle acc-toggle-plus" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            <svg class="acc-toggle acc-toggle-minus" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="safety-accordion-body">
+            <div class="safety-accordion-body-inner">
+              <p>Schools can restrict athlete account creation to approved email domains only. This ensures that only verified students with a valid school email address can join your program on AMPD. This feature is optional and can be configured per organization.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="safety-block reveal">
-          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-          <h2>COPPA Compliance</h2>
-          <p>For athletes under 13, AMPD follows the Children's Online Privacy Protection Act (COPPA) guidelines. We support parental consent workflows and minimize data collection for younger users in accordance with federal requirements.</p>
+        <div class="safety-accordion-item reveal">
+          <button class="safety-accordion-trigger" onclick="toggleAccordion(this)">
+            <svg class="acc-icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            <span>COPPA Compliance</span>
+            <svg class="acc-toggle acc-toggle-plus" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            <svg class="acc-toggle acc-toggle-minus" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="safety-accordion-body">
+            <div class="safety-accordion-body-inner">
+              <p>For athletes under 13, AMPD follows the Children's Online Privacy Protection Act (COPPA) guidelines. We support parental consent workflows and minimize data collection for younger users in accordance with federal requirements.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="safety-block reveal">
-          <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          <h2>Session Security</h2>
-          <p>AMPD uses session based authentication with encrypted cookies. Sessions are scoped to the user's organization and role. There are no persistent tokens floating around in local storage or URLs. Sessions expire and can be revoked by administrators.</p>
+        <div class="safety-accordion-item reveal">
+          <button class="safety-accordion-trigger" onclick="toggleAccordion(this)">
+            <svg class="acc-icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>Session Security</span>
+            <svg class="acc-toggle acc-toggle-plus" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            <svg class="acc-toggle acc-toggle-minus" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="safety-accordion-body">
+            <div class="safety-accordion-body-inner">
+              <p>AMPD uses session based authentication with encrypted cookies. Sessions are scoped to the user's organization and role. There are no persistent tokens floating around in local storage or URLs. Sessions expire and can be revoked by administrators.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="safety-block reveal">
-          <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
-          <h2>Zero Advertising Policy</h2>
-          <p>AMPD does not run ads. We do not use student data for advertising purposes. We do not share data with ad networks or data brokers. Your athletes are not the product.</p>
+        <div class="safety-accordion-item reveal">
+          <button class="safety-accordion-trigger" onclick="toggleAccordion(this)">
+            <svg class="acc-icon" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+            <span>Zero Advertising Policy</span>
+            <svg class="acc-toggle acc-toggle-plus" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            <svg class="acc-toggle acc-toggle-minus" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="safety-accordion-body">
+            <div class="safety-accordion-body-inner">
+              <p>AMPD does not run ads. We do not use student data for advertising purposes. We do not share data with ad networks or data brokers. Your athletes are not the product.</p>
+            </div>
+          </div>
         </div>
+
       </div>
     </section>
 
@@ -523,5 +614,24 @@
   </footer>
 
   <script src="script.js?v=6"></script>
+  <script>
+    function toggleAccordion(btn) {
+      var item = btn.parentElement;
+      var body = item.querySelector('.safety-accordion-body');
+      var isActive = item.classList.contains('active');
+
+      // Close all items
+      document.querySelectorAll('.safety-accordion-item.active').forEach(function(el) {
+        el.classList.remove('active');
+        el.querySelector('.safety-accordion-body').style.maxHeight = null;
+      });
+
+      // Open clicked item if it was not already open
+      if (!isActive) {
+        item.classList.add('active');
+        body.style.maxHeight = body.scrollHeight + 'px';
+      }
+    }
+  </script>
 </body>
 </html>
