@@ -1576,6 +1576,7 @@ body.ampd-lock {
 
   /* Footer mobile */
   .site-footer > div {
+    max-width: 100% !important;
     margin: 0 12px 12px 12px !important;
   }
 
