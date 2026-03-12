@@ -1122,7 +1122,7 @@ body.ampd-lock {
 }
 
 .demo-layout {
-  padding: 1.5rem 0 4rem;
+  padding: 0 0 4rem;
   background: linear-gradient(180deg, var(--bg-primary) 0%, #0a0a0a 30%, #0d1117 60%, var(--bg-primary) 100%);
 }
 
@@ -1760,7 +1760,7 @@ body.ampd-lock {
 
   /* Demo page */
   .demo-layout {
-    padding: 6rem 0 4rem;
+    padding: 1.5rem 0 3rem;
   }
 
   .demo-layout__inner {
