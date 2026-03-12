@@ -1129,6 +1129,8 @@ body.ampd-lock {
   background: var(--bg-primary);
   min-height: 100vh;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 .demo-layout {
@@ -1733,10 +1735,16 @@ body.ampd-lock {
   }
 
   /* Footer mobile */
+  .site-footer {
+    overflow: hidden;
+    max-width: 100vw;
+  }
+
   .site-footer > div {
     max-width: 100% !important;
     margin: 0 12px 12px 12px !important;
     border-radius: 12px !important;
+    overflow: hidden !important;
   }
 
   .site-footer > div > div:first-child {
