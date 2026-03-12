@@ -1138,6 +1138,7 @@ body.ampd-lock {
 
 .demo-value {
   padding-top: 1rem;
+  min-width: 0;
 }
 
 .demo-eyebrow {
@@ -1260,10 +1261,10 @@ body.ampd-lock {
 }
 
 .demo-marquee-track img {
-  height: 28px;
+  height: 24px;
   width: auto;
   object-fit: contain;
-  margin: 0 20px;
+  margin: 0 16px;
   opacity: 0.4;
   filter: grayscale(100%) brightness(1.8);
   flex-shrink: 0;
