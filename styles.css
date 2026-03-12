@@ -1225,8 +1225,8 @@ body.ampd-lock {
 }
 
 .pilot-form select option {
-  background: #1a1a1a;
-  color: #f5f5f5;
+  background: #ffffff;
+  color: #000000;
 }
 
 .pilot-form textarea {
