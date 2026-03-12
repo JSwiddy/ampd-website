@@ -1128,6 +1128,10 @@ body.ampd-lock {
   min-height: 100vh;
 }
 
+.site-footer--tight {
+  padding-top: 12px !important;
+}
+
 .demo-layout {
   padding: 1rem 0 1.5rem;
   background: linear-gradient(180deg, var(--bg-primary) 0%, #0a0a0a 30%, #0d1117 60%, var(--bg-primary) 100%);
