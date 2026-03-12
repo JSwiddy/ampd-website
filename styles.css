@@ -1309,6 +1309,11 @@ body.ampd-lock {
   padding-right: 3rem;
 }
 
+.pilot-form select option {
+  background: #1a1a1a;
+  color: #f5f5f5;
+}
+
 .pilot-form textarea {
   resize: vertical;
   min-height: 120px;
