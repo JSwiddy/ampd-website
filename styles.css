@@ -1250,6 +1250,7 @@ body.ampd-lock {
   border-top: 1px solid var(--border);
   max-width: 100%;
   overflow: hidden;
+  contain: paint;
 }
 
 .demo-social-proof__label {
@@ -1265,6 +1266,7 @@ body.ampd-lock {
   overflow: hidden;
   position: relative;
   width: 100%;
+  contain: paint;
   -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
