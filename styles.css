@@ -1299,6 +1299,13 @@ body.ampd-lock {
   box-shadow: 0 0 40px rgba(255, 255, 255, 0.03), 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
+.demo-form-wrap .pilot-form {
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+
 .demo-form-wrap .form-group {
   margin-bottom: 1rem;
 }
