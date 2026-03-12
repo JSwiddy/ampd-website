@@ -1126,9 +1126,6 @@ body.ampd-lock {
 .demo-page {
   background: var(--bg-primary);
   min-height: 100vh;
-  overflow-x: hidden;
-  width: 100%;
-  max-width: 100%;
 }
 
 .demo-layout {
