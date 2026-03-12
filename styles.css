@@ -1263,6 +1263,7 @@ body.ampd-lock {
 
 .demo-marquee-wrap {
   overflow: hidden;
+  position: relative;
   width: 100%;
   -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
@@ -1270,7 +1271,7 @@ body.ampd-lock {
 
 .demo-marquee-track {
   display: flex;
-  width: fit-content;
+  white-space: nowrap;
   animation: demoMarquee 35s linear infinite;
 }
 
@@ -1781,6 +1782,7 @@ body.ampd-lock {
   /* Demo page */
   .demo-layout {
     padding: 1.5rem 0 3rem;
+    overflow: hidden;
   }
 
   .demo-layout__inner {
