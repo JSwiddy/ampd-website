@@ -1130,7 +1130,7 @@ body.ampd-lock {
   min-height: 100vh;
   overflow-x: hidden;
   width: 100%;
-  max-width: 100vw;
+  max-width: 100%;
 }
 
 .demo-layout {
@@ -1616,8 +1616,8 @@ body.ampd-lock {
 
   /* Orbit */
   .ampd-orbit-wrap {
-    width: 320px;
-    height: 320px;
+    width: min(320px, 90vw);
+    height: min(320px, 90vw);
   }
 
   .ampd-orbit-item {
@@ -1740,7 +1740,7 @@ body.ampd-lock {
   /* Footer mobile */
   .site-footer {
     overflow: hidden;
-    max-width: 100vw;
+    max-width: 100%;
   }
 
   .site-footer > div {
