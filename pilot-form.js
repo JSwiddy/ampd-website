@@ -6,13 +6,63 @@
   document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('pilotForm');
     const formSuccess = document.getElementById('formSuccess');
-    
+
     if (!form) return;
+
+    // Custom dropdown logic
+    document.querySelectorAll('.custom-select').forEach(function(select) {
+      var trigger = select.querySelector('.custom-select__trigger');
+      var textEl = select.querySelector('.custom-select__text');
+      var options = select.querySelectorAll('.custom-select__option');
+      var hiddenInput = document.getElementById(select.dataset.target);
+
+      trigger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        // Close all other dropdowns
+        document.querySelectorAll('.custom-select.open').forEach(function(s) {
+          if (s !== select) s.classList.remove('open');
+        });
+        select.classList.toggle('open');
+      });
+
+      options.forEach(function(option) {
+        option.addEventListener('click', function(e) {
+          e.stopPropagation();
+          textEl.textContent = option.textContent;
+          hiddenInput.value = option.dataset.value;
+          select.classList.add('has-value');
+          select.classList.remove('open');
+          // Mark selected
+          options.forEach(function(o) { o.classList.remove('selected'); });
+          option.classList.add('selected');
+        });
+      });
+    });
+
+    // Close dropdowns on outside click
+    document.addEventListener('click', function() {
+      document.querySelectorAll('.custom-select.open').forEach(function(s) {
+        s.classList.remove('open');
+      });
+    });
     
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       e.stopPropagation();
-      
+
+      // Validate custom dropdowns
+      var missing = false;
+      document.querySelectorAll('.custom-select').forEach(function(select) {
+        var hiddenInput = document.getElementById(select.dataset.target);
+        if (!hiddenInput.value) {
+          select.querySelector('.custom-select__trigger').style.borderColor = '#e74c3c';
+          missing = true;
+        } else {
+          select.querySelector('.custom-select__trigger').style.borderColor = '';
+        }
+      });
+      if (missing) return;
+
       const formData = new FormData(form);
       const data = {};
       

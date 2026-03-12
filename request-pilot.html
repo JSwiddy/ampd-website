@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=56">
+  <link rel="stylesheet" href="styles.css?v=57">
 </head>
 <body>
   <!-- Header -->
@@ -122,23 +122,35 @@
 
           <div class="form-row">
             <div class="form-group">
-              <label for="orgType">Program Type *</label>
-              <select id="orgType" name="orgType" required>
-                <option value="">Select one...</option>
-                <option value="high-school">High School</option>
-                <option value="college">College / University</option>
-                <option value="youth-sports">Youth Sports Organization</option>
-              </select>
+              <label>Program Type *</label>
+              <input type="hidden" id="orgType" name="orgType" required>
+              <div class="custom-select" data-target="orgType">
+                <div class="custom-select__trigger">
+                  <span class="custom-select__text">Select one...</span>
+                  <svg class="custom-select__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1L6 6L11 1" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="custom-select__options">
+                  <div class="custom-select__option" data-value="high-school">High School</div>
+                  <div class="custom-select__option" data-value="college">College / University</div>
+                  <div class="custom-select__option" data-value="youth-sports">Youth Sports Organization</div>
+                </div>
+              </div>
             </div>
             <div class="form-group">
-              <label for="teamSize">Total Athletes in Program *</label>
-              <select id="teamSize" name="teamSize" required>
-                <option value="">Select one...</option>
-                <option value="up-to-250">Up to 250 athletes</option>
-                <option value="251-1000">251–1,000 athletes</option>
-                <option value="1000+">1,000+ athletes</option>
-                <option value="district">District / Multi-School</option>
-              </select>
+              <label>Total Athletes in Program *</label>
+              <input type="hidden" id="teamSize" name="teamSize" required>
+              <div class="custom-select" data-target="teamSize">
+                <div class="custom-select__trigger">
+                  <span class="custom-select__text">Select one...</span>
+                  <svg class="custom-select__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1L6 6L11 1" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="custom-select__options">
+                  <div class="custom-select__option" data-value="up-to-250">Up to 250 athletes</div>
+                  <div class="custom-select__option" data-value="251-1000">251–1,000 athletes</div>
+                  <div class="custom-select__option" data-value="1000+">1,000+ athletes</div>
+                  <div class="custom-select__option" data-value="district">District / Multi-School</div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -318,6 +330,6 @@
   </footer>
 
   <script src="script.js?v=6"></script>
-  <script src="pilot-form.js?v=4"></script>
+  <script src="pilot-form.js?v=5"></script>
 </body>
 </html>
