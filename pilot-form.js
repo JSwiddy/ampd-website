@@ -48,13 +48,6 @@
           formSuccess.style.display = 'flex';
           formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
           
-          // Optional: Send to analytics
-          if (window.gtag) {
-            gtag('event', 'pilot_program_request', {
-              organization_type: data.orgType,
-              team_size: data.teamSize
-            });
-          }
         } else {
           throw new Error(result.message || 'Submission failed');
         }
