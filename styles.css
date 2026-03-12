@@ -1823,9 +1823,26 @@ body.ampd-lock {
     text-align: center;
   }
 
+  .demo-marquee-wrap {
+    overflow: hidden;
+  }
+
+  .demo-marquee-track {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 20px;
+    animation: none;
+    white-space: normal;
+  }
+
   .demo-marquee-track img {
-    height: 22px;
-    margin: 0 14px;
+    height: 20px;
+    margin: 0;
+  }
+
+  .demo-marquee-track img.demo-marquee-dup {
+    display: none;
   }
 
   .demo-form-wrap {
