@@ -35,6 +35,8 @@ body {
   background: var(--bg-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 img {
@@ -1244,6 +1246,8 @@ body.ampd-lock {
   margin-top: 1.5rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--border);
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .demo-social-proof__label {
