@@ -1785,7 +1785,7 @@ body.ampd-lock {
   .demo-layout__inner {
     grid-template-columns: 1fr;
     gap: 2.5rem;
-    padding: 0 2.75rem 0 1.25rem;
+    padding: 0 2.85rem 0 1.15rem;
   }
 
   .demo-value {
