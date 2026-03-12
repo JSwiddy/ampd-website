@@ -1125,6 +1125,7 @@ body.ampd-lock {
 .demo-page {
   background: var(--bg-primary);
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .demo-layout {
@@ -1777,6 +1778,8 @@ body.ampd-lock {
   .demo-value {
     text-align: center;
     padding-top: 0;
+    min-width: 0;
+    overflow: hidden;
   }
 
   .demo-subtitle {
