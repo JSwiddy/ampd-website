@@ -1132,7 +1132,7 @@ body.ampd-lock {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  align-items: start;
+  align-items: center;
 }
 
 .demo-value {
@@ -1226,6 +1226,18 @@ body.ampd-lock {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 2.5rem;
+}
+
+.demo-form-wrap .form-group {
+  margin-bottom: 1.25rem;
+}
+
+.demo-form-wrap .form-row {
+  margin-bottom: 1.25rem;
+}
+
+.demo-form-wrap .form-row .form-group {
+  margin-bottom: 0;
 }
 
 .demo-form-title {
