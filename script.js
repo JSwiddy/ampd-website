@@ -15,45 +15,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Orbit animation — items always face upright, pauses when off-screen
-window.addEventListener('load', function() {
-  var items = document.querySelectorAll('.ampd-orbit-item');
-  if (!items.length) return;
-
-  var wrap = document.querySelector('.ampd-orbit-wrap');
-  var count = items.length;
-  var angle = 0;
-  var orbitVisible = true;
-  var rafId = null;
-
-  // Pause orbit when off-screen
-  var orbitObserver = new IntersectionObserver(function(entries) {
-    orbitVisible = entries[0].isIntersecting;
-    if (orbitVisible && !rafId) {
-      rafId = requestAnimationFrame(tick);
-    }
-  }, { threshold: 0.05 });
-  orbitObserver.observe(wrap);
-
-  function tick() {
-    if (!orbitVisible) {
-      rafId = null;
-      return;
-    }
-    var radius = Math.max(wrap.offsetWidth / 2 - 50, 140);
-    angle += 0.15;
-    for (var i = 0; i < count; i++) {
-      var a = (i / count) * 360 + angle;
-      var rad = a * Math.PI / 180;
-      var x = Math.cos(rad) * radius;
-      var y = Math.sin(rad) * radius;
-      items[i].style.transform = 'translate(' + x + 'px, ' + y + 'px)';
-    }
-    rafId = requestAnimationFrame(tick);
-  }
-  rafId = requestAnimationFrame(tick);
-});
-
 // Scroll fade-in observer for .reveal elements
 (function() {
   var observer = new IntersectionObserver(function(entries) {
@@ -96,7 +57,7 @@ window.addEventListener('load', function() {
   toggle.addEventListener('click', function() {
     toggle.classList.toggle('active');
     mobileNav.classList.toggle('active');
-    document.body.classList.toggle('ampd-lock');
+    document.body.classList.toggle('nav-lock');
   });
 
   // Close on link click
@@ -105,7 +66,7 @@ window.addEventListener('load', function() {
     links[i].addEventListener('click', function() {
       toggle.classList.remove('active');
       mobileNav.classList.remove('active');
-      document.body.classList.remove('ampd-lock');
+      document.body.classList.remove('nav-lock');
     });
   }
 })();
