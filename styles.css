@@ -9,9 +9,9 @@
 
 :root {
   /* Colors — AMPD neutral palette */
-  --primary: #1e2a4a;
-  --secondary: #334155;
-  --tertiary: #487ae9;
+  --primary: #0f172a;
+  --secondary: #1e293b;
+  --tertiary: #0f172a;
   --text-color: #0f172a;
   --text-light: #64748b;
   --text-muted: #94a3b8;
@@ -852,7 +852,7 @@ body.nav-lock {
 
 .cta-band {
   padding: var(--section-padding) 0;
-  background: var(--primary);
+  background: #0f172a;
   text-align: center;
 }
 
@@ -872,7 +872,7 @@ body.nav-lock {
 
 .cta-band .btn-primary {
   background: #fff;
-  color: var(--primary);
+  color: #0f172a;
 }
 
 .cta-band .btn-primary:hover {
@@ -884,13 +884,16 @@ body.nav-lock {
    =========================== */
 
 .site-footer {
-  background: var(--primary);
+  background: #fff;
   color: #fff;
+  padding: 0 3rem 3rem;
 }
 
 .footer-inner {
   max-width: var(--page-width);
   margin: 0 auto;
+  background: #0f172a;
+  border-radius: 2.4rem;
   padding: 0 4rem;
 }
 
@@ -949,6 +952,12 @@ body.nav-lock {
 .footer-col--cta .btn-primary {
   font-size: 1.3rem;
   padding: 1.2rem 2rem;
+  background: #fff;
+  color: #0f172a;
+}
+
+.footer-col--cta .btn-primary:hover {
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15);
 }
 
 .footer-bottom {
