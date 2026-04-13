@@ -8,19 +8,18 @@
    =========================== */
 
 :root {
-  /* Colors — Motion Sports palette adapted */
-  --primary: #202a5e;
-  --secondary: #283ca5;
+  /* Colors — AMPD neutral palette */
+  --primary: #1e2a4a;
+  --secondary: #334155;
   --tertiary: #487ae9;
-  --text-color: #191919;
-  --text-light: #5a607a;
-  --text-muted: #a7a7a7;
+  --text-color: #0f172a;
+  --text-light: #64748b;
+  --text-muted: #94a3b8;
   --bg: #ffffff;
-  --bg-accent: #ebeff7;
-  --border: #e2e5ed;
-  --green: #22c55e;
-  --soft-blue: #93c5fd;
-  --sage: #94a3b8;
+  --bg-accent: #f8fafc;
+  --border: #e2e8f0;
+  --slate: #475569;
+  --slate-light: #64748b;
 
   /* Typography — fluid clamp scale matching Motion */
   --text-base: 1.6rem;
@@ -117,7 +116,7 @@ button {
 
 .section-header p {
   font-size: var(--text-base);
-  color: var(--sage);
+  color: var(--slate-light);
   line-height: 1.5;
 }
 
@@ -452,7 +451,7 @@ body.nav-lock {
 .logo-carousel-label {
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--soft-blue);
+  color: var(--slate-light);
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -617,7 +616,7 @@ body.nav-lock {
 .feature-link {
   font-size: var(--text-sm);
   font-weight: 700;
-  color: var(--sage);
+  color: var(--slate);
   transition: color 0.3s ease;
 }
 
@@ -720,7 +719,7 @@ body.nav-lock {
 
 .comparison-list li svg {
   flex-shrink: 0;
-  color: var(--sage);
+  color: var(--slate);
 }
 
 .comparison-visual {
@@ -826,7 +825,7 @@ body.nav-lock {
   width: 4rem;
   height: 4rem;
   margin: 0 auto 1.6rem;
-  color: var(--sage);
+  color: var(--slate);
 }
 
 .trust-icon svg {
