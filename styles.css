@@ -435,15 +435,16 @@ body.nav-lock {
    LOGO CAROUSEL
    =========================== */
 
+/* ---- Logo section — matched to motionsports.io Slick slider ---- */
 .logo-carousel {
-  padding: 6rem 0;
-  background: #f5f5f7;
+  padding: 0;
+  background: #fff;
 }
 
 .logo-carousel-inner {
   max-width: var(--page-width);
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 6rem;
 }
 
 .logo-carousel-label {
@@ -460,9 +461,9 @@ body.nav-lock {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 2rem;
 }
 
+/* Arrows — motionsports uses 30px slick arrows, color #212121, opacity 1 */
 .logo-slider-btn {
   flex-shrink: 0;
   width: 30px;
@@ -474,57 +475,63 @@ body.nav-lock {
   justify-content: center;
   cursor: pointer;
   color: #212121;
-  opacity: 0.5;
+  font-size: 30px;
+  opacity: 1;
   transition: opacity 0.2s;
   padding: 0;
+  z-index: 1;
 }
 
 .logo-slider-btn svg {
-  width: 24px;
-  height: 24px;
-  stroke-width: 2;
+  width: 30px;
+  height: 30px;
+  stroke-width: 1.5;
 }
 
 .logo-slider-btn:hover {
-  opacity: 1;
+  opacity: 0.6;
 }
 
+/* Track — motionsports .slick-track: display flex, gap 2rem */
 .logo-slider-track {
   flex: 1;
   overflow: hidden;
+  margin: 0 20px;
 }
 
 .logo-slider-row {
   display: flex;
   align-items: center;
+  gap: 2rem;
   transition: transform 0.5s ease;
 }
 
+/* Each logo — 1/6 of track width */
 .logo-box {
   flex: 0 0 calc(100% / 6);
-  height: 140px;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 2rem;
+  padding: 0 1rem;
   box-sizing: border-box;
 }
 
 .logo-box img {
-  max-width: 85%;
-  max-height: 85%;
+  max-width: 100%;
+  max-height: 100%;
   width: auto;
   height: auto;
   object-fit: contain;
-  opacity: 1;
-  filter: grayscale(100%) contrast(1.2);
+  filter: grayscale(100%);
+  opacity: 0.7;
   transition: opacity 0.3s ease, filter 0.3s ease;
   mix-blend-mode: multiply;
 }
 
 .logo-box img:hover {
   opacity: 1;
-  filter: grayscale(0%) contrast(1);
+  filter: grayscale(0%);
 }
 
 
@@ -1545,7 +1552,11 @@ body.nav-lock {
     max-width: 48rem;
   }
 
-  /* Logos — 4 visible on tablet */
+  /* Logos — 4 visible on tablet (motionsports: 992px → 4) */
+  .logo-carousel-inner {
+    padding: 6rem 4rem;
+  }
+
   .logo-box {
     flex: 0 0 calc(100% / 4);
     height: 100px;
@@ -1626,17 +1637,22 @@ body.nav-lock {
     max-width: 36rem;
   }
 
-  /* Logos — 3 visible on mobile */
+  /* Logos — 3 visible on mobile (motionsports: 768px → 3) */
+  .logo-carousel-inner {
+    padding: 6rem 3rem;
+  }
+
   .logo-box {
     flex: 0 0 calc(100% / 3);
     height: 80px;
   }
 
-  .logo-slider {
-    gap: 0.8rem;
+  .logo-slider-btn {
+    width: 24px;
+    height: 24px;
   }
 
-  .logo-slider-btn {
+  .logo-slider-btn svg {
     width: 24px;
     height: 24px;
   }
@@ -1743,7 +1759,11 @@ body.nav-lock {
     padding: 0 1.6rem;
   }
 
-  /* Logos — 2 visible on small phones */
+  /* Logos — 2 visible on small phones (motionsports: 500px → 2) */
+  .logo-carousel-inner {
+    padding: 6rem 2rem;
+  }
+
   .logo-box {
     flex: 0 0 calc(100% / 2);
     height: 60px;
