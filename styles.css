@@ -369,7 +369,7 @@ body.nav-lock {
    =========================== */
 
 .hero {
-  padding: clamp(8rem, 12vw, 14rem) 0;
+  padding: clamp(3.2rem, calc(3.2rem + ((1vw - 0.32rem) * 1.5)), 4.8rem) 0;
   background: var(--primary);
   overflow: hidden;
 }
@@ -436,7 +436,7 @@ body.nav-lock {
    =========================== */
 
 .logo-carousel {
-  padding: 8rem 0;
+  padding: 4rem 0 3.2rem;
   background: var(--bg);
 }
 
@@ -453,26 +453,52 @@ body.nav-lock {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  margin-bottom: 4rem;
+  margin-bottom: 2.4rem;
 }
 
-.logo-marquee {
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-}
-
-.logo-marquee-track {
+.logo-slider {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 80px;
-  width: max-content;
-  animation: logoScroll 35s linear infinite;
+  gap: 1.6rem;
+}
+
+.logo-slider-btn {
+  flex-shrink: 0;
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 50%;
+  border: 1.5px solid #d0d5dd;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-light);
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.logo-slider-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.logo-slider-track {
+  flex: 1;
+  overflow: hidden;
+}
+
+.logo-slider-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  transition: transform 0.4s ease;
 }
 
 .logo-box {
-  width: 200px;
-  height: 120px;
+  width: 120px;
+  height: 72px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -481,25 +507,22 @@ body.nav-lock {
 }
 
 .logo-box img {
-  max-width: 100% !important;
-  max-height: 100% !important;
-  width: auto !important;
-  height: auto !important;
-  object-fit: contain !important;
-  opacity: 0.55;
-  filter: grayscale(100%) brightness(0.3);
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.45;
+  filter: grayscale(100%);
   transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
 .logo-box img:hover {
-  opacity: 0.75;
-  filter: grayscale(100%) brightness(0.2);
+  opacity: 0.8;
+  filter: grayscale(50%);
 }
 
-@keyframes logoScroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
+
 
 /* ===========================
    FEATURES — 4-column card grid (matches Motion Products section)
@@ -1593,22 +1616,14 @@ body.nav-lock {
   }
 
   /* Logos */
-  .logo-carousel-label {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  margin-bottom: 2.4rem;
-}
-
-.logo-carousel-track {
-    gap: 2.4rem;
+  .logo-box {
+    width: 80px;
+    height: 48px;
   }
 
-  .logo-slide img {
-    height: 3rem;
+  .logo-slider-btn {
+    width: 2.8rem;
+    height: 2.8rem;
   }
 
   /* Features */

@@ -71,3 +71,39 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   }
 })();
 
+// Logo slider (prev/next arrows)
+(function() {
+  var row = document.getElementById('logoRow');
+  var prevBtn = document.getElementById('logoPrev');
+  var nextBtn = document.getElementById('logoNext');
+  if (!row || !prevBtn || !nextBtn) return;
+
+  var offset = 0;
+  var boxWidth = 140; // logo-box width + gap
+
+  function getVisibleCount() {
+    var trackWidth = row.parentElement.offsetWidth;
+    return Math.floor(trackWidth / boxWidth);
+  }
+
+  function getMaxOffset() {
+    var total = row.children.length;
+    var visible = getVisibleCount();
+    return Math.max(0, total - visible);
+  }
+
+  function update() {
+    row.style.transform = 'translateX(-' + (offset * boxWidth) + 'px)';
+  }
+
+  prevBtn.addEventListener('click', function() {
+    offset = Math.max(0, offset - 1);
+    update();
+  });
+
+  nextBtn.addEventListener('click', function() {
+    offset = Math.min(getMaxOffset(), offset + 1);
+    update();
+  });
+})();
+
