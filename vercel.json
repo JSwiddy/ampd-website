@@ -36,9 +36,9 @@
       "permanent": true
     },
     {
-      "source": "/products/:path*",
-      "destination": "/",
-      "permanent": true
+      "source": "/schedule-demo",
+      "destination": "/demo.html",
+      "permanent": false
     },
     {
       "source": "/collections/:path*",
@@ -118,7 +118,11 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!about\\.html|mission\\.html|platform\\.html|safety\\.html|request-pilot\\.html|privacy-policy\\.html|terms\\.html|api/).*)",
+      "source": "/why-ampd",
+      "destination": "/why-ampd.html"
+    },
+    {
+      "source": "/((?!about\\.html|mission\\.html|platform\\.html|safety\\.html|request-pilot\\.html|privacy-policy\\.html|terms\\.html|why-ampd\\.html|demo\\.html|schedule-demo|products/|api/).*)",
       "destination": "/index.html"
     }
   ]

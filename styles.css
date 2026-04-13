@@ -1054,6 +1054,530 @@ body.nav-lock {
 }
 
 /* ===========================
+   PRODUCTS GRID (home page)
+   =========================== */
+
+.products-section {
+  padding: var(--section-padding) 0;
+  background: var(--bg);
+}
+
+.products-inner {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.4rem;
+}
+
+/* Center the bottom 2 cards */
+.products-grid .product-card:nth-child(4),
+.products-grid .product-card:nth-child(5) {
+  /* On the 3-col grid, items 4 and 5 land in a 2nd row. Center them. */
+}
+
+/* We use a wrapper trick: make the grid justify items center on the second row */
+.products-grid {
+  justify-items: center;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 3.2rem 2.4rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg);
+  transition: var(--transition);
+  cursor: pointer;
+  width: 100%;
+  max-width: 100%;
+}
+
+.product-card:hover {
+  border-color: var(--tertiary);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+}
+
+.product-icon {
+  width: 5.6rem;
+  height: 5.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-accent);
+  border-radius: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--primary);
+}
+
+.product-card h3 {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.8rem;
+  line-height: 1.2;
+}
+
+.product-card p {
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  flex: 1;
+}
+
+.product-link {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.product-card:hover .product-link {
+  color: var(--tertiary);
+}
+
+/* Coming Soon Badge */
+.coming-soon-badge {
+  display: inline-block;
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  padding: 0.4rem 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: var(--bg-accent);
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+}
+
+/* Dropdown badge (in nav) */
+.dropdown-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg-accent);
+  border-radius: 9999px;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
+
+/* Footer coming soon label */
+.footer-coming-soon {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.35);
+  font-weight: 400;
+}
+
+/* ===========================
+   PLATFORM SECTION (everything in one platform)
+   =========================== */
+
+.platform-section {
+  padding: var(--section-padding) 0;
+  background: var(--bg-accent);
+}
+
+.platform-showcase {
+  max-width: 80rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.mockup-placeholder {
+  width: 100%;
+  min-height: 32rem;
+  background: var(--bg);
+  border: 2px dashed var(--border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 3.2rem;
+}
+
+.word-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.word-cloud span {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-color);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  transition: var(--transition);
+}
+
+.word-cloud span:hover {
+  border-color: var(--tertiary);
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   FOUNDER QUOTE
+   =========================== */
+
+.founder-quote {
+  padding: var(--section-padding) 0;
+  background: var(--bg);
+}
+
+.founder-blockquote {
+  max-width: 72rem;
+  margin: 0 auto;
+  text-align: center;
+  border: none;
+  padding: 0;
+}
+
+.founder-blockquote p {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--primary);
+  margin-bottom: 2.4rem;
+  font-style: italic;
+}
+
+.founder-blockquote cite {
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--text-muted);
+  font-style: normal;
+}
+
+/* ===========================
+   WHY AMPD TEASER
+   =========================== */
+
+.why-teaser {
+  padding: var(--section-padding) 0;
+  background: var(--bg-accent);
+}
+
+.why-teaser-inner {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  max-width: var(--page-width);
+  margin: 0 auto;
+}
+
+.why-teaser-image {
+  flex: 1;
+}
+
+.why-teaser-image .mockup-placeholder {
+  min-height: 28rem;
+}
+
+.why-teaser-content {
+  flex: 1;
+}
+
+.why-teaser-content p {
+  font-size: var(--text-lg);
+  line-height: 1.6;
+  color: var(--text-light);
+  margin-bottom: 2.4rem;
+}
+
+.why-teaser-link {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--primary);
+  transition: color 0.3s ease;
+}
+
+.why-teaser-link:hover {
+  color: var(--tertiary);
+}
+
+/* ===========================
+   FOOTER 4-COLUMN LAYOUT
+   =========================== */
+
+.footer-grid--4col {
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+}
+
+.footer-legal-links {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.footer-legal-sep {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 1.3rem;
+}
+
+/* ===========================
+   MOBILE NAV SUBMENU
+   =========================== */
+
+.mobile-nav-submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding-left: 2rem;
+}
+
+.mobile-nav-sub {
+  font-size: 1.6rem !important;
+  color: var(--text-muted) !important;
+}
+
+/* ===========================
+   PRODUCT PAGE STYLES
+   =========================== */
+
+.product-hero {
+  padding: var(--section-padding) 0;
+  background: var(--bg);
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.product-hero h1 {
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 1.6rem;
+}
+
+.product-hero .hero-tagline {
+  font-size: var(--text-lg);
+  color: var(--text-light);
+  margin-bottom: 1.6rem;
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product-hero .hero-body {
+  font-size: var(--text-base);
+  color: var(--text-light);
+  line-height: 1.6;
+  max-width: 56rem;
+  margin: 0 auto 3.2rem;
+}
+
+/* Alternating feature sections */
+.product-feature {
+  padding: var(--section-padding) 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.product-feature:nth-child(even) {
+  background: var(--bg-accent);
+}
+
+.product-feature-inner {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 4rem;
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+}
+
+.product-feature--reversed .product-feature-inner {
+  flex-direction: row-reverse;
+}
+
+.product-feature-text {
+  flex: 1;
+}
+
+.product-feature-text h2 {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 1.6rem;
+}
+
+.product-feature-text p {
+  font-size: var(--text-base);
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.product-feature-visual {
+  flex: 1;
+}
+
+.product-feature-visual .mockup-placeholder {
+  min-height: 24rem;
+}
+
+/* Coming Soon Page */
+.coming-soon-hero {
+  padding: var(--section-padding) 0;
+  background: var(--bg);
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.coming-soon-hero h1 {
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 1.2rem;
+}
+
+.coming-soon-hero .coming-soon-badge {
+  position: static;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.coming-soon-hero p {
+  font-size: var(--text-lg);
+  color: var(--text-light);
+  max-width: 56rem;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.coming-soon-body {
+  padding: var(--section-padding) 0;
+  background: var(--bg);
+}
+
+.coming-soon-body .section-wrap {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.coming-soon-body h2 {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 1.6rem;
+}
+
+.coming-soon-body p {
+  font-size: var(--text-base);
+  color: var(--text-light);
+  line-height: 1.7;
+  margin-bottom: 1.6rem;
+}
+
+.coming-soon-body ul {
+  list-style: disc;
+  padding-left: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+
+.coming-soon-body ul li {
+  font-size: var(--text-base);
+  color: var(--text-light);
+  line-height: 1.7;
+  margin-bottom: 0.8rem;
+}
+
+/* Waitlist form */
+.waitlist-form {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 4rem;
+  background: var(--bg-accent);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.waitlist-form h3 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1.6rem;
+}
+
+.waitlist-form-row {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 1.6rem;
+}
+
+.waitlist-form input[type="email"] {
+  flex: 1;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  font-size: var(--text-sm);
+  font-family: var(--font);
+  color: var(--text-color);
+  background: var(--bg);
+}
+
+.waitlist-form input[type="email"]:focus {
+  outline: none;
+  border-color: var(--tertiary);
+}
+
+.waitlist-form .waitlist-note {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Why AMPD page */
+.why-ampd-section {
+  padding: var(--section-padding) 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.why-ampd-section:nth-child(even) {
+  background: var(--bg-accent);
+}
+
+.why-ampd-section .section-wrap {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.why-ampd-section h2 {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 1.6rem;
+}
+
+.why-ampd-section p {
+  font-size: var(--text-base);
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+/* ===========================
    SCROLL REVEAL
    =========================== */
 
@@ -1654,6 +2178,29 @@ body.nav-lock {
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
   }
+
+  .footer-grid--4col {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-teaser-inner {
+    flex-direction: column;
+    gap: 3.2rem;
+  }
+
+  .product-feature-inner {
+    flex-direction: column;
+    gap: 3.2rem;
+    text-align: center;
+  }
+
+  .product-feature--reversed .product-feature-inner {
+    flex-direction: column;
+  }
 }
 
 /* ===========================
@@ -1749,10 +2296,49 @@ body.nav-lock {
     padding: 4rem 0 3rem;
   }
 
+  .footer-grid--4col {
+    grid-template-columns: 1fr;
+  }
+
   .footer-bottom {
     flex-direction: column;
     gap: 1.2rem;
     text-align: center;
+  }
+
+  .footer-legal-links {
+    justify-content: center;
+  }
+
+  /* Products grid */
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+
+  .products-inner {
+    padding: 0 2rem;
+  }
+
+  /* Why teaser */
+  .why-teaser-inner {
+    flex-direction: column;
+    gap: 2.4rem;
+    text-align: center;
+  }
+
+  /* Product pages */
+  .product-feature-inner {
+    padding: 0 2rem;
+  }
+
+  /* Waitlist form */
+  .waitlist-form-row {
+    flex-direction: column;
+  }
+
+  .waitlist-form {
+    padding: 2.4rem 2rem;
   }
 
   /* Demo page */
