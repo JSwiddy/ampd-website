@@ -458,6 +458,16 @@ body.nav-lock {
   margin-bottom: 4rem;
 }
 
+.credibility-text {
+  font-size: var(--text-lg);
+  font-weight: 500;
+  color: var(--text-light);
+  text-align: center;
+  line-height: 1.5;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
 .logo-slider {
   position: relative;
   display: flex;
