@@ -460,14 +460,13 @@ body.nav-lock {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 3rem;
-  padding: 0 1rem;
+  gap: 2rem;
 }
 
 .logo-slider-btn {
   flex-shrink: 0;
-  width: 4.4rem;
-  height: 4.4rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
   border: 1.5px solid #d0d5dd;
   background: #fff;
@@ -475,13 +474,13 @@ body.nav-lock {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: var(--text-light);
+  color: #212121;
   transition: border-color 0.2s, color 0.2s;
 }
 
 .logo-slider-btn svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 }
 
 .logo-slider-btn:hover {
@@ -497,19 +496,17 @@ body.nav-lock {
 .logo-slider-row {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  gap: 3rem;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s ease;
 }
 
 .logo-box {
-  width: 160px;
+  flex: 0 0 calc(100% / 6);
   height: 120px;
-  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
 }
 
 .logo-box img {
@@ -1546,6 +1543,12 @@ body.nav-lock {
     max-width: 48rem;
   }
 
+  /* Logos — 4 visible on tablet */
+  .logo-box {
+    flex: 0 0 calc(100% / 4);
+    height: 100px;
+  }
+
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1621,24 +1624,19 @@ body.nav-lock {
     max-width: 36rem;
   }
 
-  /* Logos */
+  /* Logos — 3 visible on mobile */
   .logo-box {
-    width: 100px;
+    flex: 0 0 calc(100% / 3);
     height: 72px;
   }
 
   .logo-slider {
-    gap: 1.2rem;
+    gap: 1rem;
   }
 
   .logo-slider-btn {
-    width: 3.2rem;
-    height: 3.2rem;
-  }
-
-  .logo-slider-btn {
-    width: 2.8rem;
-    height: 2.8rem;
+    width: 3rem;
+    height: 3rem;
   }
 
   /* Features */
@@ -1741,6 +1739,12 @@ body.nav-lock {
   .footer-inner,
   .section-inner {
     padding: 0 1.6rem;
+  }
+
+  /* Logos — 2 visible on small phones */
+  .logo-box {
+    flex: 0 0 calc(100% / 2);
+    height: 60px;
   }
 }
 

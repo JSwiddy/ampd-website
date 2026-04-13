@@ -71,39 +71,61 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   }
 })();
 
-// Logo slider (prev/next arrows)
+// Logo slider — autoplay + arrows (matches Motion Sports behavior)
 (function() {
   var row = document.getElementById('logoRow');
   var prevBtn = document.getElementById('logoPrev');
   var nextBtn = document.getElementById('logoNext');
   if (!row || !prevBtn || !nextBtn) return;
 
-  var offset = 0;
-  var boxWidth = 140; // logo-box width + gap
+  var current = 0;
+  var total = row.children.length;
+  var autoplayInterval = 3000;
+  var timer;
 
   function getVisibleCount() {
-    var trackWidth = row.parentElement.offsetWidth;
-    return Math.floor(trackWidth / boxWidth);
+    var w = window.innerWidth;
+    if (w <= 479) return 2;
+    if (w <= 767) return 3;
+    if (w <= 991) return 4;
+    return 6;
   }
 
   function getMaxOffset() {
-    var total = row.children.length;
-    var visible = getVisibleCount();
-    return Math.max(0, total - visible);
+    return Math.max(0, total - getVisibleCount());
   }
 
-  function update() {
-    row.style.transform = 'translateX(-' + (offset * boxWidth) + 'px)';
+  function slideTo(index) {
+    var max = getMaxOffset();
+    if (index > max) index = 0;
+    if (index < 0) index = max;
+    current = index;
+    var pct = (100 / getVisibleCount()) * current;
+    row.style.transform = 'translateX(-' + pct + '%)';
   }
 
-  prevBtn.addEventListener('click', function() {
-    offset = Math.max(0, offset - 1);
-    update();
-  });
+  function next() { slideTo(current + 1); }
+  function prev() { slideTo(current - 1); }
+
+  function startAutoplay() {
+    stopAutoplay();
+    timer = setInterval(next, autoplayInterval);
+  }
+
+  function stopAutoplay() {
+    if (timer) clearInterval(timer);
+  }
 
   nextBtn.addEventListener('click', function() {
-    offset = Math.min(getMaxOffset(), offset + 1);
-    update();
+    next();
+    startAutoplay();
   });
+
+  prevBtn.addEventListener('click', function() {
+    prev();
+    startAutoplay();
+  });
+
+  startAutoplay();
 })();
 
