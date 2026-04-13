@@ -133,7 +133,7 @@ button {
   font-family: var(--font);
   font-size: 1.5rem;
   font-weight: 700;
-  border-radius: var(--radius);
+  border-radius: 9999px;
   border: none;
   cursor: pointer;
   transition: var(--transition);
@@ -284,7 +284,7 @@ button {
   color: #fff;
   font-size: 1.4rem;
   font-weight: 700;
-  border-radius: var(--radius);
+  border-radius: 9999px;
   flex-shrink: 0;
   transition: var(--transition);
 }
@@ -370,7 +370,7 @@ body.nav-lock {
 
 .hero {
   padding: var(--section-padding) 0;
-  background: var(--bg);
+  background: var(--primary);
   overflow: hidden;
 }
 
@@ -392,14 +392,14 @@ body.nav-lock {
   font-size: var(--text-5xl);
   font-weight: 800;
   line-height: 1.08;
-  color: var(--primary);
+  color: #fff;
   margin-bottom: 2rem;
 }
 
 .hero-sub {
   font-size: var(--text-lg);
   line-height: 1.4;
-  color: var(--text-light);
+  color: rgba(255, 255, 255, 0.7);
   margin-bottom: 3.2rem;
   max-width: 48rem;
 }
@@ -408,6 +408,15 @@ body.nav-lock {
   display: flex;
   gap: 1.6rem;
   flex-wrap: wrap;
+}
+
+.hero-ctas .btn-primary {
+  background: #fff;
+  color: var(--primary);
+}
+
+.hero-ctas .btn-primary:hover {
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
 }
 
 .hero-visual {
@@ -459,10 +468,10 @@ body.nav-lock {
 }
 
 .logo-slide img {
-  height: 4rem;
+  height: 5.6rem;
   width: auto;
   object-fit: contain;
-  opacity: 0.2;
+  opacity: 0.35;
   filter: grayscale(100%);
   transition: opacity 0.3s ease;
 }
