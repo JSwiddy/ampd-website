@@ -884,16 +884,14 @@ body.nav-lock {
    =========================== */
 
 .site-footer {
-  background: #fff;
+  background: #0f172a;
   color: #fff;
-  padding: 0 3rem 3rem;
+  border-radius: 2.4rem 2.4rem 0 0;
 }
 
 .footer-inner {
   max-width: var(--page-width);
   margin: 0 auto;
-  background: #0f172a;
-  border-radius: 2rem;
   padding: 4rem 4rem 2.4rem;
 }
 
@@ -1545,10 +1543,6 @@ body.nav-lock {
     padding: 4rem 3rem 2.4rem;
   }
 
-  .site-footer {
-    padding: 0 2rem 2rem;
-  }
-
   .hero-inner {
     flex-direction: column;
     text-align: center;
@@ -1638,10 +1632,6 @@ body.nav-lock {
 
   .footer-inner {
     padding: 3rem 2.4rem 2rem;
-  }
-
-  .site-footer {
-    padding: 0 1.6rem 1.6rem;
   }
 
   /* Header */
@@ -1790,10 +1780,6 @@ body.nav-lock {
 
   .footer-inner {
     padding: 2.4rem 2rem 1.6rem;
-  }
-
-  .site-footer {
-    padding: 0 1.2rem 1.2rem;
   }
 
   /* Logos — 2 visible on small phones (motionsports: 500px → 2) */
