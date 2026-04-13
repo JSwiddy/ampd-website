@@ -70,3 +70,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
   }
 })();
+
+// Logo carousel scroll
+(function() {
+  var track = document.getElementById('logoTrack');
+  var prev = document.getElementById('carouselPrev');
+  var next = document.getElementById('carouselNext');
+  if (!track || !prev || !next) return;
+
+  var scrollAmount = 200;
+
+  prev.addEventListener('click', function() {
+    track.parentElement.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
+
+  next.addEventListener('click', function() {
+    track.parentElement.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
+})();
