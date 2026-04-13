@@ -25,8 +25,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=58">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=73">
 
   <style>
     body {
@@ -277,7 +277,7 @@
     }
   </style>
 </head>
-<body>
+<body class="dark-page">
 
   <div class="loading" id="loader">
     <div class="loading-text">Loading...</div>
@@ -287,29 +287,38 @@
 
   <header class="site-header" id="siteHeader">
     <div class="header-inner">
-      <div class="header-logo">
-        <a href="/">
-          <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487124/AMPD_White_ms0gvl.png" alt="AMPD">
-        </a>
-      </div>
+      <a href="/" class="header-logo">
+        <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487124/AMPD_White_ms0gvl.png" alt="AMPD">
+      </a>
       <nav class="header-nav" id="headerNav">
-        <a href="/platform.html" class="header-nav__link">Platform</a>
-        <a href="/about.html" class="header-nav__link">The Why</a>
-        <a href="/mission.html" class="header-nav__link">Mission</a>
-        <a href="/safety.html" class="header-nav__link">Safety</a>
-        <a href="/demo.html" class="header-nav__cta">Demo &amp; Pricing</a>
+        <ul class="nav-menu">
+          <li><a href="/about.html">About</a></li>
+          <li class="has-dropdown">
+            <a href="/platform.html">Platform <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <ul class="dropdown-menu">
+              <li><a href="/platform.html#mental-performance">Mental Performance</a></li>
+              <li><a href="/platform.html#training">Training</a></li>
+              <li><a href="/platform.html#schedules">Schedules</a></li>
+              <li><a href="/platform.html#readiness">Readiness Check-Ins</a></li>
+              <li><a href="/platform.html#communication">Communication</a></li>
+            </ul>
+          </li>
+          <li><a href="/mission.html">Mission</a></li>
+          <li><a href="/safety.html">Safety</a></li>
+        </ul>
       </nav>
+      <a href="/demo.html" class="header-cta">Get a Demo</a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
   <div class="mobile-nav-overlay" id="mobileNav">
+    <a href="/about.html">About</a>
     <a href="/platform.html">Platform</a>
-    <a href="/about.html">The Why</a>
     <a href="/mission.html">Mission</a>
     <a href="/safety.html">Safety</a>
-    <a href="/demo.html" class="btn-primary">Demo &amp; Pricing</a>
+    <a href="/demo.html" class="btn-primary">Get a Demo</a>
   </div>
 
 
@@ -348,52 +357,51 @@
 
   <!-- Footer -->
   <footer class="site-footer">
-    <div style="background:#0d0d0d;border:1px solid #1e1e1e;border-radius:16px;max-width:1100px;margin:0 auto 24px auto;overflow:hidden;padding:0;">
-      <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;padding:48px 48px 32px;align-items:start;">
-        <div>
-          <a href="/"><img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487124/AMPD_White_ms0gvl.png" alt="AMPD" style="height:32px;width:auto;"></a>
-          <span style="font-size:0.85rem;color:#888;margin-top:10px;margin-bottom:20px;display:block;">Develop athletes. Every day.</span>
-          <span style="font-size:0.6rem;letter-spacing:0.12em;color:#555;text-transform:uppercase;margin-bottom:8px;display:block;">Coming Soon</span>
-          <div style="display:flex;gap:10px;align-items:center;">
-            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" style="height:38px;opacity:0.5;pointer-events:none;cursor:default;">
-            <a href="#" style="opacity:0.5;pointer-events:none;cursor:default;display:inline-block;"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play" style="height:56px;margin:-8px 0;"></a>
-          </div>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/"><img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487124/AMPD_White_ms0gvl.png" alt="AMPD" class="footer-logo"></a>
+          <p class="footer-tagline">The all-in-one platform for high school athletics.</p>
         </div>
-        <div>
-          <span style="font-size:0.65rem;letter-spacing:0.12em;color:#555;margin-bottom:14px;display:block;text-transform:uppercase;font-weight:600;">Platform</span>
-          <a href="/platform.html" class="footer-link" style="display:block;font-size:0.85rem;color:#666;text-decoration:none;margin-bottom:10px;">Platform</a>
-          <a href="/demo.html" class="footer-link" style="display:block;font-size:0.85rem;color:#666;text-decoration:none;margin-bottom:10px;">Get a Demo</a>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="/platform.html#mental-performance">Mental Performance</a></li>
+            <li><a href="/platform.html#training">Training</a></li>
+            <li><a href="/platform.html#schedules">Schedules</a></li>
+            <li><a href="/platform.html#readiness">Readiness</a></li>
+            <li><a href="/platform.html#communication">Communication</a></li>
+          </ul>
         </div>
-        <div>
-          <span style="font-size:0.65rem;letter-spacing:0.12em;color:#555;margin-bottom:14px;display:block;text-transform:uppercase;font-weight:600;">Company</span>
-          <a href="/about.html" class="footer-link" style="display:block;font-size:0.85rem;color:#666;text-decoration:none;margin-bottom:10px;">The Why</a>
-          <a href="/mission.html" class="footer-link" style="display:block;font-size:0.85rem;color:#666;text-decoration:none;margin-bottom:10px;">Mission</a>
-          <a href="/safety.html" class="footer-link" style="display:block;font-size:0.85rem;color:#666;text-decoration:none;margin-bottom:10px;">Safety</a>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about.html">The Why</a></li>
+            <li><a href="/mission.html">Mission</a></li>
+            <li><a href="/safety.html">Safety</a></li>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-col--cta">
+          <h4>See AMPD in action</h4>
+          <p>Get a walkthrough of the platform built for your program.</p>
+          <a href="/demo.html" class="btn-primary">Get a Demo</a>
         </div>
       </div>
-      <div style="border-top:1px solid #1e1e1e;margin:0 48px;"></div>
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:20px 48px;">
-        <div style="display:flex;gap:20px;align-items:center;">
-          <div style="display:flex;gap:6px;align-items:center;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-            <span style="font-size:0.6rem;font-weight:700;letter-spacing:0.08em;color:#666;text-transform:uppercase;">FERPA Compliant</span>
-          </div>
-          <div style="display:flex;gap:6px;align-items:center;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-            <span style="font-size:0.6rem;font-weight:700;letter-spacing:0.08em;color:#666;text-transform:uppercase;">COPPA Compliant</span>
-          </div>
-        </div>
-        <div style="display:flex;align-items:center;gap:12px;">
-          <a href="https://www.instagram.com/get_ampd_up/" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social-icon" style="width:36px;height:36px;border:1px solid #2e2e2e;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="#888"/></svg>
+      <div class="footer-bottom">
+        <div class="footer-social">
+          <a href="https://www.instagram.com/get_ampd_up/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
           </a>
         </div>
+        <p class="footer-copyright">&copy; 2026 AMPD LLC. All Rights Reserved.</p>
+        <a href="/privacy-policy.html" class="footer-legal">Privacy Policy</a>
       </div>
-      <div style="text-align:center;font-size:0.75rem;color:#555;padding:0 48px 20px;">&copy; 2026 AMPD LLC. All Rights Reserved. &middot; <a href="/privacy-policy.html" class="footer-legal-link" style="color:#555;text-decoration:none;">Privacy Policy</a> &middot; <a href="/terms.html" class="footer-legal-link" style="color:#555;text-decoration:none;">Terms of Service</a></div>
     </div>
   </footer>
 
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=8"></script>
 
   <!-- THREE.JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>

@@ -1663,3 +1663,73 @@ body.nav-lock {
     padding: 0 1.6rem;
   }
 }
+
+/* ===========================
+   DARK PAGE OVERRIDES
+   For about, mission, safety pages that use dark backgrounds
+   =========================== */
+
+.dark-page {
+  background: #080808;
+  color: #f5f5f5;
+}
+
+.dark-page .site-header {
+  background: rgba(8, 8, 8, 0.95);
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+
+.dark-page .site-header.scrolled {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dark-page .header-logo img {
+  filter: none;
+}
+
+.dark-page .nav-menu > li > a {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.dark-page .nav-menu > li > a:hover {
+  color: #fff;
+}
+
+.dark-page .nav-toggle span {
+  background: #f5f5f5;
+}
+
+.dark-page .mobile-nav-overlay {
+  background: rgba(8, 8, 8, 0.98);
+}
+
+.dark-page .mobile-nav-overlay a {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.dark-page .mobile-nav-overlay a:hover {
+  color: #fff;
+}
+
+.dark-page .dropdown-menu {
+  background: #1a1a1a;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-page .dropdown-menu li a {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.dark-page .dropdown-menu li a:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.dark-page .header-cta {
+  background: #fff;
+  color: var(--primary);
+}
+
+.dark-page .section-divider {
+  background: rgba(255, 255, 255, 0.06);
+}
