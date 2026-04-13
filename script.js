@@ -71,18 +71,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   }
 })();
 
-// Logo carousel scroll
-(function() {
-  var viewport = document.getElementById('logoViewport');
-  var prev = document.getElementById('carouselPrev');
-  var next = document.getElementById('carouselNext');
-  if (!viewport || !prev || !next) return;
-
-  prev.addEventListener('click', function() {
-    viewport.scrollBy({ left: -300, behavior: 'smooth' });
-  });
-
-  next.addEventListener('click', function() {
-    viewport.scrollBy({ left: 300, behavior: 'smooth' });
-  });
-})();

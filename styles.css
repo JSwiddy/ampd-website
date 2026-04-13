@@ -191,9 +191,9 @@ button {
 }
 
 .header-logo img {
-  height: 2.8rem;
+  height: 4rem;
   width: auto;
-  filter: brightness(0);        /* Makes white logo black on light bg */
+  filter: brightness(0);
 }
 
 /* Nav menu */
@@ -456,62 +456,40 @@ body.nav-lock {
   margin-bottom: 4rem;
 }
 
-.logo-carousel-wrap {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-
-.carousel-arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  min-width: 48px;
-  height: 48px;
-  border: none;
-  background: transparent;
-  color: #bbb;
-  cursor: pointer;
-  padding: 0;
-  flex-shrink: 0;
-  transition: color 0.3s ease;
-}
-
-.carousel-arrow:hover {
-  color: var(--primary);
-}
-
-.logo-carousel-viewport {
-  flex: 1 1 0%;
+.logo-marquee {
   overflow: hidden;
-  min-width: 0;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
 
-.logo-carousel-track {
+.logo-marquee-track {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
   align-items: center;
-  gap: 48px;
+  gap: 64px;
+  width: max-content;
+  animation: logoScroll 30s linear infinite;
 }
 
-.logo-carousel-track img {
+.logo-marquee-track img {
   display: block;
-  height: 56px;
+  height: 80px;
   width: auto;
-  max-width: 120px;
+  max-width: 160px;
   object-fit: contain;
-  flex: 0 0 auto;
-  opacity: 0.4;
+  flex-shrink: 0;
+  opacity: 0.35;
   filter: grayscale(100%) brightness(0.4);
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
-.logo-carousel-track img:hover {
+.logo-marquee-track img:hover {
   opacity: 0.6;
-  filter: grayscale(100%) brightness(0.3);
+  filter: grayscale(100%) brightness(0.25);
+}
+
+@keyframes logoScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* ===========================
