@@ -116,7 +116,7 @@ button {
 
 .section-header p {
   font-size: var(--text-base);
-  color: var(--slate-light);
+  color: var(--text-light);
   line-height: 1.5;
 }
 
@@ -450,8 +450,8 @@ body.nav-lock {
 
 .logo-carousel-label {
   font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--slate-light);
+  font-weight: 700;
+  color: var(--text-color);
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -616,7 +616,7 @@ body.nav-lock {
 .feature-link {
   font-size: var(--text-sm);
   font-weight: 700;
-  color: var(--slate);
+  color: var(--text-color);
   transition: color 0.3s ease;
 }
 
@@ -719,7 +719,7 @@ body.nav-lock {
 
 .comparison-list li svg {
   flex-shrink: 0;
-  color: var(--slate);
+  color: var(--text-color);
 }
 
 .comparison-visual {
@@ -825,7 +825,7 @@ body.nav-lock {
   width: 4rem;
   height: 4rem;
   margin: 0 auto 1.6rem;
-  color: var(--slate);
+  color: var(--text-color);
 }
 
 .trust-icon svg {
