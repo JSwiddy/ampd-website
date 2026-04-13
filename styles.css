@@ -892,14 +892,45 @@ body.nav-lock {
 .footer-inner {
   max-width: var(--page-width);
   margin: 0 auto;
-  padding: 4rem 4rem 2.4rem;
+  padding: 0 4rem 2.4rem;
+}
+
+.footer-cta {
+  text-align: center;
+  padding: 6rem 0 5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-cta h2 {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 1.2rem;
+}
+
+.footer-cta p {
+  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 3.2rem;
+  line-height: 1.5;
+}
+
+.footer-cta .footer-btn {
+  background: #fff;
+  color: #0f172a;
+  font-size: 1.6rem;
+  padding: 1.8rem 3.5rem;
+}
+
+.footer-cta .footer-btn:hover {
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15);
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: 2.5fr 1fr 1fr;
   gap: 4rem;
-  padding-bottom: 2.4rem;
+  padding: 4rem 0 2.4rem;
 }
 
 .footer-logo {
