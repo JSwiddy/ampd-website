@@ -9,10 +9,10 @@
 
 :root {
   /* Colors — AMPD neutral palette */
-  --primary: #0f172a;
-  --secondary: #1e293b;
-  --tertiary: #0f172a;
-  --text-color: #0f172a;
+  --primary: #111111;
+  --secondary: #1a1a1a;
+  --tertiary: #111111;
+  --text-color: #111111;
   --text-light: #64748b;
   --text-muted: #94a3b8;
   --bg: #ffffff;
@@ -129,7 +129,7 @@ button {
   align-items: center;
   justify-content: center;
   padding: 1.5rem 2.5rem;
-  background: #0f172a;
+  background: #111111;
   color: #fff;
   font-family: var(--font);
   font-size: 1.5rem;
@@ -143,7 +143,7 @@ button {
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
   opacity: 1;
 }
 
@@ -281,7 +281,7 @@ button {
   display: inline-flex;
   align-items: center;
   padding: 1rem 2rem;
-  background: #0f172a;
+  background: #111111;
   color: #fff;
   font-size: 1.4rem;
   font-weight: 700;
@@ -292,7 +292,7 @@ button {
 
 .header-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.2);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Mobile toggle */
@@ -413,7 +413,7 @@ body.nav-lock {
 
 .hero-ctas .btn-primary {
   background: #fff;
-  color: #0f172a;
+  color: #111111;
 }
 
 .hero-ctas .btn-primary:hover {
@@ -771,7 +771,7 @@ body.nav-lock {
   width: 5.2rem;
   height: 5.2rem;
   border-radius: 50%;
-  background: #0f172a;
+  background: #111111;
   color: #fff;
   font-size: 2rem;
   font-weight: 800;
@@ -852,7 +852,7 @@ body.nav-lock {
 
 .cta-band {
   padding: var(--section-padding) 0;
-  background: #0f172a;
+  background: #111111;
   text-align: center;
 }
 
@@ -872,7 +872,7 @@ body.nav-lock {
 
 .cta-band .btn-primary {
   background: #fff;
-  color: #0f172a;
+  color: #111111;
 }
 
 .cta-band .btn-primary:hover {
@@ -892,7 +892,7 @@ body.nav-lock {
 .footer-inner {
   max-width: var(--page-width);
   margin: 0 auto;
-  background: linear-gradient(135deg, #0a0f1a 0%, #0f172a 50%, #1e293b 100%);
+  background: linear-gradient(135deg, #0a0a0a 0%, #111111 50%, #1a1a1a 100%);
   border-radius: 2rem;
   padding: 3.5rem 4rem 2.4rem;
 }
@@ -919,7 +919,7 @@ body.nav-lock {
 
 .footer-cta .footer-btn {
   background: #fff;
-  color: #0f172a;
+  color: #111111;
   font-size: 1.6rem;
   padding: 1.8rem 3.5rem;
 }
@@ -959,7 +959,7 @@ body.nav-lock {
   font-size: 1.3rem;
   padding: 1.2rem 2rem;
   background: #fff;
-  color: #0f172a;
+  color: #111111;
 }
 
 .footer-btn:hover {
