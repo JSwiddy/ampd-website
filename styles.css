@@ -19,6 +19,8 @@
   --bg-accent: #ebeff7;
   --border: #e2e5ed;
   --green: #22c55e;
+  --soft-blue: #93c5fd;
+  --sage: #94a3b8;
 
   /* Typography — fluid clamp scale matching Motion */
   --text-base: 1.6rem;
@@ -115,7 +117,7 @@ button {
 
 .section-header p {
   font-size: var(--text-base);
-  color: var(--text-light);
+  color: var(--sage);
   line-height: 1.5;
 }
 
@@ -450,7 +452,7 @@ body.nav-lock {
 .logo-carousel-label {
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--text-muted);
+  color: var(--soft-blue);
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -615,7 +617,7 @@ body.nav-lock {
 .feature-link {
   font-size: var(--text-sm);
   font-weight: 700;
-  color: var(--secondary);
+  color: var(--sage);
   transition: color 0.3s ease;
 }
 
@@ -718,7 +720,7 @@ body.nav-lock {
 
 .comparison-list li svg {
   flex-shrink: 0;
-  color: var(--green);
+  color: var(--sage);
 }
 
 .comparison-visual {
@@ -824,7 +826,7 @@ body.nav-lock {
   width: 4rem;
   height: 4rem;
   margin: 0 auto 1.6rem;
-  color: var(--green);
+  color: var(--sage);
 }
 
 .trust-icon svg {
