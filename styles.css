@@ -369,7 +369,7 @@ body.nav-lock {
    =========================== */
 
 .hero {
-  padding: var(--section-padding) 0;
+  padding: clamp(8rem, 12vw, 14rem) 0;
   background: var(--primary);
   overflow: hidden;
 }
