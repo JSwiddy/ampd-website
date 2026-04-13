@@ -436,7 +436,7 @@ body.nav-lock {
    =========================== */
 
 .logo-carousel {
-  padding: 6rem 0;
+  padding: 8rem 0;
   background: var(--bg);
 }
 
@@ -465,14 +465,14 @@ body.nav-lock {
 .logo-marquee-track {
   display: flex;
   align-items: center;
-  gap: 64px;
+  gap: 80px;
   width: max-content;
-  animation: logoScroll 30s linear infinite;
+  animation: logoScroll 35s linear infinite;
 }
 
 .logo-box {
-  width: 180px;
-  height: 100px;
+  width: 200px;
+  height: 120px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
