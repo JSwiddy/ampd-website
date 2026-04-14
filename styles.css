@@ -948,7 +948,7 @@ body.nav-lock {
 /* Footer Row 1 */
 .footer-row-1 {
   display: flex;
-  gap: 10rem;
+  justify-content: space-between;
   width: 100%;
   padding-bottom: 3rem;
 }
@@ -958,6 +958,11 @@ body.nav-lock {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+}
+
+.footer-columns {
+  display: flex;
+  gap: 6rem;
 }
 
 /* App Store Badges */
