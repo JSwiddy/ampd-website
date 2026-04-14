@@ -1071,8 +1071,7 @@ body.nav-lock {
 .products-heading {
   font-family: 'Kanit', sans-serif;
   font-size: var(--text-3xl);
-  font-weight: 900;
-  -webkit-text-stroke: 6px #191919;
+  font-weight: 600;
   line-height: 1.2;
   color: #191919;
   line-height: 1.2;
