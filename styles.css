@@ -1029,6 +1029,15 @@ body.nav-lock {
   margin: 0;
 }
 
+.footer-row-2-inner .btn-primary {
+  background: #fff;
+  color: #111;
+}
+
+.footer-row-2-inner .btn-primary:hover {
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
+}
+
 /* Footer Row 3 */
 .footer-row-3 {
   display: flex;
