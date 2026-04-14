@@ -424,7 +424,7 @@ body.nav-lock {
 }
 
 .hero-visual {
-  width: 50%;
+  width: 55%;
   flex-shrink: 0;
   display: flex;
   justify-content: flex-end;
@@ -432,9 +432,9 @@ body.nav-lock {
 }
 
 .hero-visual img {
-  width: 100%;
-  max-width: 56rem;
-  border-radius: 2rem;
+  width: 110%;
+  max-width: 70rem;
+  border-radius: 0;
 }
 
 /* ===========================
