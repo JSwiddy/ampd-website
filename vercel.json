@@ -131,7 +131,11 @@
       "destination": "/why-ampd.html"
     },
     {
-      "source": "/((?!about\\.html|mission\\.html|platform\\.html|safety\\.html|request-pilot\\.html|privacy-policy\\.html|terms\\.html|why-ampd\\.html|whats-next\\.html|demo\\.html|schedule-demo|whats-next|products/|api/).*)",
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/((?!about\\.html|mission\\.html|platform\\.html|safety\\.html|request-pilot\\.html|privacy-policy\\.html|terms\\.html|why-ampd\\.html|whats-next\\.html|contact\\.html|demo\\.html|schedule-demo|whats-next|contact|products/|api/).*)",
       "destination": "/index.html"
     }
   ]
