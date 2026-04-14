@@ -3139,16 +3139,14 @@ h2.products-heading {
   max-width: var(--page-width);
   margin: 0 auto;
   position: relative;
-  display: flex;
-  align-items: stretch;
   min-height: 50rem;
-  border-radius: 2rem;
-  overflow: hidden;
 }
 
 .about-hero-image {
-  width: 55%;
-  flex-shrink: 0;
+  width: 65%;
+  height: 50rem;
+  border-radius: 2rem;
+  overflow: hidden;
 }
 
 .about-hero-image img {
@@ -3158,12 +3156,18 @@ h2.products-heading {
 }
 
 .about-hero-card {
-  width: 45%;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50%;
   padding: 5rem 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background: var(--bg);
+  border-radius: 2rem;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
 }
 
 .about-hero-body {
@@ -3179,7 +3183,6 @@ h2.products-heading {
 
 @media (max-width: 991px) {
   .about-hero-photo-inner {
-    flex-direction: column;
     min-height: auto;
   }
   .about-hero-image {
@@ -3187,8 +3190,14 @@ h2.products-heading {
     height: 30rem;
   }
   .about-hero-card {
+    position: relative;
+    top: auto;
+    transform: none;
     width: 100%;
     padding: 3rem 2.4rem;
+    margin-top: -4rem;
+    border-radius: 1.6rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
   }
   .about-hero-card .products-heading {
     text-align: center !important;
