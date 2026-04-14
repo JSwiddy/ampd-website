@@ -1918,9 +1918,9 @@ h2.products-heading {
 }
 
 .demo-layout {
-  padding: 3.5rem 0 0;
+  padding: 5rem 0 3rem;
   background: var(--bg);
-  min-height: calc(100vh - 8rem);
+  min-height: calc(100vh - 6rem);
 }
 
 .demo-layout__inner {
