@@ -1517,27 +1517,30 @@ h2.products-heading {
    PRODUCT PAGE STYLES
    =========================== */
 
+/* Product Hero */
 .product-hero {
-  padding: var(--section-padding) 0;
+  padding: 8rem 0 6rem;
   background: var(--bg);
   text-align: center;
-  border-bottom: 1px solid var(--border);
 }
 
 .product-hero h1 {
-  font-size: var(--text-3xl);
-  font-weight: 800;
+  font-family: 'Kanit', sans-serif;
+  font-size: var(--text-5xl);
+  font-weight: 600;
   color: var(--primary);
   margin-bottom: 1.6rem;
+  line-height: 1.1;
 }
 
 .product-hero .hero-tagline {
-  font-size: var(--text-lg);
+  font-size: 2rem;
   color: var(--text-light);
-  margin-bottom: 1.6rem;
+  margin-bottom: 2rem;
   max-width: 60rem;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.5;
 }
 
 .product-hero .hero-body {
@@ -1548,15 +1551,188 @@ h2.products-heading {
   margin: 0 auto 3.2rem;
 }
 
-/* Alternating feature sections */
+/* Section Label (uppercase category) */
+.section-label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+/* Feature Boxes — Motion style */
+.feature-boxes {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.feature-box {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  padding: 4rem;
+  border: 3px solid var(--border);
+  border-radius: 2rem;
+  background: var(--bg);
+}
+
+.feature-box--reversed {
+  flex-direction: row-reverse;
+}
+
+.feature-box-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.feature-box-title {
+  font-family: 'Kanit', sans-serif;
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--primary);
+  line-height: 1.2;
+}
+
+.feature-box-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.feature-box-bullet {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.feature-box-bullet strong {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.feature-box-bullet p {
+  font-size: var(--text-sm);
+  color: var(--text-light);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.feature-box-tagline {
+  font-size: var(--text-sm);
+  font-style: italic;
+  color: var(--text-muted);
+  margin-top: 0.8rem;
+}
+
+.feature-box-visual {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-box-visual img {
+  width: 100%;
+  max-width: 48rem;
+  border-radius: 1.2rem;
+}
+
+.feature-box-visual .mockup-placeholder {
+  min-height: 28rem;
+  width: 100%;
+}
+
+/* Feature Summary Grid */
+.feature-summary {
+  padding: var(--section-padding) 0;
+  background: var(--bg-accent);
+}
+
+.feature-summary-inner {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 4rem;
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.feature-summary-list {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem;
+}
+
+.feature-summary-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.feature-summary-item svg {
+  flex-shrink: 0;
+  color: var(--primary);
+}
+
+.feature-summary-visual {
+  flex: 1;
+}
+
+.feature-summary-visual .mockup-placeholder {
+  min-height: 32rem;
+}
+
+/* Responsive — feature boxes */
+@media (max-width: 991px) {
+  .feature-box {
+    flex-direction: column;
+    padding: 3rem;
+    gap: 3rem;
+  }
+  .feature-box--reversed {
+    flex-direction: column;
+  }
+  .feature-summary-inner {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .feature-summary-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .feature-boxes {
+    padding: 0 2rem;
+    gap: 2rem;
+  }
+  .feature-box {
+    padding: 2rem;
+  }
+  .product-hero {
+    padding: 6rem 0 4rem;
+  }
+  .product-hero h1 {
+    font-size: var(--text-3xl);
+  }
+}
+
+/* Legacy — keep for any pages still using old classes */
 .product-feature {
   padding: var(--section-padding) 0;
   background: var(--bg);
-  border-bottom: 1px solid var(--border);
-}
-
-.product-feature:nth-child(even) {
-  background: var(--bg-accent);
 }
 
 .product-feature-inner {
