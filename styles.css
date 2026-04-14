@@ -202,7 +202,8 @@ button {
 .header-nav {
   flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  margin-right: 3.2rem;
 }
 
 .nav-menu {
