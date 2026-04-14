@@ -909,9 +909,9 @@ body.nav-lock {
 .footer-inner {
   max-width: var(--page-width);
   margin: 0 auto;
-  background: linear-gradient(135deg, #0a0a0a 0%, #111111 50%, #1a1a1a 100%);
+  background: linear-gradient(135deg, #111111 0%, #2a2a2a 100%);
   border-radius: 2rem;
-  padding: 3.5rem 4rem 2.4rem;
+  padding: 5rem;
 }
 
 .footer-cta {
@@ -1005,16 +1005,17 @@ body.nav-lock {
 /* Footer Row 2 */
 .footer-row-2 {
   display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 3rem 0 4rem;
+  gap: 2rem;
+}
+
+.footer-row-2-inner {
+  display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 3rem 0;
-}
-
-.footer-cta {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
 }
 
 .footer-cta-heading {
