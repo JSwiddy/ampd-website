@@ -28,6 +28,7 @@
   --text-xl: clamp(2.4rem, calc(2.4rem + ((1vw - 0.32rem) * 0.321)), 2.6rem);
   --text-2xl: clamp(3rem, calc(3rem + ((1vw - 0.32rem) * 0.321)), 3.2rem);
   --text-3xl: clamp(3.6rem, calc(3.6rem + ((1vw - 0.32rem) * 0.321)), 3.8rem);
+  --text-4xl: clamp(4.2rem, calc(4.2rem + ((1vw - 0.32rem) * 0.0321)), 4.4rem);
   --text-5xl: clamp(4.8rem, calc(4.8rem + ((1vw - 0.32rem) * 0.321)), 5rem);
 
   /* Layout */
@@ -1070,7 +1071,7 @@ body.nav-lock {
 
 h2.products-heading {
   font-family: 'Kanit', sans-serif;
-  font-size: var(--text-3xl);
+  font-size: var(--text-4xl);
   font-weight: 600;
   line-height: 1.2;
   color: #191919;
