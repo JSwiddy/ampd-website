@@ -1912,17 +1912,17 @@ h2.products-heading {
 .demo-page {
   background: var(--bg);
   min-height: 100vh;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.demo-page .demo-layout {
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .site-footer--tight {
-  padding: 0 !important;
-}
-
-.site-footer--tight .footer-inner {
-  border-radius: 0;
-  margin: 0;
-  max-width: 100%;
-  padding: 4rem 5rem 2.4rem;
+  padding: 0 3rem 3rem !important;
 }
 
 .demo-layout {
@@ -2037,10 +2037,8 @@ h2.products-heading {
 }
 
 .demo-social-proof {
-  margin-top: 1.6rem;
-  padding-top: 1.6rem;
-  padding-bottom: 0;
-  margin-bottom: 0;
+  margin: 1.6rem 0 0 0;
+  padding: 1.6rem 0 0 0;
   border-top: 1px solid var(--border);
   max-width: 100%;
   overflow: hidden;
