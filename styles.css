@@ -1915,7 +1915,7 @@ h2.products-heading {
 }
 
 .site-footer--tight {
-  padding: 0 3rem 3rem !important;
+  padding: 1rem 2rem 2rem !important;
 }
 
 .demo-layout {
@@ -2030,8 +2030,10 @@ h2.products-heading {
 }
 
 .demo-social-proof {
-  margin-top: 2.4rem;
-  padding-top: 2.4rem;
+  margin-top: 1.6rem;
+  padding-top: 1.6rem;
+  padding-bottom: 0;
+  margin-bottom: 0;
   border-top: 1px solid var(--border);
   max-width: 100%;
   overflow: hidden;
