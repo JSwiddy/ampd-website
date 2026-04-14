@@ -1204,6 +1204,13 @@ h2.products-heading {
 .platform-section {
   padding: var(--section-padding) 0;
   background: var(--bg-accent);
+  text-align: center;
+}
+
+.platform-section .section-wrap {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 4rem;
 }
 
 .features-grid {
