@@ -3301,44 +3301,45 @@ h2.products-heading {
   gap: 2.4rem;
 }
 
-/* Why AMPD band */
-.why-ampd-band {
+/* Why AMPD section */
+.why-ampd-section {
   padding: 8rem 0;
   background: #111111;
   text-align: center;
 }
 
-.why-ampd-band .products-heading {
-  font-size: var(--text-5xl);
-  max-width: 80rem;
+.why-ampd-content {
+  max-width: 72rem;
   margin: 0 auto;
 }
 
-.why-ampd-body {
+.why-ampd-logo {
+  margin-bottom: 3rem;
+}
+
+.why-ampd-logo-img {
+  height: 5rem;
+  width: auto;
+  opacity: 0.3;
+}
+
+.why-ampd-manifesto {
   max-width: 56rem;
-  margin: 3rem auto 0;
+  margin: 2.4rem auto 0;
 }
 
-.why-ampd-body p {
-  font-size: var(--text-base);
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.5);
-  margin-bottom: 1.2rem;
-}
-
-.why-ampd-body p:first-child {
-  font-size: var(--text-xl);
-  font-weight: 700;
-  color: #fff;
+.why-ampd-manifesto p {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.6);
   margin-bottom: 1.6rem;
 }
 
-.why-ampd-body p:last-child {
-  font-size: var(--text-xl);
-  font-weight: 700;
-  color: #fff;
-  margin-top: 1.6rem;
-  margin-bottom: 0;
+.why-ampd-closer {
+  font-size: var(--text-lg) !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  margin-top: 2rem !important;
 }
 
 .about-value-card {
