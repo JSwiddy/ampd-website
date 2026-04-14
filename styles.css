@@ -3129,100 +3129,95 @@ h2.products-heading {
   color: var(--text-light);
 }
 
-/* About Page — new styles */
+/* About Page */
 .about-hero {
   padding: 8rem 0 6rem;
   background: var(--bg);
   text-align: center;
 }
 
-.about-hero-sub {
-  font-size: 2rem;
-  line-height: 1.5;
-  color: var(--text-light);
-  max-width: 60rem;
-  margin: 0 auto;
-}
-
-.about-stats {
-  padding: 5rem 0;
-  background: var(--bg-accent);
-}
-
-.about-stats-grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6rem;
-}
-
-.about-stat {
-  text-align: center;
-}
-
-.about-stat-number {
-  font-family: 'Kanit', sans-serif;
-  font-size: var(--text-4xl);
-  font-weight: 600;
-  color: var(--primary);
-  line-height: 1;
-  margin-bottom: 0.8rem;
-}
-
-.about-stat-label {
-  font-size: var(--text-sm);
-  font-weight: 600;
-  color: var(--text-light);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.about-founder {
-  padding: var(--section-padding) 0;
-  background: var(--bg);
-}
-
-.about-founder-card {
-  display: flex;
-  align-items: center;
-  gap: 5rem;
+.about-hero .products-heading {
   max-width: 80rem;
   margin: 0 auto;
 }
 
-.about-founder-photo {
+/* The Gap + The Answer sections */
+.about-gap {
+  padding: var(--section-padding) 0;
+  background: var(--bg);
+}
+
+.about-answer {
+  padding: var(--section-padding) 0;
+  background: var(--bg-accent);
+}
+
+.about-gap-inner {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  max-width: 100rem;
+  margin: 0 auto;
+}
+
+.about-gap-inner--reversed {
+  flex-direction: row-reverse;
+}
+
+.about-gap-text {
+  flex: 1;
+}
+
+.about-gap-body {
+  font-size: 1.8rem;
+  line-height: 1.7;
+  color: var(--text-light);
+  margin-top: 2rem;
+}
+
+.about-gap-visual {
+  flex: 1;
+}
+
+.about-gap-visual .mockup-placeholder {
+  min-height: 32rem;
+}
+
+/* Founder — full width */
+.about-founder-full {
+  padding: var(--section-padding) 0;
+  background: var(--bg);
+}
+
+.about-founder-full-inner {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  max-width: 100rem;
+  margin: 0 auto;
+}
+
+.about-founder-photo-large {
   flex-shrink: 0;
 }
 
-.about-founder-photo img {
-  width: 24rem;
-  height: 24rem;
+.about-founder-photo-large img {
+  width: 32rem;
+  height: 32rem;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 2rem;
 }
 
-.about-founder-content h3 {
-  font-family: 'Kanit', sans-serif;
-  font-size: var(--text-xl);
-  font-weight: 600;
-  color: var(--primary);
-  margin-bottom: 0.4rem;
+.about-founder-story {
+  flex: 1;
 }
 
-.about-founder-role {
-  font-size: var(--text-sm);
-  font-weight: 600;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  display: block;
-  margin-bottom: 1.6rem;
+.about-founder-story .about-gap-body {
+  margin-top: 1.6rem;
 }
 
-.about-founder-content p {
-  font-size: var(--text-base);
-  line-height: 1.7;
-  color: var(--text-light);
+.about-founder-story .about-gap-body + .about-gap-body {
+  margin-top: 1.2rem;
 }
 
 .about-values {
@@ -3270,28 +3265,38 @@ h2.products-heading {
 }
 
 @media (max-width: 991px) {
-  .about-founder-card {
+  .about-gap-inner,
+  .about-gap-inner--reversed,
+  .about-founder-full-inner {
     flex-direction: column;
     text-align: center;
-  }
-  .about-stats-grid {
     gap: 4rem;
+  }
+  .about-gap-text .products-heading,
+  .about-founder-story .products-heading {
+    text-align: center !important;
   }
   .about-values-grid {
     grid-template-columns: 1fr;
     max-width: 48rem;
     margin: 0 auto;
   }
+  .about-founder-photo-large img {
+    width: 24rem;
+    height: 24rem;
+  }
 }
 
 @media (max-width: 767px) {
-  .about-stats-grid {
-    flex-direction: column;
-    gap: 3rem;
+  .about-hero {
+    padding: 6rem 0 4rem;
   }
-  .about-founder-photo img {
-    width: 18rem;
-    height: 18rem;
+  .about-founder-photo-large img {
+    width: 20rem;
+    height: 20rem;
+  }
+  .about-gap-body {
+    font-size: 1.6rem;
   }
 }
 
