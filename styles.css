@@ -1097,8 +1097,8 @@ body.nav-lock {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #ffffff;
-  border: 2px solid #111111;
+  background: #111111;
+  border: none;
   border-radius: 9999px;
   margin-bottom: 2.4rem;
 }
