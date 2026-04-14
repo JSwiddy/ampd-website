@@ -1210,22 +1210,23 @@ h2.products-heading {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6rem;
-  max-width: 75rem;
+  gap: 4rem;
+  max-width: 90rem;
   margin: 0 auto;
+  padding: 0 4rem;
 }
 
 .features-grid-cell {
-  align-self: stretch;
+  align-self: center;
 }
 
 .features-grid-cell-1,
 .features-grid-cell-3 {
-  width: calc(33.33% - 4rem);
+  flex: 1;
 }
 
 .features-grid-cell-2 {
-  width: 33.33%;
+  flex: 1.2;
 }
 
 .features-list {
