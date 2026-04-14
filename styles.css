@@ -378,12 +378,11 @@ body.nav-lock {
 .hero-inner {
   max-width: var(--page-width);
   margin: 0 auto;
-  padding: 8rem 5rem;
+  padding: 6rem 5rem;
   display: flex;
   align-items: center;
-  gap: 6rem;
-  border-radius: 2rem;
   gap: 4rem;
+  border-radius: 2rem;
 }
 
 .hero-content {
@@ -451,13 +450,13 @@ body.nav-lock {
 .logo-carousel-inner {
   max-width: var(--page-width);
   margin: 0 auto;
-  padding: 6rem;
+  padding: 3rem 4rem;
 }
 
 .logo-carousel-label {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  color: var(--text-color);
+  color: var(--text-muted);
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.12em;
