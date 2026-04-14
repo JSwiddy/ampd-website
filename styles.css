@@ -1092,36 +1092,36 @@ body.nav-lock {
 }
 
 .product-icon {
-  width: 7.2rem;
-  height: 7.2rem;
+  width: 6.4rem;
+  height: 6.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #111111;
   border: none;
   border-radius: 9999px;
-  margin-bottom: 2.4rem;
+  margin-bottom: 2rem;
 }
 
 .product-icon svg {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
 }
 
 .product-card h3 {
-  font-size: var(--text-2xl);
-  font-weight: 800;
+  font-size: var(--text-lg);
+  font-weight: 700;
   color: var(--text-color);
-  margin-bottom: 1.2rem;
-  line-height: 1.2;
+  margin-bottom: 1rem;
+  line-height: 1.3;
 }
 
 .product-card p {
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   line-height: 1.6;
   color: var(--text-light);
-  margin-bottom: 3.2rem;
-  max-width: 28rem;
+  margin-bottom: 2.4rem;
+  max-width: 24rem;
   flex: 1;
 }
 
