@@ -114,15 +114,24 @@
       "source": "/tools/:path*",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/products/ampd",
+      "destination": "/products/core",
+      "permanent": true
     }
   ],
   "rewrites": [
+    {
+      "source": "/whats-next",
+      "destination": "/whats-next.html"
+    },
     {
       "source": "/why-ampd",
       "destination": "/why-ampd.html"
     },
     {
-      "source": "/((?!about\\.html|mission\\.html|platform\\.html|safety\\.html|request-pilot\\.html|privacy-policy\\.html|terms\\.html|why-ampd\\.html|demo\\.html|schedule-demo|products/|api/).*)",
+      "source": "/((?!about\\.html|mission\\.html|platform\\.html|safety\\.html|request-pilot\\.html|privacy-policy\\.html|terms\\.html|why-ampd\\.html|whats-next\\.html|demo\\.html|schedule-demo|whats-next|products/|api/).*)",
       "destination": "/index.html"
     }
   ]

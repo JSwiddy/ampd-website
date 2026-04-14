@@ -17,12 +17,13 @@
 
 | File | Purpose |
 |------|---------|
-| `products/ampd/index.html` | AMPD product page |
+| `products/core/index.html` | AMPD Core product page (renamed from products/ampd) |
 | `products/grades/index.html` | Grades product page |
 | `products/counsel/index.html` | Counsel coming-soon page with waitlist |
 | `products/training-room/index.html` | Training Room coming-soon page with waitlist |
 | `products/fuel/index.html` | Fuel coming-soon page with waitlist |
 | `why-ampd.html` | Why AMPD page |
+| `whats-next.html` | What's Next hub page (Counsel, Training Room, Fuel) |
 | `docs/structure-pass-complete.md` | This file |
 
 ## Content Placeholders
@@ -36,7 +37,7 @@
 | `[WHY_AMPD_TEASER_PLACEHOLDER]` | ~181 | Why AMPD teaser paragraph |
 | `[EMAIL_PLACEHOLDER]` | ~197 (footer) | Contact email address |
 
-### products/ampd/index.html
+### products/core/index.html (renamed from products/ampd)
 | Placeholder | Description |
 |-------------|-------------|
 | `[AMPD_PRODUCT_TAGLINE_PLACEHOLDER]` | Hero tagline |
@@ -113,14 +114,29 @@
 |-------|------|
 | `PLATFORM_MOCKUP` | index.html |
 | `FOUNDER_STORY_IMAGE` | index.html |
-| `ATHLETE_MORNING_MOCKUP` | products/ampd/index.html |
-| `COACH_VIEW_MOCKUP` | products/ampd/index.html |
-| `FLAG_MEETING_MOCKUP` | products/ampd/index.html |
-| `THE_WEEK_MOCKUP` | products/ampd/index.html |
-| `FAMILY_MOCKUP` | products/ampd/index.html |
+| `ATHLETE_MORNING_MOCKUP` | products/core/index.html |
+| `COACH_VIEW_MOCKUP` | products/core/index.html |
+| `FLAG_MEETING_MOCKUP` | products/core/index.html |
+| `THE_WEEK_MOCKUP` | products/core/index.html |
+| `FAMILY_MOCKUP` | products/core/index.html |
 | `GRADES_FEATURE_1_MOCKUP` | products/grades/index.html |
 | `GRADES_FEATURE_2_MOCKUP` | products/grades/index.html |
 | `GRADES_FEATURE_3_MOCKUP` | products/grades/index.html |
+
+### whats-next.html
+| Placeholder | Description |
+|-------------|-------------|
+| `[WHATS_NEXT_HEADLINE_PLACEHOLDER]` | Hero headline |
+| `[WHATS_NEXT_SUBHEAD_PLACEHOLDER]` | Hero subhead |
+| `[COUNSEL_DESCRIPTION_PLACEHOLDER]` | Counsel description paragraphs |
+| `[COUNSEL_EXPECT_PLACEHOLDER]` | Counsel "what to expect" bullets |
+| `[TRAINING_ROOM_DESCRIPTION_PLACEHOLDER]` | Training Room description paragraphs |
+| `[TRAINING_ROOM_EXPECT_PLACEHOLDER]` | Training Room "what to expect" bullets |
+| `[FUEL_DESCRIPTION_PLACEHOLDER]` | Fuel description paragraphs |
+| `[FUEL_EXPECT_PLACEHOLDER]` | Fuel "what to expect" bullets |
+| `[WHATS_NEXT_CLOSING_PLACEHOLDER]` | Closing section headline |
+| `[EARLY_ACCESS_PLACEHOLDER]` | Early access body text |
+| `[EMAIL_PLACEHOLDER]` | Footer contact email |
 
 ## Global Placeholder (appears in every page footer)
 - `[EMAIL_PLACEHOLDER]` — contact email, appears in footer Connect column on all pages

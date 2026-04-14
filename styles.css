@@ -1071,50 +1071,39 @@ body.nav-lock {
 .products-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2.4rem;
-}
-
-/* Center the bottom 2 cards */
-.products-grid .product-card:nth-child(4),
-.products-grid .product-card:nth-child(5) {
-  /* On the 3-col grid, items 4 and 5 land in a 2nd row. Center them. */
-}
-
-/* We use a wrapper trick: make the grid justify items center on the second row */
-.products-grid {
+  gap: 4rem;
   justify-items: center;
 }
 
 .product-card {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   position: relative;
-  padding: 3.2rem 2.4rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  background: var(--bg);
+  padding: 3.2rem 2rem;
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
   transition: var(--transition);
-  cursor: pointer;
   width: 100%;
-  max-width: 100%;
+  max-width: 36rem;
 }
 
 .product-card:hover {
-  border-color: var(--tertiary);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
   transform: translateY(-4px);
 }
 
 .product-icon {
-  width: 5.6rem;
-  height: 5.6rem;
+  width: 6.4rem;
+  height: 6.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg-accent);
-  border-radius: 1.2rem;
+  background: #111111;
+  border-radius: 50%;
   margin-bottom: 2rem;
-  color: var(--primary);
 }
 
 .product-card h3 {
@@ -1127,21 +1116,27 @@ body.nav-lock {
 
 .product-card p {
   font-size: var(--text-sm);
-  line-height: 1.5;
+  line-height: 1.6;
   color: var(--text-light);
-  margin-bottom: 2rem;
+  margin-bottom: 2.4rem;
   flex: 1;
 }
 
 .product-link {
+  display: inline-block;
+  padding: 1rem 2.4rem;
   font-size: var(--text-sm);
   font-weight: 700;
-  color: var(--text-color);
-  transition: color 0.3s ease;
+  color: #111111;
+  border: 1.5px solid #111111;
+  border-radius: 9999px;
+  background: none;
+  transition: var(--transition);
 }
 
-.product-card:hover .product-link {
-  color: var(--tertiary);
+.product-link:hover {
+  background: #111111;
+  color: #ffffff;
 }
 
 /* Coming Soon Badge */
@@ -1546,6 +1541,105 @@ body.nav-lock {
   font-size: var(--text-sm);
   color: var(--text-muted);
   font-style: italic;
+}
+
+/* What's Next page */
+.whats-next-product {
+  padding: var(--section-padding) 0;
+}
+
+.whats-next-product-header {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.whats-next-product-header h2 {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--primary);
+  margin: 0;
+}
+
+.coming-soon-pill {
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: var(--bg-accent);
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+}
+
+.whats-next-tagline {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 2rem;
+}
+
+.whats-next-product p {
+  font-size: var(--text-base);
+  color: var(--text-light);
+  line-height: 1.7;
+  margin-bottom: 1.6rem;
+  max-width: 72rem;
+}
+
+.whats-next-product h3 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--primary);
+  margin-top: 3.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.whats-next-list {
+  list-style: disc;
+  padding-left: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+
+.whats-next-list li {
+  font-size: var(--text-base);
+  color: var(--text-light);
+  line-height: 1.7;
+  margin-bottom: 0.8rem;
+}
+
+.whats-next-product .waitlist-form {
+  margin-top: 3.2rem;
+}
+
+.whats-next-closing {
+  padding: var(--section-padding) 0;
+  background: var(--bg-accent);
+  text-align: center;
+}
+
+.whats-next-closing h2 {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 1.6rem;
+}
+
+.whats-next-closing p {
+  font-size: var(--text-base);
+  color: var(--text-light);
+  line-height: 1.7;
+  margin-bottom: 1.6rem;
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.whats-next-closing .btn-primary {
+  margin-top: 2rem;
 }
 
 /* Why AMPD page */
