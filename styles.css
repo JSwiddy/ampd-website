@@ -1911,18 +1911,10 @@ h2.products-heading {
 
 .demo-page {
   background: var(--bg);
-  min-height: 100vh;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.demo-page .demo-layout {
-  margin-bottom: 0;
-  padding-bottom: 0;
 }
 
 .site-footer--tight {
-  padding: 0 3rem 3rem !important;
+  padding: 2rem 3rem 3rem;
 }
 
 .demo-layout {
