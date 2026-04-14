@@ -1068,7 +1068,7 @@ body.nav-lock {
   padding: 0 4rem;
 }
 
-.products-heading {
+h2.products-heading {
   font-family: 'Kanit', sans-serif;
   font-size: var(--text-3xl);
   font-weight: 600;
