@@ -3297,8 +3297,41 @@ h2.products-heading {
 
 .about-values-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.4rem;
+}
+
+/* Why AMPD band */
+.why-ampd-band {
+  padding: 10rem 0;
+  background: #111111;
+  text-align: center;
+}
+
+.why-ampd-body {
+  max-width: 64rem;
+  margin: 2.4rem auto 0;
+}
+
+.why-ampd-body p {
+  font-size: 1.8rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1.6rem;
+}
+
+.why-ampd-body p:first-child {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.why-ampd-body p:last-child {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 2rem;
 }
 
 .about-value-card {
@@ -3347,8 +3380,8 @@ h2.products-heading {
     text-align: center !important;
   }
   .about-values-grid {
-    grid-template-columns: 1fr;
-    max-width: 48rem;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 64rem;
     margin: 0 auto;
   }
   .about-founder-photo-large img {
