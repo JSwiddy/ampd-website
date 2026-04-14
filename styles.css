@@ -1069,6 +1069,7 @@ body.nav-lock {
 }
 
 .products-heading {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: var(--text-3xl);
   font-weight: 800;
   color: #191919;
