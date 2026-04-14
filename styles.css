@@ -3303,35 +3303,42 @@ h2.products-heading {
 
 /* Why AMPD band */
 .why-ampd-band {
-  padding: 10rem 0;
+  padding: 8rem 0;
   background: #111111;
   text-align: center;
 }
 
+.why-ampd-band .products-heading {
+  font-size: var(--text-5xl);
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
 .why-ampd-body {
-  max-width: 64rem;
-  margin: 2.4rem auto 0;
+  max-width: 56rem;
+  margin: 3rem auto 0;
 }
 
 .why-ampd-body p {
-  font-size: 1.8rem;
+  font-size: var(--text-base);
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 1.6rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 1.2rem;
 }
 
 .why-ampd-body p:first-child {
-  font-size: 2.2rem;
+  font-size: var(--text-xl);
   font-weight: 700;
   color: #fff;
-  margin-bottom: 2rem;
+  margin-bottom: 1.6rem;
 }
 
 .why-ampd-body p:last-child {
-  font-size: 2.2rem;
+  font-size: var(--text-xl);
   font-weight: 700;
   color: #fff;
-  margin-top: 2rem;
+  margin-top: 1.6rem;
+  margin-bottom: 0;
 }
 
 .about-value-card {
