@@ -1969,8 +1969,8 @@ h2.products-heading {
 .demo-bullets {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  margin-bottom: 3rem;
+  gap: 1rem;
+  margin-bottom: 1.6rem;
 }
 
 .demo-bullet {
@@ -1985,9 +1985,9 @@ h2.products-heading {
 }
 
 .demo-bullet span {
-  font-size: var(--text-lg);
+  font-size: var(--text-sm);
   color: var(--text-color);
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .demo-trust-badges {
