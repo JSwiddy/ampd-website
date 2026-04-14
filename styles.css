@@ -2064,10 +2064,10 @@ h2.products-heading {
 }
 
 .demo-marquee-track img {
-  height: 2.4rem;
+  height: 3.6rem;
   width: auto;
   object-fit: contain;
-  margin: 0 1.6rem;
+  margin: 0 2rem;
   opacity: 0.7;
   filter: grayscale(100%) brightness(0.3);
   flex-shrink: 0;
