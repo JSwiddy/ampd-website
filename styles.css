@@ -1915,7 +1915,7 @@ h2.products-heading {
 }
 
 .site-footer--tight {
-  padding-top: 0 !important;
+  padding: 0 3rem 3rem !important;
 }
 
 .demo-layout {
