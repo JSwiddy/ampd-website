@@ -1940,7 +1940,7 @@ h2.products-heading {
 
 .demo-eyebrow {
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -1949,27 +1949,28 @@ h2.products-heading {
 }
 
 .demo-value h1 {
-  font-size: var(--text-2xl);
-  font-weight: 800;
+  font-family: 'Kanit', sans-serif;
+  font-size: var(--text-4xl);
+  font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  margin-bottom: 1.6rem;
+  margin-bottom: 2rem;
   color: var(--primary);
 }
 
 .demo-subtitle {
-  font-size: var(--text-base);
+  font-size: 1.8rem;
   line-height: 1.6;
   color: var(--text-light);
-  margin-bottom: 2.4rem;
+  margin-bottom: 3rem;
   max-width: 46rem;
 }
 
 .demo-bullets {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  margin-bottom: 2rem;
+  gap: 1.6rem;
+  margin-bottom: 2.4rem;
 }
 
 .demo-bullet {
@@ -1984,9 +1985,9 @@ h2.products-heading {
 }
 
 .demo-bullet span {
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   color: var(--text-color);
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 .demo-trust-badges {
@@ -2081,7 +2082,7 @@ h2.products-heading {
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 1.2rem;
-  padding: 3.2rem;
+  padding: 4rem;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
 }
 
