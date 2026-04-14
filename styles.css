@@ -378,7 +378,7 @@ body.nav-lock {
 .hero-inner {
   max-width: var(--page-width);
   margin: 0 auto;
-  padding: 6rem 5rem;
+  padding: 8rem 5rem 6rem;
   display: flex;
   align-items: center;
   gap: 4rem;
