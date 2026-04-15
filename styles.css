@@ -1579,9 +1579,12 @@ h2.products-heading {
 }
 
 .product-hero--banner-wrap h1 {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Manrope', sans-serif !important;
   font-size: var(--text-5xl);
-  font-weight: 800;
+  font-weight: 800 !important;
+  font-style: normal !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
   color: #fff;
   margin-bottom: 1.2rem;
   line-height: 1.1;
