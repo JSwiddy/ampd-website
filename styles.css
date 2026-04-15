@@ -1572,6 +1572,12 @@ h2.products-heading {
   align-items: center;
 }
 
+.product-hero--banner-wrap .hero-logo {
+  height: 6rem;
+  width: auto;
+  margin-bottom: 1.2rem;
+}
+
 .product-hero--banner-wrap h1 {
   font-family: 'Kanit', sans-serif;
   font-size: var(--text-5xl);
