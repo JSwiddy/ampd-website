@@ -461,7 +461,7 @@ body.nav-lock {
   position: relative;
   border-radius: 1.6rem;
   overflow: hidden;
-  min-height: 340px;
+  min-height: 368px;
   display: flex;
   align-items: center;
 }
