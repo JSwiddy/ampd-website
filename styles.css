@@ -1537,6 +1537,9 @@ h2.products-heading {
 .product-hero--banner-wrap {
   position: relative;
   overflow: hidden;
+  min-height: 48rem;
+  display: flex;
+  align-items: center;
 }
 
 .product-hero--banner-wrap::before {
