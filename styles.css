@@ -1533,25 +1533,13 @@ h2.products-heading {
   text-align: center;
 }
 
-/* Product Hero — Banner variant (MotionSports style) */
+/* Product Hero — Banner variant (full-bleed, matches homepage hero size) */
 .product-hero--banner-wrap {
-  background: var(--primary);
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
-}
-
-.product-hero--banner {
   position: relative;
-  padding: 8rem 5rem 6rem;
-  text-align: left;
   overflow: hidden;
-  border-radius: 2rem;
-  width: 100%;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
 }
 
-.product-hero--banner::before {
+.product-hero--banner-wrap::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -1561,7 +1549,7 @@ h2.products-heading {
   z-index: 0;
 }
 
-.product-hero--banner::after {
+.product-hero--banner-wrap::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -1575,31 +1563,35 @@ h2.products-heading {
   z-index: 1;
 }
 
-.product-hero--banner .section-wrap {
+.product-hero--banner-wrap .section-wrap {
   position: relative;
   z-index: 2;
-  max-width: 44rem;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 8rem 5rem 6rem;
 }
 
-.product-hero--banner h1 {
+.product-hero--banner-wrap h1 {
   font-family: 'Kanit', sans-serif;
   font-size: var(--text-5xl);
   font-weight: 600;
   color: #fff;
   margin-bottom: 1.2rem;
   line-height: 1.1;
+  max-width: 44rem;
 }
 
-.product-hero--banner .hero-tagline {
-  font-size: 1.6rem;
-  color: rgba(255,255,255,0.8);
+.product-hero--banner-wrap .hero-tagline {
+  font-size: 1.8rem;
+  color: rgba(255,255,255,0.7);
   margin-bottom: 2.4rem;
   line-height: 1.6;
+  max-width: 44rem;
 }
 
-.product-hero--banner .btn-primary {
-  background: var(--primary);
-  color: #fff;
+.product-hero--banner-wrap .btn-primary {
+  background: #fff;
+  color: var(--primary);
   font-weight: 700;
   border: none;
   padding: 1.2rem 2.8rem;
@@ -1608,14 +1600,10 @@ h2.products-heading {
 }
 
 @media (max-width: 767px) {
-  .product-hero--banner-wrap {
-    padding: 1.2rem;
+  .product-hero--banner-wrap .section-wrap {
+    padding: 5rem 2rem 4rem;
   }
-  .product-hero--banner {
-    padding: 4rem 2rem;
-    border-radius: 1.2rem;
-  }
-  .product-hero--banner h1 {
+  .product-hero--banner-wrap h1 {
     font-size: var(--text-3xl);
   }
 }
