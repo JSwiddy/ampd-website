@@ -1535,7 +1535,8 @@ h2.products-heading {
 
 /* Product Hero — Banner variant (MotionSports style) */
 .product-hero--banner-wrap {
-  padding: 6rem 2rem 0;
+  background: var(--primary);
+  padding: 6rem 2rem 8rem;
   display: flex;
   justify-content: center;
 }
