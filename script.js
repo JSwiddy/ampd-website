@@ -104,8 +104,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     row.style.transform = 'translateX(-' + pct + '%)';
   }
 
-  function next() { slideTo(current + 1); }
-  function prev() { slideTo(current - 1); }
+  function next() { slideTo(current + getVisibleCount()); }
+  function prev() { slideTo(current - getVisibleCount()); }
 
   function startAutoplay() {
     stopAutoplay();
