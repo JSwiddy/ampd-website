@@ -461,7 +461,7 @@ body.nav-lock {
   position: relative;
   border-radius: 1.6rem;
   overflow: hidden;
-  min-height: 352px;
+  height: 352px;
   display: flex;
   align-items: center;
 }
@@ -2816,7 +2816,7 @@ h2.products-heading {
   }
 
   .academics-hero-card {
-    min-height: 320px;
+    height: 320px;
   }
 
   /* Logos — 4 visible on tablet (motionsports: 992px → 4) */
@@ -2966,7 +2966,7 @@ h2.products-heading {
   }
 
   .academics-hero-card {
-    min-height: 280px;
+    height: 280px;
   }
 
   .academics-hero-content h1 {
