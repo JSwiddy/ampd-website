@@ -1575,19 +1575,13 @@ h2.products-heading {
 .product-hero--banner-wrap .hero-logo {
   height: 7rem;
   width: auto;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.4rem;
 }
 
-.product-hero--banner-wrap h1 {
-  font-family: 'Kanit', sans-serif;
-  font-size: var(--text-5xl);
-  font-weight: 600;
-  font-style: italic;
-  color: #fff;
-  margin-bottom: 1.2rem;
-  line-height: 1.1;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+.product-hero--banner-wrap .hero-subtitle-logo {
+  height: 5rem;
+  width: auto;
+  margin-bottom: 1.6rem;
 }
 
 .product-hero--banner-wrap .hero-tagline {
