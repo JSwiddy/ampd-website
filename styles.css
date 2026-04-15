@@ -513,7 +513,7 @@ body.nav-lock {
   flex: 1;
   overflow: hidden;
   margin: 0 20px;
-  padding: 0 1rem;
+  padding: 0;
 }
 
 .logo-slider-row {
