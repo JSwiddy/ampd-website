@@ -1556,7 +1556,7 @@ h2.products-heading {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(19,19,19,0.65);
+  background: rgba(19,19,19,0.72);
   z-index: 1;
 }
 
