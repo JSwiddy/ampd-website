@@ -1745,7 +1745,7 @@ h2.products-heading {
 }
 
 .feature-box-bullet strong {
-  font-size: var(--text-xl);
+  font-size: var(--text-base);
   font-weight: 700;
   color: var(--primary);
 }
