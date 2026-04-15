@@ -1739,13 +1739,13 @@ h2.products-heading {
 }
 
 .feature-box-bullet .bullet-check {
-  width: 3.6rem;
-  height: 3.6rem;
+  width: 4.8rem;
+  height: 4.8rem;
   flex-shrink: 0;
 }
 
 .feature-box-bullet strong {
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   font-weight: 700;
   color: var(--primary);
 }
