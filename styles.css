@@ -1548,7 +1548,6 @@ h2.products-heading {
   overflow: hidden;
   border-radius: 2rem;
   width: 100%;
-  max-width: var(--page-width);
   box-shadow: 0 4px 24px rgba(0,0,0,0.15);
 }
 
