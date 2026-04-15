@@ -540,14 +540,14 @@ body.nav-lock {
   width: auto;
   height: auto;
   object-fit: contain;
-  filter: brightness(0) invert(0);
-  opacity: 0.85;
+  filter: grayscale(100%) contrast(0.3) brightness(0.6);
+  opacity: 0.9;
   transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
 .logo-box img:hover {
   opacity: 1;
-  filter: brightness(0) invert(0);
+  filter: grayscale(0%) contrast(1) brightness(1);
 }
 
 
