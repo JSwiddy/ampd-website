@@ -1556,13 +1556,7 @@ h2.products-heading {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(19,19,19,0.92) 0%,
-    rgba(19,19,19,0.80) 40%,
-    rgba(19,19,19,0.45) 75%,
-    rgba(19,19,19,0.25) 100%
-  );
+  background: rgba(19,19,19,0.65);
   z-index: 1;
 }
 
@@ -1572,6 +1566,10 @@ h2.products-heading {
   max-width: var(--page-width);
   margin: 0 auto;
   padding: 8rem 5rem 6rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .product-hero--banner-wrap h1 {
@@ -1581,7 +1579,6 @@ h2.products-heading {
   color: #fff;
   margin-bottom: 1.2rem;
   line-height: 1.1;
-  max-width: 44rem;
 }
 
 .product-hero--banner-wrap .hero-tagline {
@@ -1589,7 +1586,7 @@ h2.products-heading {
   color: rgba(255,255,255,0.7);
   margin-bottom: 2.4rem;
   line-height: 1.6;
-  max-width: 44rem;
+  max-width: 52rem;
 }
 
 .product-hero--banner-wrap .btn-primary {
