@@ -1714,7 +1714,7 @@ h2.products-heading {
 
 .feature-box-title {
   font-family: 'Kanit', sans-serif;
-  font-size: var(--text-2xl);
+  font-size: var(--text-3xl);
   font-weight: 600;
   color: var(--primary);
   line-height: 1.2;
@@ -1773,7 +1773,7 @@ h2.products-heading {
 }
 
 .feature-box-visual {
-  flex: 2.5;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
