@@ -1310,11 +1310,12 @@ h2.products-heading {
 
 .features-grid {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: auto minmax(0, 420px) auto;
   align-items: center;
-  gap: 4rem;
+  gap: 3rem;
   max-width: 75rem;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .features-grid-cell-1 {
