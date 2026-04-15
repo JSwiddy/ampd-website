@@ -1714,11 +1714,10 @@ h2.products-heading {
 
 .feature-box-title {
   font-family: 'Kanit', sans-serif;
-  font-size: var(--text-3xl);
+  font-size: var(--text-2xl);
   font-weight: 600;
   color: var(--primary);
   line-height: 1.2;
-  white-space: nowrap;
 }
 
 .feature-box-content {
