@@ -1619,10 +1619,9 @@ h2.products-heading {
 
 /* Section Heading Block — divider + label + title (Motion style) */
 .section-heading-block {
-  padding: 5rem 2rem 4rem;
+  padding: 8rem 2rem;
   text-align: center;
-  background: #fff;
-  box-shadow: inset 0 8px 16px -8px rgba(0,0,0,0.12);
+  background: linear-gradient(#ffffff, #e8e8e8, #e8e8e8, #ffffff);
 }
 
 .section-heading-inner {
