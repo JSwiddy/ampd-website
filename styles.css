@@ -1533,15 +1533,22 @@ h2.products-heading {
   text-align: center;
 }
 
-/* Product Hero — Banner variant (with background image) */
+/* Product Hero — Banner variant (MotionSports style) */
+.product-hero--banner-wrap {
+  padding: 6rem 2rem 0;
+  display: flex;
+  justify-content: center;
+}
+
 .product-hero--banner {
   position: relative;
-  padding: 8rem 2rem;
+  padding: 6rem 5rem;
   text-align: left;
   overflow: hidden;
-  border-radius: 1.6rem;
-  max-width: 75rem;
-  margin: 2rem auto 0;
+  border-radius: 2rem;
+  width: 100%;
+  max-width: 90rem;
+  box-shadow: 0 0 0 8px rgba(55,55,55,0.15), 0 0 40px rgba(0,0,0,0.1);
 }
 
 .product-hero--banner::before {
@@ -1558,14 +1565,20 @@ h2.products-heading {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(19,19,19,0.88) 0%, rgba(30,30,30,0.75) 50%, rgba(40,40,40,0.65) 100%);
+  background: linear-gradient(
+    to right,
+    rgba(19,19,19,0.92) 0%,
+    rgba(19,19,19,0.80) 40%,
+    rgba(19,19,19,0.45) 75%,
+    rgba(19,19,19,0.25) 100%
+  );
   z-index: 1;
 }
 
 .product-hero--banner .section-wrap {
   position: relative;
   z-index: 2;
-  max-width: 50rem;
+  max-width: 44rem;
 }
 
 .product-hero--banner h1 {
@@ -1578,16 +1591,30 @@ h2.products-heading {
 }
 
 .product-hero--banner .hero-tagline {
-  font-size: 1.8rem;
-  color: rgba(255,255,255,0.85);
+  font-size: 1.6rem;
+  color: rgba(255,255,255,0.8);
   margin-bottom: 2.4rem;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .product-hero--banner .btn-primary {
-  background: #fff;
-  color: var(--primary);
+  background: var(--primary);
+  color: #fff;
   font-weight: 700;
+  border: none;
+  padding: 1.2rem 2.8rem;
+  border-radius: 0.8rem;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 767px) {
+  .product-hero--banner {
+    padding: 4rem 2.4rem;
+    border-radius: 1.2rem;
+  }
+  .product-hero--banner h1 {
+    font-size: var(--text-3xl);
+  }
 }
 
 .product-hero h1 {
