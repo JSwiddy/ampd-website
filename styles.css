@@ -499,7 +499,7 @@ body.nav-lock {
 
 .academics-hero-content h1 {
   font-family: 'Kanit', sans-serif;
-  font-size: var(--text-5xl);
+  font-size: 6rem;
   font-weight: 600;
   line-height: 1.1;
   color: #fff;
