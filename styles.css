@@ -1718,6 +1718,15 @@ h2.products-heading {
   font-weight: 600;
   color: var(--primary);
   line-height: 1.2;
+  hyphens: none;
+  -webkit-hyphens: none;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+.feature-box-content {
+  hyphens: none;
+  -webkit-hyphens: none;
 }
 
 .feature-box-bullets {
