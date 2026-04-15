@@ -1621,8 +1621,8 @@ h2.products-heading {
 .section-heading-block {
   padding: 5rem 2rem 4rem;
   text-align: center;
-  background: var(--bg-accent);
-  box-shadow: inset 0 4px 12px rgba(0,0,0,0.06), inset 0 -4px 12px rgba(0,0,0,0.06);
+  background: #fff;
+  box-shadow: inset 0 8px 16px -8px rgba(0,0,0,0.12);
 }
 
 .section-heading-inner {
