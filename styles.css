@@ -442,13 +442,13 @@ body.nav-lock {
    =========================== */
 
 .academics-hero {
-  padding: 0;
+  padding: 2rem;
 }
 
 .academics-hero-wrap {
   max-width: var(--page-width);
   margin: 0 auto;
-  padding: 1.5rem 2rem 2rem;
+  padding: 2rem 2rem 2.5rem;
 }
 
 .academics-hero-frame {
@@ -2797,7 +2797,7 @@ h2.products-heading {
 
   /* Academics hero — tablet */
   .academics-hero-wrap {
-    padding: 1.5rem 2rem 2rem;
+    padding: 2rem;
   }
 
   .academics-hero-content {
@@ -2947,7 +2947,7 @@ h2.products-heading {
 
   /* Academics hero — mobile */
   .academics-hero-wrap {
-    padding: 1rem 1.5rem 1.5rem;
+    padding: 1.5rem;
   }
 
   .academics-hero-content {
