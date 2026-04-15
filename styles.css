@@ -1732,6 +1732,13 @@ h2.products-heading {
   gap: 0.4rem;
 }
 
+.feature-box-bullet .bullet-check {
+  width: 2.4rem;
+  height: 2.4rem;
+  flex-shrink: 0;
+  margin-bottom: 0.4rem;
+}
+
 .feature-box-bullet strong {
   font-size: var(--text-base);
   font-weight: 700;
