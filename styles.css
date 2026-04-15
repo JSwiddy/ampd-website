@@ -448,7 +448,7 @@ body.nav-lock {
 .academics-hero-wrap {
   max-width: var(--page-width);
   margin: 0 auto;
-  padding: 8rem 5rem 6rem;
+  padding: 4rem 5rem 3rem;
 }
 
 .academics-hero-frame {
@@ -2797,7 +2797,7 @@ h2.products-heading {
 
   /* Academics hero — tablet */
   .academics-hero-wrap {
-    padding: 4rem 3rem;
+    padding: 3rem;
   }
 
   .academics-hero-content {
@@ -2947,7 +2947,7 @@ h2.products-heading {
 
   /* Academics hero — mobile */
   .academics-hero-wrap {
-    padding: 4rem 2rem;
+    padding: 2rem;
   }
 
   .academics-hero-content {
