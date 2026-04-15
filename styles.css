@@ -1706,6 +1706,7 @@ h2.products-heading {
 
 .feature-box-content {
   flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -1752,7 +1753,7 @@ h2.products-heading {
 }
 
 .feature-box-visual {
-  flex: 1;
+  flex: 1.5;
   display: flex;
   align-items: center;
   justify-content: center;
