@@ -492,26 +492,26 @@ body.nav-lock {
 }
 
 .academics-hero-logo {
-  height: 4rem;
+  height: 8rem;
   width: auto;
-  margin-bottom: 0.6rem;
+  margin-bottom: 1rem;
 }
 
 .academics-hero-content h1 {
   font-family: 'Kanit', sans-serif;
-  font-size: var(--text-4xl);
+  font-size: var(--text-5xl);
   font-weight: 600;
   line-height: 1.1;
   color: #fff;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.4rem;
 }
 
 .academics-hero-content p {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   color: rgba(255, 255, 255, 0.65);
   line-height: 1.5;
-  margin-bottom: 2rem;
-  max-width: 48rem;
+  margin-bottom: 2.4rem;
+  max-width: 52rem;
 }
 
 .academics-hero-content .btn-primary {
