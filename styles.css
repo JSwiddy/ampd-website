@@ -1356,6 +1356,7 @@ h2.products-heading {
   font-size: var(--text-lg);
   font-weight: 600;
   color: var(--text-color);
+  white-space: nowrap;
 }
 
 .platform-showcase {
