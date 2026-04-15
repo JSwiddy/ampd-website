@@ -1622,7 +1622,7 @@ h2.products-heading {
   padding: 5rem 2rem 4rem;
   text-align: center;
   border-bottom: 1px solid var(--border);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
 }
 
 .section-heading-inner {
