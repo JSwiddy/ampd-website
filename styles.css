@@ -1308,7 +1308,7 @@ h2.products-heading {
   background: var(--bg-accent);
 }
 
-.features-grid {
+.platform-section .features-grid {
   display: grid;
   grid-template-columns: auto minmax(0, 420px) auto;
   align-items: center;
