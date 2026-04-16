@@ -1063,8 +1063,8 @@ body.nav-lock {
 
 .app-badge {
   display: inline-flex;
-  width: 24rem;
-  height: 7.1rem;
+  width: 21rem;
+  height: 6.21rem;
   text-decoration: none;
   transition: opacity 0.2s ease;
 }
