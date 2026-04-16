@@ -1079,6 +1079,10 @@ body.nav-lock {
   display: block;
 }
 
+.app-badge img[src*="google-play"] {
+  height: 3.6rem;
+}
+
 /* Footer Row 2 */
 .footer-row-2 {
   display: flex;
