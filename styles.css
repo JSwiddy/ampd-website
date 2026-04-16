@@ -1064,6 +1064,9 @@ body.nav-lock {
 .app-badge {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  width: 14rem;
+  height: 4.8rem;
   text-decoration: none;
   transition: opacity 0.2s ease;
 }
@@ -1074,13 +1077,12 @@ body.nav-lock {
 }
 
 .app-badge img {
-  height: 4rem;
+  max-width: 100%;
+  max-height: 100%;
   width: auto;
+  height: auto;
+  object-fit: contain;
   display: block;
-}
-
-.app-badge img[src*="google-play"] {
-  height: 3.6rem;
 }
 
 /* Footer Row 2 */
