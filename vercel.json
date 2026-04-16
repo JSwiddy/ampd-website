@@ -119,6 +119,11 @@
       "source": "/products/ampd",
       "destination": "/products/core",
       "permanent": true
+    },
+    {
+      "source": "/platform.html",
+      "destination": "/products/core",
+      "permanent": true
     }
   ],
   "rewrites": [
