@@ -1138,10 +1138,9 @@ body.nav-lock {
 .footer-tagline {
   font-size: var(--text-lg);
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.55;
   letter-spacing: -0.01em;
-  max-width: 34rem;
   margin-bottom: 1.6rem;
 }
 
