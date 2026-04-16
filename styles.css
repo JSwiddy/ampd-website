@@ -1058,13 +1058,13 @@ body.nav-lock {
   gap: 1.4rem;
   margin-top: 1.6rem;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .app-badge {
   display: inline-flex;
-  width: 56rem;
-  height: 16.56rem;
+  width: 24rem;
+  height: 7.1rem;
   text-decoration: none;
   transition: opacity 0.2s ease;
 }
