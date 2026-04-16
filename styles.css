@@ -1055,7 +1055,7 @@ body.nav-lock {
 /* App Store Badges */
 .footer-app-badges {
   display: flex;
-  gap: 1.4rem;
+  gap: 0.4rem;
   margin-top: 1.6rem;
   align-items: center;
   flex-wrap: nowrap;
