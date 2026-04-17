@@ -4,11 +4,13 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { name, email, organization, role, orgType, teamSize, phone, message, timeline } = req.body;
+    const { firstName, lastName, email, organization, role, sportsCount, teamSize, phone, message, timeline } = req.body;
 
-    if (!name || !email || !organization || !role) {
+    if (!firstName || !lastName || !email || !organization || !role) {
       return res.status(400).json({ error: 'Missing required fields' });
     }
+
+    const name = `${firstName} ${lastName}`.trim();
 
     const emailHtml = `
       <h2>New Demo Request</h2>
@@ -19,11 +21,11 @@ export default async function handler(req, res) {
         ${phone ? `<li><strong>Phone:</strong> ${phone}</li>` : ''}
         <li><strong>Role:</strong> ${role}</li>
       </ul>
-      <h3>Organization Details</h3>
+      <h3>Program Details</h3>
       <ul>
-        <li><strong>Organization:</strong> ${organization}</li>
-        ${orgType ? `<li><strong>Type:</strong> ${orgType}</li>` : ''}
-        ${teamSize ? `<li><strong>Team Size:</strong> ${teamSize}</li>` : ''}
+        <li><strong>School:</strong> ${organization}</li>
+        ${sportsCount ? `<li><strong>Number of Sports:</strong> ${sportsCount}</li>` : ''}
+        ${teamSize ? `<li><strong>Total Athletes:</strong> ${teamSize}</li>` : ''}
         ${timeline ? `<li><strong>Timeline:</strong> ${timeline}</li>` : ''}
       </ul>
       ${message ? `<h3>Message</h3><p>${message.replace(/\n/g, '<br>')}</p>` : ''}
@@ -40,10 +42,10 @@ Contact Information:
 ${phone ? `- Phone: ${phone}` : ''}
 - Role: ${role}
 
-Organization Details:
-- Organization: ${organization}
-${orgType ? `- Type: ${orgType}` : ''}
-${teamSize ? `- Team Size: ${teamSize}` : ''}
+Program Details:
+- School: ${organization}
+${sportsCount ? `- Number of Sports: ${sportsCount}` : ''}
+${teamSize ? `- Total Athletes: ${teamSize}` : ''}
 ${timeline ? `- Timeline: ${timeline}` : ''}
 
 ${message ? `Message:\n${message}` : ''}
@@ -92,12 +94,12 @@ Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' })
         To: email,
         Subject: 'Thank you for your AMPD demo request',
         HtmlBody: `
-          <h2>Thank you, ${name}!</h2>
+          <h2>Thank you, ${firstName}!</h2>
           <p>We've received your demo request for <strong>${organization}</strong>.</p>
           <p>Our team will review your information and reach out within 24 hours to schedule your walkthrough.</p>
           <p>Best regards,<br>The AMPD Team</p>
         `,
-        TextBody: `Thank you, ${name}!
+        TextBody: `Thank you, ${firstName}!
 
 We've received your demo request for ${organization}.
 

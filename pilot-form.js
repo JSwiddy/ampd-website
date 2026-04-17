@@ -26,8 +26,8 @@
 
     if (!form) return;
 
-    function showBookingStage(fullName, email, stage) {
-      const firstName = (fullName || '').trim().split(/\s+/)[0] || '';
+    function showBookingStage(firstName, lastName, email, stage) {
+      const fullName = [firstName, lastName].filter(Boolean).join(' ').trim();
       form.style.display = 'none';
       formSuccess.style.display = 'block';
 
@@ -48,7 +48,7 @@
 
     const existing = loadDemoState();
     if (existing && existing.submitted) {
-      showBookingStage(existing.name || '', existing.email || '', existing.booked ? 'booked' : 'prompt');
+      showBookingStage(existing.firstName || '', existing.lastName || '', existing.email || '', existing.booked ? 'booked' : 'prompt');
     }
 
     // Custom dropdown logic
@@ -136,12 +136,13 @@
       })
       .then(result => {
         if (result.success) {
-          const fullName = (data.name || '').trim();
+          const firstName = (data.firstName || '').trim();
+          const lastName = (data.lastName || '').trim();
           const email = (data.email || '').trim();
 
-          saveDemoState({ submitted: true, booked: false, name: fullName, email: email });
+          saveDemoState({ submitted: true, booked: false, firstName: firstName, lastName: lastName, email: email });
 
-          showBookingStage(fullName, email, 'prompt');
+          showBookingStage(firstName, lastName, email, 'prompt');
           formSuccess.scrollIntoView({ behavior: 'smooth', block: 'start' });
         } else {
           throw new Error(result.message || 'Submission failed');

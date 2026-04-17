@@ -119,42 +119,50 @@
 
             <div class="form-row">
               <div class="form-group">
-                <label for="name">Name *</label>
-                <input type="text" id="name" name="name" required placeholder="Your full name">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" required placeholder="First name">
               </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" required placeholder="Last name">
+              </div>
+            </div>
+
+            <div class="form-row">
               <div class="form-group">
                 <label for="email">Email *</label>
                 <input type="email" id="email" name="email" required placeholder="your@email.com">
               </div>
-            </div>
-
-            <div class="form-row">
               <div class="form-group">
                 <label for="organization">School Name *</label>
                 <input type="text" id="organization" name="organization" required placeholder="Your school name">
               </div>
-              <div class="form-group">
-                <label for="role">Your Role *</label>
-                <input type="text" id="role" name="role" required placeholder="e.g., AD, Head Coach">
-              </div>
             </div>
 
             <div class="form-row">
               <div class="form-group">
-                <label>Program Type *</label>
-                <input type="hidden" id="orgType" name="orgType" required>
-                <div class="custom-select" data-target="orgType">
+                <label for="role">Your Role *</label>
+                <input type="text" id="role" name="role" required placeholder="e.g., AD, Head Coach">
+              </div>
+              <div class="form-group">
+                <label>Number of Sports *</label>
+                <input type="hidden" id="sportsCount" name="sportsCount" required>
+                <div class="custom-select" data-target="sportsCount">
                   <div class="custom-select__trigger">
                     <span class="custom-select__text">Select one...</span>
                     <svg class="custom-select__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1L6 6L11 1" stroke="#191919" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                   </div>
                   <div class="custom-select__options">
-                    <div class="custom-select__option" data-value="high-school">High School</div>
-                    <div class="custom-select__option" data-value="college">College / University</div>
-                    <div class="custom-select__option" data-value="youth-sports">Youth Sports Organization</div>
+                    <div class="custom-select__option" data-value="up-to-5">Up to 5</div>
+                    <div class="custom-select__option" data-value="6-15">6–15</div>
+                    <div class="custom-select__option" data-value="16-25">16–25</div>
+                    <div class="custom-select__option" data-value="25+">25+</div>
                   </div>
                 </div>
               </div>
+            </div>
+
+            <div class="form-row">
               <div class="form-group">
                 <label>Total Athletes *</label>
                 <input type="hidden" id="teamSize" name="teamSize" required>
@@ -171,11 +179,10 @@
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div class="form-group">
-              <label for="phone">Phone (Optional)</label>
-              <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+              <div class="form-group">
+                <label for="phone">Phone (Optional)</label>
+                <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+              </div>
             </div>
 
             <div class="form-actions">
