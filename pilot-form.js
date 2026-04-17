@@ -221,8 +221,14 @@
       });
 
       btn.addEventListener('click', function () {
+        const params = new URLSearchParams();
+        if (name) params.set('name', name);
+        if (email) params.set('email', email);
+        const qs = params.toString();
+        const calLink = qs ? `get-ampd-up/30min?${qs}` : 'get-ampd-up/30min';
+
         Cal.ns["demo-booking"]("modal", {
-          calLink: "get-ampd-up/30min",
+          calLink: calLink,
           config: {
             layout: "month_view",
             name: name,
