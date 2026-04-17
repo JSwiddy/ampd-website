@@ -29,14 +29,9 @@
     function showBookingStage(fullName, email, stage) {
       const firstName = (fullName || '').trim().split(/\s+/)[0] || '';
       form.style.display = 'none';
-      formSuccess.style.display = 'flex';
+      formSuccess.style.display = 'block';
 
-      const layoutInner = document.querySelector('.demo-layout__inner');
-      if (layoutInner) layoutInner.classList.add('is-booking');
-
-      const promptHeadline = document.getElementById('bookingPromptHeadline');
       const doneHeadline = document.getElementById('bookingDoneHeadline');
-      if (firstName && promptHeadline) promptHeadline.textContent = `Thanks, ${firstName}! Pick a time below.`;
       if (firstName && doneHeadline) doneHeadline.textContent = `You're locked in, ${firstName}.`;
 
       if (stage === 'booked') {

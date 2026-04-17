@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=316">
+  <link rel="stylesheet" href="styles.css?v=317">
 </head>
 <body>
   <!-- Header -->
@@ -190,7 +190,7 @@
           </form>
 
           <!-- Success Message (hidden by default) -->
-          <div class="form-success" id="formSuccess" style="display: none; background: transparent; border: none; padding: 1rem 0;">
+          <div class="form-success" id="formSuccess" style="display: none; background: transparent; border: none; padding: 0; text-align: left; align-items: stretch;">
             <style>
               .ampd-success-headline {
                 font-family: 'Poppins', sans-serif;
@@ -257,9 +257,9 @@
 
             <!-- Stage 1: Form submitted, show Cal.com booking embed -->
             <div id="bookingPrompt">
-              <div class="ampd-success-headline" id="bookingPromptHeadline">Thanks! Pick a time below.</div>
-              <div class="ampd-success-sub">Grab a slot that works — we'll see you there.</div>
-              <div id="cal-inline-embed" style="width:100%;height:720px;max-height:720px;overflow-y:auto;overflow-x:hidden;background:#fff;border-radius:12px;margin-top:1rem;"></div>
+              <h2 class="demo-form-title" id="bookingPromptHeadline">Pick a date and time</h2>
+              <p class="ampd-success-sub" style="margin-bottom:1.5rem;">Grab a slot that works — we'll see you there.</p>
+              <div id="cal-inline-embed" style="width:100%;height:620px;max-height:620px;overflow-y:auto;overflow-x:hidden;background:#fff;border-radius:8px;"></div>
             </div>
 
             <!-- Stage 2: Booking confirmed on Cal.com -->
@@ -435,6 +435,6 @@
   </footer>
 
   <script src="script.js?v=8"></script>
-  <script src="pilot-form.js?v=9"></script>
+  <script src="pilot-form.js?v=10"></script>
 </body>
 </html>

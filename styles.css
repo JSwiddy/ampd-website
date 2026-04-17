@@ -2387,14 +2387,6 @@ h2.products-heading {
   align-items: center;
 }
 
-.demo-layout__inner.is-booking {
-  grid-template-columns: 1fr;
-  max-width: 90rem;
-}
-
-.demo-layout__inner.is-booking .demo-value {
-  display: none;
-}
 
 .demo-value {
   padding-top: 0;
