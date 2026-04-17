@@ -192,15 +192,15 @@
         elementOrSelector: "#cal-inline-embed",
         calLink: "get-ampd-up/30min",
         config: {
-          layout: "column_view",
+          layout: "month_view",
           name: name,
           email: email
         }
       });
 
       Cal.ns["demo-booking"]("ui", {
-        hideEventTypeDetails: true,
-        layout: "column_view"
+        hideEventTypeDetails: false,
+        layout: "month_view"
       });
 
       Cal.ns["demo-booking"]("on", {
