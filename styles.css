@@ -1685,6 +1685,7 @@ h2.products-heading {
   background-image: var(--hero-bg);
   background-size: cover;
   background-position: center;
+  filter: grayscale(100%);
   z-index: 0;
 }
 
@@ -1692,7 +1693,7 @@ h2.products-heading {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(19,19,19,0.72);
+  background: rgba(8, 8, 8, 0.6);
   z-index: 1;
 }
 
