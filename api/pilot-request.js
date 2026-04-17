@@ -1,3 +1,5 @@
+import { buildAMPDEmail } from './_emailTemplate.js';
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -81,7 +83,25 @@ Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' })
 
     const result = await response.json();
 
-    // Send confirmation email to user
+    // Send confirmation email to user — branded template
+    const calLink = `https://cal.com/get-ampd-up/30min?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}`;
+
+    const confirmationHtml = buildAMPDEmail({
+      orgName: "AMPD",
+      accentColor: "#10b981",
+      roleLabel: "Schedule Your Demo",
+      headline: `Let's build something great, ${firstName}.`,
+      subtext: `Thanks for your interest in AMPD for ${organization}. Grab a time below and we'll show you AMPD configured for a program like yours — no generic slide decks.`,
+      features: [
+        "Built for high school athletic programs",
+        "One platform for coaches, athletes, and parents",
+        "Up and running in a day"
+      ],
+      ctaText: "Book Your Walkthrough",
+      ctaUrl: calLink,
+      expiryText: ""
+    });
+
     await fetch('https://api.postmarkapp.com/email', {
       method: 'POST',
       headers: {
@@ -93,20 +113,13 @@ Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' })
         From: process.env.POSTMARK_FROM_EMAIL,
         To: email,
         Subject: `Your AMPD walkthrough, ${firstName}`,
-        HtmlBody: `
-          <p>Hi ${firstName},</p>
-          <p>Thanks for your interest in AMPD for <strong>${organization}</strong>.</p>
-          <p>If you haven't already grabbed a time, book your 30 minute walkthrough here:</p>
-          <p><a href="https://cal.com/get-ampd-up/30min" style="display:inline-block; padding:12px 24px; background:#0f172a; color:#ffffff; text-decoration:none; border-radius:8px; font-weight:600;">Book Your Walkthrough</a></p>
-          <p>On the call we'll show you AMPD configured for a program like yours. No generic slide decks.</p>
-          <p>Talk soon,<br>John Swiderek<br>Founder &amp; CEO, AMPD</p>
-        `,
+        HtmlBody: confirmationHtml,
         TextBody: `Hi ${firstName},
 
 Thanks for your interest in AMPD for ${organization}.
 
 If you haven't already grabbed a time, book your 30 minute walkthrough here:
-https://cal.com/get-ampd-up/30min
+${calLink}
 
 On the call we'll show you AMPD configured for a program like yours. No generic slide decks.
 
