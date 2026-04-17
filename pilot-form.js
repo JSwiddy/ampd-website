@@ -96,7 +96,11 @@
         if (result.success) {
           form.style.display = 'none';
           formSuccess.style.display = 'flex';
-          formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+          const layoutInner = document.querySelector('.demo-layout__inner');
+          if (layoutInner) layoutInner.classList.add('is-booking');
+
+          formSuccess.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
           const fullName = (data.name || '').trim();
           const firstName = fullName.split(/\s+/)[0] || '';
