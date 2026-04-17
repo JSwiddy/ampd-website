@@ -221,8 +221,14 @@
       });
 
       btn.addEventListener('click', function () {
+        const parts = (name || '').trim().split(/\s+/);
+        const firstName = parts[0] || '';
+        const lastName = parts.slice(1).join(' ') || '';
+
         const params = new URLSearchParams();
         if (name) params.set('name', name);
+        if (firstName) params.set('firstName', firstName);
+        if (lastName) params.set('lastName', lastName);
         if (email) params.set('email', email);
         const qs = params.toString();
         const calLink = qs ? `get-ampd-up/30min?${qs}` : 'get-ampd-up/30min';
@@ -232,6 +238,8 @@
           config: {
             layout: "month_view",
             name: name,
+            firstName: firstName,
+            lastName: lastName,
             email: email
           }
         });
