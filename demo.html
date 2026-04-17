@@ -190,7 +190,7 @@
           </form>
 
           <!-- Success Message (hidden by default) -->
-          <div class="form-success" id="formSuccess" style="display: none;">
+          <div class="form-success" id="formSuccess" style="display: none; background: transparent; border: none; padding: 1rem 0;">
             <style>
               .ampd-success-headline {
                 font-family: 'Poppins', sans-serif;
@@ -259,11 +259,11 @@
             <div id="bookingPrompt">
               <div class="ampd-success-headline" id="bookingPromptHeadline">Thanks! Pick a time below.</div>
               <div class="ampd-success-sub">Grab a slot that works — we'll see you there.</div>
-              <div id="cal-inline-embed" style="width:100%;min-height:680px;overflow:hidden;background:#fff;border-radius:12px;margin-top:1rem;"></div>
+              <div id="cal-inline-embed" style="width:100%;height:720px;max-height:720px;overflow-y:auto;overflow-x:hidden;background:#fff;border-radius:12px;margin-top:1rem;"></div>
             </div>
 
             <!-- Stage 2: Booking confirmed on Cal.com -->
-            <div id="bookingDone" style="display:none;">
+            <div id="bookingDone" style="display:none; background: rgba(34, 197, 94, 0.06); border: 1px solid rgba(34, 197, 94, 0.2); border-radius: 1.2rem; padding: 4rem 2rem; text-align: center;">
               <div class="ampd-success-headline" id="bookingDoneHeadline">You're locked in.</div>
               <div class="ampd-success-sub">Check your email for the calendar invite. Here's what happens next:</div>
 
@@ -435,6 +435,6 @@
   </footer>
 
   <script src="script.js?v=8"></script>
-  <script src="pilot-form.js?v=7"></script>
+  <script src="pilot-form.js?v=8"></script>
 </body>
 </html>
