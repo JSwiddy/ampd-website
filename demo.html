@@ -256,13 +256,20 @@
             </style>
 
             <!-- Stage 1: Form submitted, show Book CTA -->
-            <div id="bookingPrompt">
-              <h2 class="demo-form-title" id="bookingPromptHeadline">Request received. Pick your time.</h2>
-              <p class="ampd-success-sub" style="margin-bottom:2rem;">Grab a slot that works — we'll see you there.</p>
+            <div id="bookingPrompt" style="text-align:center;">
+              <p style="font-size:1.2rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#10b981; margin-bottom:1.5rem;">Request Received</p>
+
+              <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/w_200,h_200,c_fill,g_face,f_auto,q_auto/v1776458003/IMG_3401_2_e2jnz3.jpg" alt="John Swiderek, Founder of AMPD" style="width:88px; height:88px; border-radius:50%; object-fit:cover; margin-bottom:1.25rem; box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+
+              <h2 class="demo-form-title" id="bookingPromptHeadline" style="margin-bottom:1rem;">Grab a time that works.</h2>
+
+              <p style="color:#475569; font-size:1.05rem; line-height:1.5; max-width:420px; margin:0 auto 2rem;">I'm John — founder of AMPD. Looking forward to walking you through the platform personally.</p>
+
               <button type="button" id="openBookingBtn" class="btn-primary btn--large" style="width:100%;">
                 Pick Your Time
               </button>
-              <p style="margin-top:1.25rem; font-size:0.9rem; color:#64748b; text-align:center;">Takes 30 seconds — opens a calendar overlay.</p>
+
+              <p style="margin-top:1rem; font-size:0.9rem; color:#64748b;">30 minutes · Zoom link sent after booking</p>
             </div>
 
             <!-- Stage 2: Booking confirmed on Cal.com -->
@@ -438,6 +445,6 @@
   </footer>
 
   <script src="script.js?v=8"></script>
-  <script src="pilot-form.js?v=15"></script>
+  <script src="pilot-form.js?v=16"></script>
 </body>
 </html>

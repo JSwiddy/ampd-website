@@ -31,7 +31,9 @@
       form.style.display = 'none';
       formSuccess.style.display = 'block';
 
+      const promptHeadline = document.getElementById('bookingPromptHeadline');
       const doneHeadline = document.getElementById('bookingDoneHeadline');
+      if (firstName && promptHeadline) promptHeadline.textContent = `Grab a time that works, ${firstName}.`;
       if (firstName && doneHeadline) doneHeadline.textContent = `You're locked in, ${firstName}.`;
 
       if (stage === 'booked') {
