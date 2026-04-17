@@ -111,8 +111,27 @@ The AMPD Team`,
       })
     });
 
-    return res.status(200).json({ 
-      success: true, 
+    if (process.env.OUTREACH_WEBHOOK_URL && process.env.INBOUND_DEMO_SECRET) {
+      try {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 3000);
+        await fetch(process.env.OUTREACH_WEBHOOK_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Webhook-Secret': process.env.INBOUND_DEMO_SECRET
+          },
+          body: JSON.stringify({ firstName, lastName, email, organization, role, sportsCount, teamSize, phone }),
+          signal: controller.signal
+        });
+        clearTimeout(timeout);
+      } catch (e) {
+        console.error('Outreach webhook failed (non-fatal):', e.message);
+      }
+    }
+
+    return res.status(200).json({
+      success: true,
       message: 'Form submitted successfully',
       messageId: result.MessageID
     });
