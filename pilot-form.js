@@ -3,11 +3,56 @@
 (function() {
   'use strict';
   
+  const STORAGE_KEY = 'ampd_demo_state';
+
+  function loadDemoState() {
+    try {
+      const raw = sessionStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function saveDemoState(state) {
+    try {
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    } catch (e) {}
+  }
+
   document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('pilotForm');
     const formSuccess = document.getElementById('formSuccess');
 
     if (!form) return;
+
+    function showBookingStage(fullName, email, stage) {
+      const firstName = (fullName || '').trim().split(/\s+/)[0] || '';
+      form.style.display = 'none';
+      formSuccess.style.display = 'flex';
+
+      const layoutInner = document.querySelector('.demo-layout__inner');
+      if (layoutInner) layoutInner.classList.add('is-booking');
+
+      const promptHeadline = document.getElementById('bookingPromptHeadline');
+      const doneHeadline = document.getElementById('bookingDoneHeadline');
+      if (firstName && promptHeadline) promptHeadline.textContent = `Thanks, ${firstName}! Pick a time below.`;
+      if (firstName && doneHeadline) doneHeadline.textContent = `You're locked in, ${firstName}.`;
+
+      if (stage === 'booked') {
+        const prompt = document.getElementById('bookingPrompt');
+        const done = document.getElementById('bookingDone');
+        if (prompt) prompt.style.display = 'none';
+        if (done) done.style.display = 'block';
+      } else {
+        initCalEmbed(fullName, email);
+      }
+    }
+
+    const existing = loadDemoState();
+    if (existing && existing.submitted) {
+      showBookingStage(existing.name || '', existing.email || '', existing.booked ? 'booked' : 'prompt');
+    }
 
     // Custom dropdown logic
     document.querySelectorAll('.custom-select').forEach(function(select) {
@@ -94,24 +139,13 @@
       })
       .then(result => {
         if (result.success) {
-          form.style.display = 'none';
-          formSuccess.style.display = 'flex';
-
-          const layoutInner = document.querySelector('.demo-layout__inner');
-          if (layoutInner) layoutInner.classList.add('is-booking');
-
-          formSuccess.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
           const fullName = (data.name || '').trim();
-          const firstName = fullName.split(/\s+/)[0] || '';
           const email = (data.email || '').trim();
 
-          const promptHeadline = document.getElementById('bookingPromptHeadline');
-          const doneHeadline = document.getElementById('bookingDoneHeadline');
-          if (firstName && promptHeadline) promptHeadline.textContent = `Thanks, ${firstName}! Pick a time below.`;
-          if (firstName && doneHeadline) doneHeadline.textContent = `You're locked in, ${firstName}.`;
+          saveDemoState({ submitted: true, booked: false, name: fullName, email: email });
 
-          initCalEmbed(fullName, email);
+          showBookingStage(fullName, email, 'prompt');
+          formSuccess.scrollIntoView({ behavior: 'smooth', block: 'start' });
         } else {
           throw new Error(result.message || 'Submission failed');
         }
@@ -177,6 +211,9 @@
       Cal.ns["demo-booking"]("on", {
         action: "bookingSuccessful",
         callback: function () {
+          const existing = loadDemoState() || {};
+          saveDemoState(Object.assign({}, existing, { submitted: true, booked: true }));
+
           const prompt = document.getElementById('bookingPrompt');
           const done = document.getElementById('bookingDone');
           if (prompt) prompt.style.display = 'none';
