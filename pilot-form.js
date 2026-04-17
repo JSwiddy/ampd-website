@@ -48,7 +48,14 @@
 
     const existing = loadDemoState();
     if (existing && existing.submitted) {
-      showBookingStage(existing.firstName || '', existing.lastName || '', existing.email || '', existing.booked ? 'booked' : 'prompt');
+      let firstName = existing.firstName || '';
+      let lastName = existing.lastName || '';
+      if (!firstName && !lastName && existing.name) {
+        const parts = existing.name.trim().split(/\s+/);
+        firstName = parts[0] || '';
+        lastName = parts.slice(1).join(' ');
+      }
+      showBookingStage(firstName, lastName, existing.email || '', existing.booked ? 'booked' : 'prompt');
     }
 
     // Custom dropdown logic
