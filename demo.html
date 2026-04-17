@@ -252,29 +252,39 @@
               }
             </style>
 
-            <div class="ampd-success-headline">You're on your way.</div>
-            <div class="ampd-success-sub">Your demo request is in. Here's what happens next:</div>
+            <!-- Stage 1: Form submitted, show Cal.com booking embed -->
+            <div id="bookingPrompt">
+              <div class="ampd-success-headline" id="bookingPromptHeadline">Thanks! Pick a time below.</div>
+              <div class="ampd-success-sub">Grab a slot that works — we'll see you there.</div>
+              <div id="cal-inline-embed" style="width:100%;min-height:680px;overflow:hidden;background:#fff;border-radius:12px;margin-top:1rem;"></div>
+            </div>
 
-            <div class="ampd-success-steps">
-              <div class="ampd-success-step">
-                <div class="ampd-success-step-number">01</div>
-                <div>
-                  <h4>Quick Response</h4>
-                  <p>We'll reach out within 24 hours to schedule a call and learn more about your program.</p>
+            <!-- Stage 2: Booking confirmed on Cal.com -->
+            <div id="bookingDone" style="display:none;">
+              <div class="ampd-success-headline" id="bookingDoneHeadline">You're locked in.</div>
+              <div class="ampd-success-sub">Check your email for the calendar invite. Here's what happens next:</div>
+
+              <div class="ampd-success-steps">
+                <div class="ampd-success-step">
+                  <div class="ampd-success-step-number">01</div>
+                  <div>
+                    <h4>Demo Call</h4>
+                    <p>We'll walk you through the platform and show you exactly how it works for your athletes and coaches.</p>
+                  </div>
                 </div>
-              </div>
-              <div class="ampd-success-step">
-                <div class="ampd-success-step-number">02</div>
-                <div>
-                  <h4>Custom Setup</h4>
-                  <p>We'll walk you through the platform and show you exactly how it works for your athletes and coaches.</p>
+                <div class="ampd-success-step">
+                  <div class="ampd-success-step-number">02</div>
+                  <div>
+                    <h4>Custom Setup</h4>
+                    <p>We tailor the platform to your program's roles, teams, and season structure.</p>
+                  </div>
                 </div>
-              </div>
-              <div class="ampd-success-step">
-                <div class="ampd-success-step-number">03</div>
-                <div>
-                  <h4>Launch</h4>
-                  <p>Your program gets set up, your athletes get access, and you start developing them from day one.</p>
+                <div class="ampd-success-step">
+                  <div class="ampd-success-step-number">03</div>
+                  <div>
+                    <h4>Launch</h4>
+                    <p>Your program gets set up, your athletes get access, and you start developing them from day one.</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -422,6 +432,6 @@
   </footer>
 
   <script src="script.js?v=8"></script>
-  <script src="pilot-form.js?v=5"></script>
+  <script src="pilot-form.js?v=6"></script>
 </body>
 </html>

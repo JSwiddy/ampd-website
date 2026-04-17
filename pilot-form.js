@@ -97,7 +97,17 @@
           form.style.display = 'none';
           formSuccess.style.display = 'flex';
           formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          
+
+          const fullName = (data.name || '').trim();
+          const firstName = fullName.split(/\s+/)[0] || '';
+          const email = (data.email || '').trim();
+
+          const promptHeadline = document.getElementById('bookingPromptHeadline');
+          const doneHeadline = document.getElementById('bookingDoneHeadline');
+          if (firstName && promptHeadline) promptHeadline.textContent = `Thanks, ${firstName}! Pick a time below.`;
+          if (firstName && doneHeadline) doneHeadline.textContent = `You're locked in, ${firstName}.`;
+
+          initCalEmbed(fullName, email);
         } else {
           throw new Error(result.message || 'Submission failed');
         }
@@ -111,6 +121,69 @@
       return false;
     });
     
+    function initCalEmbed(name, email) {
+      if (!document.getElementById('cal-inline-embed')) return;
+
+      (function (C, A, L) {
+        let p = function (a, ar) { a.q.push(ar); };
+        let d = C.document;
+        C.Cal = C.Cal || function () {
+          let cal = C.Cal;
+          let ar = arguments;
+          if (!cal.loaded) {
+            cal.ns = {};
+            cal.q = cal.q || [];
+            d.head.appendChild(d.createElement("script")).src = A;
+            cal.loaded = true;
+          }
+          if (ar[0] === L) {
+            const api = function () { p(api, arguments); };
+            const namespace = ar[1];
+            api.q = api.q || [];
+            if (typeof namespace === "string") {
+              cal.ns[namespace] = cal.ns[namespace] || api;
+              p(cal.ns[namespace], ar);
+              p(cal, ["initNamespace", namespace]);
+            } else {
+              p(cal, ar);
+            }
+            return;
+          }
+          p(cal, ar);
+        };
+      })(window, "https://app.cal.com/embed/embed.js", "init");
+
+      Cal("init", "demo-booking", { origin: "https://cal.com" });
+
+      Cal.ns["demo-booking"]("inline", {
+        elementOrSelector: "#cal-inline-embed",
+        calLink: "get-ampd-up/30min",
+        config: {
+          layout: "month_view",
+          name: name,
+          email: email
+        }
+      });
+
+      Cal.ns["demo-booking"]("ui", {
+        hideEventTypeDetails: false,
+        layout: "month_view"
+      });
+
+      Cal.ns["demo-booking"]("on", {
+        action: "bookingSuccessful",
+        callback: function () {
+          const prompt = document.getElementById('bookingPrompt');
+          const done = document.getElementById('bookingDone');
+          if (prompt) prompt.style.display = 'none';
+          if (done) {
+            done.style.display = 'block';
+            done.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }
+      });
+    }
+
     // Phone number formatting
     const phoneInput = document.getElementById('phone');
     if (phoneInput) {
