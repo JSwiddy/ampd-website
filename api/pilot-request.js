@@ -92,21 +92,27 @@ Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' })
       body: JSON.stringify({
         From: process.env.POSTMARK_FROM_EMAIL,
         To: email,
-        Subject: 'Thank you for your AMPD demo request',
+        Subject: `Your AMPD walkthrough, ${firstName}`,
         HtmlBody: `
-          <h2>Thank you, ${firstName}!</h2>
-          <p>We've received your demo request for <strong>${organization}</strong>.</p>
-          <p>Our team will review your information and reach out within 24 hours to schedule your walkthrough.</p>
-          <p>Best regards,<br>The AMPD Team</p>
+          <p>Hi ${firstName},</p>
+          <p>Thanks for your interest in AMPD for <strong>${organization}</strong>.</p>
+          <p>If you haven't already grabbed a time, book your 30 minute walkthrough here:</p>
+          <p><a href="https://cal.com/get-ampd-up/30min" style="display:inline-block; padding:12px 24px; background:#0f172a; color:#ffffff; text-decoration:none; border-radius:8px; font-weight:600;">Book Your Walkthrough</a></p>
+          <p>On the call we'll show you AMPD configured for a program like yours. No generic slide decks.</p>
+          <p>Talk soon,<br>John Swiderek<br>Founder &amp; CEO, AMPD</p>
         `,
-        TextBody: `Thank you, ${firstName}!
+        TextBody: `Hi ${firstName},
 
-We've received your demo request for ${organization}.
+Thanks for your interest in AMPD for ${organization}.
 
-Our team will review your information and reach out within 24 hours to schedule your walkthrough.
+If you haven't already grabbed a time, book your 30 minute walkthrough here:
+https://cal.com/get-ampd-up/30min
 
-Best regards,
-The AMPD Team`,
+On the call we'll show you AMPD configured for a program like yours. No generic slide decks.
+
+Talk soon,
+John Swiderek
+Founder & CEO, AMPD`,
         MessageStream: 'outbound'
       })
     });
