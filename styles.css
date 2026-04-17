@@ -2378,11 +2378,11 @@ h2.products-heading {
 }
 
 .demo-layout__inner {
-  max-width: 120rem;
+  max-width: 140rem;
   margin: 0 auto;
   padding: 0 5rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.5fr;
   gap: 5rem;
   align-items: start;
 }
