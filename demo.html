@@ -255,11 +255,14 @@
               }
             </style>
 
-            <!-- Stage 1: Form submitted, show Cal.com booking embed -->
+            <!-- Stage 1: Form submitted, show Book CTA -->
             <div id="bookingPrompt">
-              <h2 class="demo-form-title" id="bookingPromptHeadline">Pick a date and time</h2>
-              <p class="ampd-success-sub" style="margin-bottom:1.5rem;">Grab a slot that works — we'll see you there.</p>
-              <div id="cal-inline-embed" style="width:100%;min-height:720px;overflow:visible;background:#fff;border-radius:8px;"></div>
+              <h2 class="demo-form-title" id="bookingPromptHeadline">Request received. Pick your time.</h2>
+              <p class="ampd-success-sub" style="margin-bottom:2rem;">Grab a slot that works — we'll see you there.</p>
+              <button type="button" id="openBookingBtn" class="btn-primary btn--large" style="width:100%;">
+                Pick Your Time
+              </button>
+              <p style="margin-top:1.25rem; font-size:0.9rem; color:#64748b; text-align:center;">Takes 30 seconds — opens a calendar overlay.</p>
             </div>
 
             <!-- Stage 2: Booking confirmed on Cal.com -->
@@ -435,6 +438,6 @@
   </footer>
 
   <script src="script.js?v=8"></script>
-  <script src="pilot-form.js?v=14"></script>
+  <script src="pilot-form.js?v=15"></script>
 </body>
 </html>

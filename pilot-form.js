@@ -155,7 +155,8 @@
     });
     
     function initCalEmbed(name, email) {
-      if (!document.getElementById('cal-inline-embed')) return;
+      const btn = document.getElementById('openBookingBtn');
+      if (!btn) return;
 
       (function (C, A, L) {
         let p = function (a, ar) { a.q.push(ar); };
@@ -188,16 +189,6 @@
 
       Cal("init", "demo-booking", { origin: "https://cal.com" });
 
-      Cal.ns["demo-booking"]("inline", {
-        elementOrSelector: "#cal-inline-embed",
-        calLink: "get-ampd-up/30min",
-        config: {
-          layout: "month_view",
-          name: name,
-          email: email
-        }
-      });
-
       Cal.ns["demo-booking"]("ui", {
         hideEventTypeDetails: false,
         layout: "month_view"
@@ -217,6 +208,17 @@
             done.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
         }
+      });
+
+      btn.addEventListener('click', function () {
+        Cal.ns["demo-booking"]("modal", {
+          calLink: "get-ampd-up/30min",
+          config: {
+            layout: "month_view",
+            name: name,
+            email: email
+          }
+        });
       });
     }
 
