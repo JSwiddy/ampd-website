@@ -1918,7 +1918,8 @@ h2.products-heading {
 
 .feature-box-visual img {
   width: 100%;
-  max-width: 100%;
+  max-width: 320px;
+  height: auto;
   border-radius: 1.2rem;
 }
 
