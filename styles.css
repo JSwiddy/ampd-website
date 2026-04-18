@@ -3018,6 +3018,7 @@ h2.products-heading {
 
   .nav-toggle {
     display: flex;
+    margin-left: auto;
   }
 
   .mobile-nav-overlay {
