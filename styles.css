@@ -624,7 +624,7 @@ body.nav-lock {
 }
 
 .logo-box img {
-  max-width: 150px;
+  max-width: min(150px, 100%);
   max-height: 100px;
   width: auto;
   height: auto;
@@ -3219,6 +3219,7 @@ h2.products-heading {
   .logo-box {
     flex: 0 0 calc(100% / 2);
     height: 60px;
+    padding: 0 0.8rem;
   }
 }
 
