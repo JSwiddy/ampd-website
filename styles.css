@@ -625,7 +625,7 @@ body.nav-lock {
 
 .logo-box img {
   max-width: min(150px, 100%);
-  max-height: 100px;
+  max-height: 100%;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -3054,7 +3054,7 @@ h2.products-heading {
 
   .logo-box {
     flex: 0 0 calc(100% / 3);
-    height: 80px;
+    height: 100px;
   }
 
   .logo-slider-btn {
@@ -3218,7 +3218,7 @@ h2.products-heading {
 
   .logo-box {
     flex: 0 0 calc(100% / 2);
-    height: 60px;
+    height: 90px;
     padding: 0 0.8rem;
   }
 }
