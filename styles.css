@@ -2889,9 +2889,16 @@ h2.products-heading {
   .platform-section .features-grid {
     display: flex !important;
     flex-direction: column !important;
+    align-items: center !important;
     gap: 2.5rem !important;
     max-width: 100% !important;
     padding: 0 1.5rem !important;
+  }
+
+  .platform-section .features-grid-cell-1,
+  .platform-section .features-grid-cell-3 {
+    width: 100% !important;
+    max-width: 360px !important;
   }
 
   .platform-section .features-grid-cell-2 img {
