@@ -276,6 +276,21 @@ button {
   color: var(--primary);
 }
 
+/* Header Sign In — text link, secondary weight, sits next to the CTA */
+.header-signin {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-light);
+  padding: 0.8rem 1.6rem;
+  margin-right: 0.6rem;
+  transition: color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.header-signin:hover {
+  color: var(--primary);
+}
+
 /* Header CTA */
 .header-cta {
   display: inline-flex;
@@ -3012,7 +3027,8 @@ h2.products-heading {
   }
 
   .header-nav,
-  .header-cta {
+  .header-cta,
+  .header-signin {
     display: none;
   }
 
@@ -3281,6 +3297,14 @@ h2.products-heading {
 
 .dark-page .dropdown-menu li a:hover {
   background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.dark-page .header-signin {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.dark-page .header-signin:hover {
   color: #fff;
 }
 
