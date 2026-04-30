@@ -276,27 +276,6 @@ button {
   color: var(--primary);
 }
 
-/* Header actions — wraps Sign In + Schedule a Demo as a paired group */
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  flex-shrink: 0;
-}
-
-/* Header Sign In — text link, secondary weight, sits next to the CTA */
-.header-signin {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--text-light);
-  transition: color 0.3s ease;
-  white-space: nowrap;
-}
-
-.header-signin:hover {
-  color: var(--primary);
-}
-
 /* Header CTA */
 .header-cta {
   display: inline-flex;
@@ -3033,9 +3012,7 @@ h2.products-heading {
   }
 
   .header-nav,
-  .header-cta,
-  .header-signin,
-  .header-actions {
+  .header-cta {
     display: none;
   }
 
@@ -3304,14 +3281,6 @@ h2.products-heading {
 
 .dark-page .dropdown-menu li a:hover {
   background: rgba(255, 255, 255, 0.05);
-  color: #fff;
-}
-
-.dark-page .header-signin {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.dark-page .header-signin:hover {
   color: #fff;
 }
 
