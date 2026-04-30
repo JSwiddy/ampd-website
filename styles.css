@@ -276,15 +276,21 @@ button {
   color: var(--primary);
 }
 
+/* Header actions — wraps Sign In + Schedule a Demo as a paired group */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-shrink: 0;
+}
+
 /* Header Sign In — text link, secondary weight, sits next to the CTA */
 .header-signin {
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--text-light);
-  padding: 0.8rem 1.6rem;
-  margin-right: 0.6rem;
   transition: color 0.3s ease;
-  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .header-signin:hover {
@@ -3028,7 +3034,8 @@ h2.products-heading {
 
   .header-nav,
   .header-cta,
-  .header-signin {
+  .header-signin,
+  .header-actions {
     display: none;
   }
 
