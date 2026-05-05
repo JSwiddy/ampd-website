@@ -146,7 +146,27 @@
       "destination": "/why-ampd.html"
     },
     {
-      "source": "/((?!about\\.html|mission\\.html|platform\\.html|safety\\.html|request-pilot\\.html|privacy-policy\\.html|terms\\.html|why-ampd\\.html|whats-next\\.html|demo\\.html|schedule-demo|whats-next|products/|api/).*)",
+      "source": "/safety",
+      "destination": "/safety.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy-policy.html"
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy-policy.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/terms-of-service",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/((?!about\\.html|mission\\.html|platform\\.html|safety\\.html|safety|request-pilot\\.html|privacy-policy\\.html|privacy-policy|privacy|terms\\.html|terms-of-service|terms|why-ampd\\.html|whats-next\\.html|demo\\.html|schedule-demo|whats-next|why-ampd|products/|api/).*)",
       "destination": "/index.html"
     }
   ]
