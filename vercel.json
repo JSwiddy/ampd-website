@@ -134,6 +134,36 @@
       "source": "/contact.html",
       "destination": "/demo.html",
       "permanent": false
+    },
+    {
+      "source": "/products/counsel",
+      "destination": "/whats-next",
+      "permanent": true
+    },
+    {
+      "source": "/products/counsel/:path*",
+      "destination": "/whats-next",
+      "permanent": true
+    },
+    {
+      "source": "/products/fuel",
+      "destination": "/whats-next",
+      "permanent": true
+    },
+    {
+      "source": "/products/fuel/:path*",
+      "destination": "/whats-next",
+      "permanent": true
+    },
+    {
+      "source": "/products/training-room",
+      "destination": "/whats-next",
+      "permanent": true
+    },
+    {
+      "source": "/products/training-room/:path*",
+      "destination": "/whats-next",
+      "permanent": true
     }
   ],
   "rewrites": [
