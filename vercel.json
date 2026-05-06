@@ -180,6 +180,10 @@
       "destination": "/safety.html"
     },
     {
+      "source": "/integrations",
+      "destination": "/integrations.html"
+    },
+    {
       "source": "/privacy",
       "destination": "/privacy-policy.html"
     },
@@ -196,7 +200,7 @@
       "destination": "/terms.html"
     },
     {
-      "source": "/((?!about\\.html|mission\\.html|platform\\.html|safety\\.html|safety|request-pilot\\.html|privacy-policy\\.html|privacy-policy|privacy|terms\\.html|terms-of-service|terms|why-ampd\\.html|whats-next\\.html|demo\\.html|schedule-demo|whats-next|why-ampd|products/|api/).*)",
+      "source": "/((?!about\\.html|mission\\.html|platform\\.html|safety\\.html|safety|request-pilot\\.html|privacy-policy\\.html|privacy-policy|privacy|terms\\.html|terms-of-service|terms|why-ampd\\.html|whats-next\\.html|demo\\.html|schedule-demo|whats-next|why-ampd|integrations\\.html|integrations|compliance/|products/|api/).*)",
       "destination": "/index.html"
     }
   ]
