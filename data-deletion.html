@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Deletion Instructions — AMPD</title>
+  <meta name="description" content="How to disconnect AMPD from your Meta account and request deletion of any data AMPD holds.">
+  <meta property="og:title" content="Data Deletion Instructions — AMPD">
+  <meta property="og:description" content="How to disconnect AMPD from your Meta account and request deletion of any data AMPD holds.">
+  <meta property="og:image" content="https://res.cloudinary.com/dhzjg43qc/image/upload/v1772744732/AMPD_APP_ICON_epn4op.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dhzjg43qc/image/upload/v1772744732/AMPD_APP_ICON_epn4op.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=331">
+
+  <style>
+    .legal-page { min-height: 100vh; display: flex; flex-direction: column; background: var(--bg); }
+    .legal-content { flex: 1; max-width: 800px; margin: 0 auto; padding: 6rem 2rem 8rem; }
+    .legal-content h1 { font-size: clamp(3rem, 4vw, 4rem); font-weight: 700; margin-bottom: 0.8rem; color: var(--primary); letter-spacing: -0.02em; line-height: 1.15; }
+    .legal-effective-date { font-size: 1.4rem; color: var(--text-muted); margin-bottom: 2.5rem; }
+    .legal-content h2 { font-size: 2.6rem; font-weight: 700; color: var(--primary); margin-top: 4rem; margin-bottom: 1.6rem; letter-spacing: -0.01em; line-height: 1.3; }
+    .legal-content h3 { font-size: 1.9rem; font-weight: 600; color: var(--primary); margin-top: 2.8rem; margin-bottom: 1.2rem; line-height: 1.4; }
+    .legal-content p { font-size: 1.7rem; color: var(--slate); line-height: 1.75; margin-bottom: 1.6rem; }
+    .legal-content ol { padding-left: 2.2rem; margin: 0 0 2rem 0; }
+    .legal-content ol li { font-size: 1.7rem; color: var(--slate); line-height: 1.75; margin-bottom: 0.8rem; }
+    .legal-content ul { list-style: none; padding: 0; margin: 0 0 2rem 0; }
+    .legal-content ul li { font-size: 1.7rem; color: var(--slate); line-height: 1.75; padding-left: 2rem; position: relative; margin-bottom: 0.8rem; }
+    .legal-content ul li::before { content: ""; position: absolute; left: 0; top: 1.3rem; width: 0.7rem; height: 0.7rem; border-radius: 50%; background: var(--primary); }
+    .legal-content a { color: var(--primary); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; text-decoration-color: var(--border); transition: text-decoration-color 0.2s ease; }
+    .legal-content a:hover { text-decoration-color: var(--primary); }
+    .legal-content strong { color: var(--primary); font-weight: 600; }
+    .legal-intro { font-size: 1.7rem; color: var(--text-light); margin-bottom: 2.5rem; line-height: 1.65; border-left: 3px solid var(--primary); padding: 1.6rem 2rem; background: var(--bg-accent); border-radius: 0 var(--radius) var(--radius) 0; }
+    .legal-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+    @media (max-width: 600px) {
+      .legal-content { padding: 9rem 2rem 6rem; }
+      .legal-content p, .legal-content ul li, .legal-content ol li { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="/" class="header-logo">
+        <img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487124/AMPD_White_ms0gvl.png" alt="AMPD">
+      </a>
+      <nav class="header-nav" id="headerNav">
+        <ul class="nav-menu">
+          <li><a href="/about.html">About</a></li>
+          <li class="has-dropdown">
+            <a href="/products/core">Products <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <ul class="dropdown-menu">
+              <li><a href="/products/core">Team Management</a></li>
+              <li><a href="/products/grades">Academics</a></li>
+              <li><a href="/whats-next">What's Next</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <a href="/schedule-demo" class="header-cta">Schedule a Demo</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-nav-overlay" id="mobileNav">
+    <a href="/about.html">About</a>
+    <a href="/products/core">Products</a>
+    <div class="mobile-nav-submenu">
+      <a href="/products/core" class="mobile-nav-sub">Team Management</a>
+      <a href="/products/grades" class="mobile-nav-sub">Academics</a>
+      <a href="/whats-next" class="mobile-nav-sub">What's Next</a>
+    </div>
+    <a href="/schedule-demo" class="btn-primary">Schedule a Demo</a>
+  </div>
+
+  <main class="legal-page">
+    <div class="legal-content">
+      <h1>Data Deletion Instructions</h1>
+      <p class="legal-effective-date">Last Updated: May 26, 2026</p>
+
+      <p class="legal-intro">
+        AMPD lets athletic directors connect their school's Facebook Page and Instagram Business account so the platform can publish approved posts on the school's behalf. This page explains how to disconnect that integration and request deletion of any data AMPD stores about it.
+      </p>
+
+      <hr class="legal-divider">
+
+      <h2>What AMPD Stores When You Connect Meta</h2>
+      <p>When an athletic director connects their school's Meta accounts to AMPD, AMPD stores the following on the school's record:</p>
+      <ul>
+        <li>A long-lived Meta access token, encrypted at rest, used only to publish AMPD-approved posts</li>
+        <li>The Facebook Page ID and Instagram Business Account ID</li>
+        <li>The page name and Instagram username, for display in the AMPD dashboard</li>
+        <li>An audit log of every post AMPD published on behalf of the school</li>
+      </ul>
+      <p>AMPD does <strong>not</strong> store the contents of your personal Facebook profile, your friends list, your private messages, or anything else outside the school's Page / Instagram Business account.</p>
+
+      <hr class="legal-divider">
+
+      <h2>Option 1 — Disconnect from inside AMPD</h2>
+      <p>This is the fastest path. It immediately revokes the stored access token and deletes the connection record from AMPD's database.</p>
+      <ol>
+        <li>Sign in to the AMPD portal at <a href="https://app.liveampd.com">app.liveampd.com</a></li>
+        <li>Go to <strong>AMPD Social → Connections</strong></li>
+        <li>Click <strong>Disconnect</strong> next to the Facebook / Instagram connection</li>
+        <li>Confirm the disconnect</li>
+      </ol>
+      <p>After this, AMPD can no longer publish to your Meta accounts and the encrypted access token is removed from our database.</p>
+
+      <hr class="legal-divider">
+
+      <h2>Option 2 — Revoke from inside Meta</h2>
+      <p>You can also revoke AMPD's access from your Meta account directly:</p>
+      <ol>
+        <li>Go to <a href="https://www.facebook.com/settings?tab=business_tools" target="_blank" rel="noopener">Facebook Settings → Business Integrations</a></li>
+        <li>Find <strong>AMPD</strong> in the list of connected apps</li>
+        <li>Click <strong>Remove</strong></li>
+      </ol>
+      <p>Once revoked from Meta's side, the next time AMPD attempts to use the token, the call will fail and AMPD's system will automatically mark the connection as disconnected.</p>
+
+      <hr class="legal-divider">
+
+      <h2>Option 3 — Request full deletion of all data AMPD holds about you</h2>
+      <p>If you want AMPD to permanently delete <em>all</em> data tied to your account or your school, email <a href="mailto:privacy@liveampd.com">privacy@liveampd.com</a> with the subject line "Data Deletion Request" and include:</p>
+      <ul>
+        <li>Your full name</li>
+        <li>The email address tied to your AMPD account</li>
+        <li>The name of your school or athletic program</li>
+        <li>What you want deleted (the Meta connection only, your user account, or the entire school's data)</li>
+      </ul>
+      <p>AMPD will confirm receipt within two business days and complete the deletion within 30 days, in accordance with the timelines spelled out in our <a href="/privacy-policy.html">Privacy Policy</a>.</p>
+
+      <hr class="legal-divider">
+
+      <h2>Questions</h2>
+      <p>For any other questions about how AMPD handles your data, see our <a href="/privacy-policy.html">Privacy Policy</a> or contact <a href="mailto:privacy@liveampd.com">privacy@liveampd.com</a>.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="footer-inner"><div class="footer-row-1"><div class="footer-brand"><a href="/"><img src="https://res.cloudinary.com/dhzjg43qc/image/upload/v1770487124/AMPD_White_ms0gvl.png" alt="AMPD" class="footer-logo"></a><p class="footer-tagline">Develop your Athletes.<br>Run your Program.<br>All in one Place.</p></div><div class="footer-columns"><div class="footer-col"><h4>Products</h4><ul><li><a href="/products/core">Team Management</a></li><li><a href="/products/grades">Academics</a></li><li><a href="/whats-next">What's Next</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/safety">Safety &amp; Privacy</a></li><li><a href="/schedule-demo">Schedule Demo</a></li></ul></div></div></div><div class="footer-row-3"><p class="footer-copyright">&copy; 2026 AMPD Technologies LLC. All Rights Reserved.</p><div class="footer-legal-links"><a href="/terms.html" class="footer-legal">Terms of Service</a><span class="footer-legal-sep">·</span><a href="/privacy-policy.html" class="footer-legal">Privacy Policy</a></div></div></div></footer>
+  <script src="script.js?v=10"></script>
+</body>
+</html>
