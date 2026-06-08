@@ -614,7 +614,7 @@
               Application served by <strong>Vercel (US)</strong>, database on <strong>MongoDB Atlas (US)</strong>. All replication and backup remains inside the United States.
             </p>
             <p>
-              <strong>TLS 1.2+</strong> on all client-server traffic. <strong>AES-256</strong> at rest. SIS API credentials are field-level encrypted. Every piece of student data is scoped by organization, and cross-organization access is impossible by design.
+              <strong>TLS 1.2+</strong> on all client-server traffic. <strong>AES-256</strong> at rest, with personally identifying fields additionally encrypted at the application layer with a separate key. SIS API credentials are field-level encrypted. Every piece of student data is scoped by organization, and cross-organization access is impossible by design.
             </p>
           </div>
 
@@ -767,7 +767,7 @@
           <details class="faq-item">
             <summary>Where is the data hosted, and is it encrypted?</summary>
             <div class="faq-answer">
-              <p>All AMPD data is hosted in the United States on MongoDB Atlas, with the application served by Vercel (US). Replication and backup remain inside the United States. Data is encrypted in transit using TLS 1.2 or higher and at rest using AES-256. SIS API credentials are field-level encrypted using a separate key.</p>
+              <p>All AMPD data is hosted in the United States on MongoDB Atlas, with the application served by Vercel (US). Replication and backup remain inside the United States. Data is encrypted in transit using TLS 1.2 or higher and at rest using AES-256. Personally identifying fields (names, contact information, emergency contacts, parent-submitted form responses, and signatures) are additionally encrypted at the application layer with a separate key. SIS API credentials are likewise field-level encrypted.</p>
             </div>
           </details>
 
