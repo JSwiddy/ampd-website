@@ -193,7 +193,7 @@
   <main class="legal-page">
     <div class="legal-content">
       <h1>Privacy Policy</h1>
-      <p class="legal-effective-date">Effective Date: May 5, 2026 · Last Updated: May 5, 2026</p>
+      <p class="legal-effective-date">Effective Date: May 5, 2026 · Last Updated: June 8, 2026</p>
 
       <p class="legal-intro">
         AMPD Technologies LLC ("AMPD," "we," "our," or "us") is committed to protecting the privacy of every person who uses our platform — especially the student-athletes we serve. This Privacy Policy explains what we collect, how we use it, who we share it with, and — just as importantly — what we never do. It applies to the AMPD mobile application, the AMPD web portal at app.liveampd.com, our marketing website at liveampd.com, and all related services (collectively, the "Service").
@@ -269,7 +269,7 @@
       <p>We implement administrative, technical, and organizational safeguards designed to protect your personal information.</p>
       <ul>
         <li><strong>Encryption in transit:</strong> all traffic to and from the Service is encrypted using TLS 1.2 or higher</li>
-        <li><strong>Encryption at rest:</strong> our primary database (MongoDB Atlas) encrypts all data at rest using AES-256. SIS API credentials are additionally field-level encrypted using AES-256-CBC with a separate key before being stored</li>
+        <li><strong>Encryption at rest:</strong> our primary database (MongoDB Atlas) encrypts all data at rest using AES-256. In addition, personally identifying fields (including names, email and phone numbers, mailing addresses, emergency contacts, parent-submitted form responses, and signatures) are individually encrypted at the application layer using AES-256-CBC with a separate key before they are written to the database, so those records are never stored in plain text. SIS API credentials are likewise field-level encrypted with a separate key</li>
         <li><strong>US-only data residency:</strong> all production data is hosted in the United States. Backups are encrypted and remain in U.S.-based regions only</li>
         <li><strong>Authentication:</strong> session-based authentication with HTTP-only, secure cookies. Passwords are hashed using bcrypt before storage. Single sign-on via ClassLink uses OAuth 2.0 with PKCE</li>
         <li><strong>Role-based access controls:</strong> all data access is enforced at the server level and scoped by organization. One school cannot access another school's data; one role cannot see data outside its scope</li>
@@ -391,12 +391,17 @@
           </tr>
           <tr>
             <td>Anthropic (Claude API)</td>
-            <td>AI-generated coaching content (workout plans, mindset session text). No personally identifiable student data is sent. See Section 11.</td>
+            <td>AI-generated coaching content (workout plans, mindset session text) and optional Social-module captions. No personally identifiable student data is sent. See Section 11.</td>
+            <td>United States</td>
+          </tr>
+          <tr>
+            <td>OpenAI</td>
+            <td>AI image generation for the optional Social module (game-day and recognition graphics). Receives image-generation prompts and, only with athlete or parent consent, reference photos. No academic, wellness, or other student records are sent. See Section 11.</td>
             <td>United States</td>
           </tr>
           <tr>
             <td>Stripe</td>
-            <td>Subscription billing for school accounts. Receives only school billing-contact information; never receives student data</td>
+            <td>Subscription billing for school accounts, and payment processing for parent and guardian payments (program registration, equipment fees, ticketing, and fundraising) through Stripe Connect. Receives the payer's name, email, and payment details. Does not receive student academic or wellness data.</td>
             <td>United States</td>
           </tr>
           <tr>
@@ -427,14 +432,15 @@
 
       <!-- 11 -->
       <h2>11. Artificial Intelligence</h2>
-      <p>AMPD uses Anthropic's Claude API to power optional features such as AI-generated workout plans and mindset session content. We have built our integration with strict data-minimization principles:</p>
+      <p>AMPD uses Anthropic's Claude API to power optional features such as AI-generated workout plans, mindset session content, and Social-module captions. We have built this integration with strict data-minimization principles:</p>
       <ul>
-        <li>No athlete names, email addresses, or other identifiers are sent to the AI service</li>
+        <li>No athlete names, email addresses, or other identifiers are sent for this coaching and caption content</li>
         <li>No daily check-in scores, free-text athlete responses, or other student-specific information is sent</li>
         <li>AI prompts contain only generic context such as the type of training, sport, focus area, and tone, plus coach-provided generic prompts</li>
         <li>AMPD has confirmed with Anthropic that prompts and responses are not used to train AI models</li>
       </ul>
-      <p>For more information on Anthropic's data practices, visit <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">anthropic.com/privacy</a>.</p>
+      <p>The optional Social module also uses OpenAI to generate game-day and recognition graphics. To produce a graphic, AMPD sends an image-generation prompt and, only when an athlete (or a parent for a minor) has granted photo consent, a reference photo. No grades, wellness scores, schedules, or other student records are ever sent for image generation.</p>
+      <p>For more information on these providers' data practices, visit <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">anthropic.com/privacy</a> and <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener">openai.com/policies/privacy-policy</a>.</p>
 
       <hr class="legal-divider">
 
