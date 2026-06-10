@@ -1963,61 +1963,50 @@ h2.products-heading {
    wraps web (desktop) product screenshots
    =========================== */
 .browser-frame {
+  position: relative;
   width: 100%;
-  border-radius: 1.2rem;
-  overflow: hidden;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 24px 60px -24px rgba(17, 17, 17, 0.28);
+  background: #0e0e0e;
+  border-radius: 1.6rem;
+  padding: 1.2rem 1.2rem 1.4rem;
+  margin-bottom: 1.6rem;
+  box-shadow: 0 26px 60px -24px rgba(15, 23, 42, 0.45), 0 0 0 1px rgba(0, 0, 0, 0.04);
 }
 
-.browser-frame-bar {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  padding: 1rem 1.4rem;
-  background: #f1f5f9;
-  border-bottom: 1px solid #e2e8f0;
+/* camera dot on the bezel */
+.browser-frame::before {
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #2b2b2b;
 }
 
-.browser-frame-dots {
-  display: flex;
-  gap: 0.6rem;
-  flex-shrink: 0;
+/* laptop base / deck below the screen */
+.browser-frame::after {
+  content: "";
+  position: absolute;
+  left: -12%;
+  right: -12%;
+  bottom: -1.6rem;
+  height: 1.6rem;
+  background: linear-gradient(180deg, #e9ecf1 0%, #c7ccd6 55%, #aab1bd 100%);
+  border-radius: 0 0 1.6rem 1.6rem;
+  box-shadow: 0 12px 18px -10px rgba(0, 0, 0, 0.35);
 }
 
-.browser-frame-dots span {
-  width: 1.1rem;
-  height: 1.1rem;
-  border-radius: 999px;
-  display: block;
-}
-
-.browser-frame-dots span:nth-child(1) { background: #ff5f57; }
-.browser-frame-dots span:nth-child(2) { background: #febc2e; }
-.browser-frame-dots span:nth-child(3) { background: #28c840; }
-
-.browser-frame-url {
-  flex: 1;
-  margin-left: 0.8rem;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 999px;
-  padding: 0.5rem 1.2rem;
-  font-size: 1.15rem;
-  color: #64748b;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+/* legacy browser bar (dots + URL) — hidden in the laptop treatment */
+.browser-frame-bar { display: none; }
 
 .browser-frame img {
   display: block;
   width: 100%;
   max-width: 100%;
   height: auto;
-  border-radius: 0;
+  border-radius: 0.5rem;
 }
 
 /* Feature Summary Grid */
