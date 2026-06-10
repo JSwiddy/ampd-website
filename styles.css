@@ -423,6 +423,36 @@ body.nav-lock {
   box-shadow: 0 8px 24px rgba(255, 255, 255, 0.3);
 }
 
+.hero-ctas .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 2.5rem;
+  background: transparent;
+  color: #fff;
+  font-family: var(--font);
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.hero-ctas .btn-secondary:hover {
+  border-color: #fff;
+  transform: translateY(-3px);
+}
+
+.hero-note {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.55);
+  max-width: 44rem;
+}
+
 .hero-visual {
   width: 55%;
   flex-shrink: 0;
@@ -1326,10 +1356,10 @@ h2.products-heading {
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 6rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4rem;
   justify-items: center;
-  max-width: 96rem;
+  max-width: 120rem;
   margin: 0 auto;
 }
 
