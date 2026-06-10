@@ -1958,6 +1958,68 @@ h2.products-heading {
   width: 100%;
 }
 
+/* ===========================
+   DESKTOP / BROWSER FRAME
+   wraps web (desktop) product screenshots
+   =========================== */
+.browser-frame {
+  width: 100%;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 24px 60px -24px rgba(17, 17, 17, 0.28);
+}
+
+.browser-frame-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1rem 1.4rem;
+  background: #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.browser-frame-dots {
+  display: flex;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.browser-frame-dots span {
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 999px;
+  display: block;
+}
+
+.browser-frame-dots span:nth-child(1) { background: #ff5f57; }
+.browser-frame-dots span:nth-child(2) { background: #febc2e; }
+.browser-frame-dots span:nth-child(3) { background: #28c840; }
+
+.browser-frame-url {
+  flex: 1;
+  margin-left: 0.8rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1.15rem;
+  color: #64748b;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.browser-frame img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0;
+}
+
 /* Feature Summary Grid */
 .feature-summary {
   padding: var(--section-padding) 0;
