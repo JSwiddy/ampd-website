@@ -2948,7 +2948,8 @@ h2.products-heading {
   }
 
   .academics-hero-card {
-    height: 320px;
+    height: auto;
+    min-height: 320px;
   }
 
   /* Logos — 4 visible on tablet (motionsports: 992px → 4) */
@@ -3113,19 +3114,44 @@ h2.products-heading {
 
   /* Academics hero — mobile */
   .academics-hero-wrap {
-    padding: 1.5rem;
+    padding: 1rem;
   }
 
   .academics-hero-content {
     padding: 2.5rem;
   }
 
+  .academics-hero {
+    padding: 0;
+  }
+
+  .academics-hero-frame {
+    padding: 0.8rem;
+    border-radius: 1.6rem;
+  }
+
   .academics-hero-card {
-    height: 280px;
+    height: auto;
+    min-height: 300px;
+  }
+
+  .academics-hero-logo {
+    height: 4.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .academics-hero-content {
+    padding: 3rem 1.4rem;
   }
 
   .academics-hero-content h1 {
-    font-size: clamp(2rem, 6vw, 3rem);
+    font-size: clamp(1.9rem, 7vw, 2.8rem);
+  }
+
+  .academics-hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    max-width: 100%;
   }
 
   /* Logos — 3 visible on mobile (motionsports: 768px → 3) */
